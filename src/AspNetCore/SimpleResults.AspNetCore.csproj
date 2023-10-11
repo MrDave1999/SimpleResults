@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <RootNamespace>SimpleResults</RootNamespace>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <OutputType>Library</OutputType>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <IsPackable>true</IsPackable>
+    <PackageId>SimpleResults.AspNetCore</PackageId>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Dave Roman</Authors>
+    <Copyright>Copyright (c) Dave Roman</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>SimpleResults-icon-nuget.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/MrDave1999/SimpleResults</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MrDave1999/SimpleResults</RepositoryUrl>
+    <PackageTags>result, pattern, web, api, aspnetcore</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <Description>
+      A simple package that translates the Result object to ActionResult.
+    </Description>
+    <Version>0.1.0-alpha</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\SimpleResults-icon-nuget.png" Pack="True" PackagePath="" />
+    <None Include="..\..\README.md" Pack="True" PackagePath="" />
+    <None Include="..\..\LICENSE" Pack="True" PackagePath="" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Core\SimpleResults.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="SimpleResults.Tests" />
+  </ItemGroup>
+
+</Project>
