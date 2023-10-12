@@ -18,7 +18,7 @@
     <Description>
       A simple package to implement the Result pattern for returning from services.
     </Description>
-    <Version>0.1.0-alpha</Version>
+    <Version>0.1.1-alpha</Version>
   </PropertyGroup>
   
   <ItemGroup>
