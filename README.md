@@ -72,7 +72,7 @@ This approach provides a new way to handle error without the need to use excepti
 
 ### Integration with ASP.NET Core
 
-You can convert the `Result` object to an [ActionResult<T>](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1?view=aspnetcore-7.0), such as:
+You can convert the `Result` object to an [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1?view=aspnetcore-7.0), such as:
 ```cs
 using SimpleResults;
 
