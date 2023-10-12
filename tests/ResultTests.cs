@@ -181,19 +181,21 @@ public class ResultTests
     }
 
     [Test]
-    public void ObtainedResource_WhenResultIsObtainedResourceWithSuccess_ShouldReturnsResultObject()
+    public void ObtainedResource_WhenResultIsObtainedResourceWithSuccess_ShouldReturnsResultOfT()
     {
         // Arrange
+        var expectedData = new Person { Name = "Test" };
         var expectedMessage = ResponseMessages.ObtainedResource;
 
         // Act
-        Result actual = Result.ObtainedResource();
+        Result<Person> actual = Result.ObtainedResource(expectedData);
 
         // Asserts
         actual.IsSuccess.Should().BeTrue();
         actual.IsFailed.Should().BeFalse();
         actual.Message.Should().Be(expectedMessage);
         actual.Errors.Should().BeEmpty();
+        actual.Data.Should().Be(expectedData);
         actual.Status.Should().Be(ResultStatus.Ok);
     }
 

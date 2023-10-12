@@ -145,10 +145,12 @@ public sealed class Result : ResultBase
     /// <summary>
     /// Represents a situation in which the service successfully obtains a resource.
     /// </summary>
-    public static Result ObtainedResource()
+    /// <param name="data">The value to be set.</param>
+    public static Result<T> ObtainedResource<T>(T data)
     {
-        return new Result
+        return new Result<T>
         {
+            Data      = data,
             IsSuccess = true,
             Message   = ResponseMessages.ObtainedResource,
             Status    = ResultStatus.Ok

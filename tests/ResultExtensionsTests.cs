@@ -123,13 +123,14 @@ public class ResultExtensionsTests
     public void ToActionResult_WhenOperationResultIsObtained_ShouldReturnsOkObjectResult()
     {
         // Arrange
+        var expectedData = new Person { Name = "Bob" };
         int expectedHttpCode = 200;
-        Result result = Result.ObtainedResource();
+        Result<Person> result = Result.ObtainedResource(expectedData);
 
         // Act
-        ActionResult<Result> actionResult = result.ToActionResult();
+        ActionResult<Result<Person>> actionResult = result.ToActionResult();
         var contentResult = actionResult.Result as OkObjectResult;
-        var actualValue = (Result)contentResult.Value;
+        var actualValue = (Result<Person>)contentResult.Value;
 
         // Asserts
         contentResult.StatusCode.Should().Be(expectedHttpCode);
@@ -137,6 +138,7 @@ public class ResultExtensionsTests
         actualValue.IsFailed.Should().BeFalse();
         actualValue.Message.Should().Be(ResponseMessages.ObtainedResource);
         actualValue.Errors.Should().BeEmpty();
+        actualValue.Data.Should().Be(expectedData);
         actualValue.Status.Should().Be(ResultStatus.Ok);
     }
 
