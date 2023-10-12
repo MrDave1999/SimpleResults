@@ -7,11 +7,6 @@ public class ResultExtensionsTests
         Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
     }
 
-    private class Person
-    {
-        public string Name { get; init; }
-    }
-
     [Test]
     public void ToActionResult_WhenOperationResultIsSuccess_ShouldReturnsOkObjectResult()
     {
