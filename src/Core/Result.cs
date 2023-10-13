@@ -6,7 +6,7 @@
 /// <remarks>This class defines different types of results for an operation.</remarks>
 public sealed class Result : ResultBase
 {
-    internal Result() { }
+    public Result() { }
 
     /// <inheritdoc cref="Success{T}(T, string)" />
     public static Result<T> Success<T>(T data)

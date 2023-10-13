@@ -5,7 +5,7 @@
 /// </summary>
 public sealed class CreatedId
 {
-    internal CreatedId() { }
+    public CreatedId() { }
 
     public int Id { get; init; }
 }
