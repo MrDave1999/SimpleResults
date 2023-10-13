@@ -9,6 +9,30 @@ A simple library to implement the Result pattern for returning from services.
 
 > This library was inspired by [Arcadis.Result](https://github.com/ardalis/Result).
 
+## Operation Result Pattern
+
+The purpose of the Result design pattern is to give an operation (a method) the possibility to return a complex result (an object), allowing the consumer to:
+- Access the result of an operation; in case there is one.
+- Access the success indicator of an operation.
+- Access the failure indicator of an operation.
+- Access the value (data) of the result if it exists.
+- Access the cause of the failure in case the operation was not successful.
+- Access an error or success message.
+- Access to a collection of error messages.
+
+## Why did I make this library?
+
+I designed this library for use in the [DentallApp](https://github.com/DentallApp/back-end) project because no library like [Arcadis.Result](https://github.com/ardalis/Result) followed this response format:
+```json
+{
+    "success": true,
+    "data": { "id": 1 },
+    "message": "..",
+    "errors": ["..", ".."]
+}
+```
+I couldn't change this format because the front-end used it, so I didn't want to make a breaking change.
+
 ## Installation
 
 Run the following command from the terminal:
