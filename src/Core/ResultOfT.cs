@@ -4,7 +4,7 @@
 /// <inheritdoc cref="ResultBase" />
 public sealed class Result<T> : ResultBase
 {
-    internal Result() { }
+    public Result() { }
 
     /// <summary>
     /// Gets the data associated with the result.

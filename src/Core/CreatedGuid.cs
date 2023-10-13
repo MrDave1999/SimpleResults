@@ -5,7 +5,7 @@
 /// </summary>
 public sealed class CreatedGuid
 {
-    internal CreatedGuid() { }
+    public CreatedGuid() { }
 
     public string Id { get; init; }
 }
