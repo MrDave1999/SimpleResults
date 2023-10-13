@@ -22,7 +22,7 @@ The purpose of the Result design pattern is to give an operation (a method) the 
 
 ## Why did I make this library?
 
-I designed this library for use in the [DentallApp](https://github.com/DentallApp/back-end) project because no library like [Arcadis.Result](https://github.com/ardalis/Result) followed this response format:
+- I designed this library for use in the [DentallApp](https://github.com/DentallApp/back-end) project because no library like [Arcadis.Result](https://github.com/ardalis/Result) followed this response format:
 ```json
 {
     "success": true,
@@ -32,6 +32,37 @@ I designed this library for use in the [DentallApp](https://github.com/DentallAp
 }
 ```
 I couldn't change this format because the front-end used it, so I didn't want to make a breaking change.
+
+- I do not want to throw [exceptions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/using-exceptions) for all cases.
+
+## Why don't I use exceptions?
+
+I usually throw exceptions when developing open source libraries to alert the developer immediately that an error has occurred and must be corrected. In this case, it makes sense to me to throw an exception because the developer can know exactly where the error originated (by looking at the stack trace).
+
+However, when I develop applications I very rarely find a case for using exceptions.
+
+For example, I could throw an exception when a normal user enters empty fields but this does not make sense to me, because it is an error caused by the end user (he/she manages the system from the user interface). So in this case throwing an exception is useless because:
+- Stack trace included in the exception object is of no use to anyone, neither the end user nor the developer. 
+  This is not a bug that a developer should be concerned about.
+
+- Nobody cares where the error originated, whether it was in method X or Y, it doesn't matter.
+
+And there are many more examples of errors caused by the end user: the email is duplicated or a password that does not comply with security policies, among others.
+
+I only throw exceptions when the exception object is useful to someone (like a developer), otherwise, I use a result object to handle errors.
+
+This is just my opinion, it is not an **absolute truth** either.
+
+### Anecdote
+> At work I had to implement a module to generate a report that performs a monthly comparison of income and expenses for a company, so it was necessary to create a function that is responsible for calculating the percentage of a balance per month:
+```cs
+Percentage.Calculate(double amount, double total);
+```
+> The `total` parameter if it is zero, will cause a division by zero (undefined operation), however, this value was not provided by an **end user**, but by the **income and expense reporting module**, but since I did not implement this module correctly, I created a bug, so the algorithm was passing a zero value for a strange reason (I call this a logic error, caused by the developer). 
+
+> Since I didn't throw an exception in the `Percentage.Calculate` function, it took me a couple of minutes to find out where the error originated (I didn't know that the problem was a division by zero).
+
+> If I had thrown an exception, I would have found the error very quickly, just by looking at the stack trace, oh yeah. In this case, it is very useful the exception object, for me and other developers.
 
 ## Installation
 
