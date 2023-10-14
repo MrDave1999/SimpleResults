@@ -2,11 +2,6 @@
 
 public class ResultExtensionsTests
 {
-    public ResultExtensionsTests()
-    {
-        Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
-    }
-
     [Test]
     public void ToActionResult_WhenOperationResultIsSuccess_ShouldReturnsOkObjectResult()
     {
