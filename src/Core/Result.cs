@@ -121,12 +121,7 @@ public sealed class Result : ResultBase
     /// </summary>
     public static Result UpdatedResource()
     {
-        return new Result
-        {
-            IsSuccess   = true,
-            Message     = ResponseMessages.UpdatedResource,
-            Status      = ResultStatus.Ok
-        };
+        return Success(ResponseMessages.UpdatedResource);
     }
 
     /// <summary>
@@ -134,12 +129,7 @@ public sealed class Result : ResultBase
     /// </summary>
     public static Result DeletedResource()
     {
-        return new Result
-        {
-            IsSuccess   = true,
-            Message     = ResponseMessages.DeletedResource,
-            Status      = ResultStatus.Ok
-        };
+        return Success(ResponseMessages.DeletedResource);
     }
 
     /// <summary>
@@ -148,13 +138,7 @@ public sealed class Result : ResultBase
     /// <param name="data">The value to be set.</param>
     public static Result<T> ObtainedResource<T>(T data)
     {
-        return new Result<T>
-        {
-            Data      = data,
-            IsSuccess = true,
-            Message   = ResponseMessages.ObtainedResource,
-            Status    = ResultStatus.Ok
-        };
+        return Success(data, ResponseMessages.ObtainedResource);
     }
 
     /// <inheritdoc cref="Failure(string)" />
