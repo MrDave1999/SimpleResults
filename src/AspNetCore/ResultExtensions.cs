@@ -3,6 +3,14 @@
 public static class ResultExtensions
 {
     /// <summary>
+    /// Converts the <c>ResultSet&lt;T&gt;</c> object to <c>ActionResult&lt;ResultSet&lt;T&gt;&gt;</c>.
+    /// </summary>
+    public static ActionResult<ResultSet<T>> ToActionResult<T>(this ResultSet<T> result)
+    {
+        return TranslateToActionResult(result);
+    }
+
+    /// <summary>
     /// Converts the <c>Result&lt;T&gt;</c> object to <c>ActionResult&lt;Result&lt;T&gt;&gt;</c>.
     /// </summary>
     public static ActionResult<Result<T>> ToActionResult<T>(this Result<T> result)

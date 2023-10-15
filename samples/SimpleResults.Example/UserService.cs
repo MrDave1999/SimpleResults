@@ -10,7 +10,7 @@ public class UserService
         _users = users;
     }
 
-    public Result<List<User>> GetAll()
+    public ResultSet<User> GetAll()
     {
         if(_users.Count == 0)
         {
