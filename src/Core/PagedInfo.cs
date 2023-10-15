@@ -38,7 +38,10 @@ public sealed class PagedInfo
     public PagedInfo(int pageNumber, int pageSize, int totalRecords)
     {
         if (pageSize == 0)
-            throw new DivideByZeroException();
+        {
+            var message = string.Format(ResponseMessages.DivideByZero, nameof(pageSize));
+            throw new DivideByZeroException(message);
+        }
 
         PageNumber   = pageNumber;
         PageSize     = pageSize;
