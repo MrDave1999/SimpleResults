@@ -281,4 +281,27 @@ public class ResultExtensionsTests
         // Assert
         act.Should().Throw<NotSupportedException>();
     }
+
+    [Test]
+    public void ToActionResult_WhenTypeIsResultSet_ShouldReturnsActionResultObject()
+    {
+        // Arrange
+        int expectedHttpCode = 200;
+        var expectedData = new List<Person>();
+        ResultSet<Person> resultSet = Result.Success(expectedData);
+
+        // Act
+        ActionResult<ResultSet<Person>> actionResult = resultSet.ToActionResult();
+        var contentResult = actionResult.Result as OkObjectResult;
+        var actualValue = (ResultSet<Person>)contentResult.Value;
+
+        // Asserts
+        contentResult.StatusCode.Should().Be(expectedHttpCode);
+        actualValue.IsSuccess.Should().BeTrue();
+        actualValue.IsFailed.Should().BeFalse();
+        actualValue.Message.Should().Be(ResponseMessages.Success);
+        actualValue.Errors.Should().BeEmpty();
+        actualValue.Data.Should().BeEquivalentTo(expectedData);
+        actualValue.Status.Should().Be(ResultStatus.Ok);
+    }
 }
