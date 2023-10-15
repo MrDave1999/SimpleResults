@@ -133,6 +133,15 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Recursos obtenidos con éxito.
+        /// </summary>
+        internal static string ObtainedResources {
+            get {
+                return ResourceManager.GetString("ObtainedResources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Operación ejecutada con éxito.
         /// </summary>
         internal static string Success {

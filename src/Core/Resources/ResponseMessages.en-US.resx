@@ -141,6 +141,9 @@
   <data name="ObtainedResource" xml:space="preserve">
     <value>Resource successfully obtained</value>
   </data>
+  <data name="ObtainedResources" xml:space="preserve">
+    <value>Resources successfully obtained</value>
+  </data>
   <data name="Success" xml:space="preserve">
     <value>Operation successfully executed</value>
   </data>
