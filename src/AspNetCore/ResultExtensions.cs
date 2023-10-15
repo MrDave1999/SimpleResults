@@ -1,9 +1,13 @@
 ﻿namespace SimpleResults;
 
+/// <summary>
+/// Defines extension methods for the <c>Result</c> object.
+/// </summary>
 public static class ResultExtensions
 {
     /// <summary>
-    /// Converts the <c>ResultSet&lt;T&gt;</c> object to <c>ActionResult&lt;ResultSet&lt;T&gt;&gt;</c>.
+    /// Converts the <see cref="ResultSet{T}" /> to <see cref="ActionResult{TValue}"/>
+    /// where <c>TValue</c> is a <see cref="ResultSet{T}" />.
     /// </summary>
     public static ActionResult<ResultSet<T>> ToActionResult<T>(this ResultSet<T> result)
     {
@@ -11,7 +15,8 @@ public static class ResultExtensions
     }
 
     /// <summary>
-    /// Converts the <c>Result&lt;T&gt;</c> object to <c>ActionResult&lt;Result&lt;T&gt;&gt;</c>.
+    /// Converts the <see cref="Result{T}" /> to <see cref="ActionResult{TValue}"/>
+    /// where <c>TValue</c> is a <see cref="Result{T}" />.
     /// </summary>
     public static ActionResult<Result<T>> ToActionResult<T>(this Result<T> result)
     {
@@ -19,7 +24,8 @@ public static class ResultExtensions
     }
 
     /// <summary>
-    /// Converts the <c>Result</c> object to <c>ActionResult&lt;Result&gt;</c>.
+    /// Converts the <see cref="Result" /> to <see cref="ActionResult{TValue}"/> 
+    /// where <c>TValue</c> is a <see cref="Result" />.
     /// </summary>
     public static ActionResult<Result> ToActionResult(this Result result)
     {
