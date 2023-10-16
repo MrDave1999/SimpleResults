@@ -165,6 +165,8 @@ public class BlogController : ControllerBase
 }
 ```
 
+## Samples
+
 You can find a complete and functional example in these projects:
 - [SimpleResults.Example](https://github.com/MrDave1999/SimpleResults/tree/master/samples/SimpleResults.Example)
 - [SimpleResults.Example.AspNetCore](https://github.com/MrDave1999/SimpleResults/tree/master/samples/SimpleResults.Example.AspNetCore)
