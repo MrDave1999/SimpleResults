@@ -61,7 +61,7 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ocurrió un conflicto debido al estado actual de un recurso.
+        ///   Looks up a localized string similar to A conflict occurred due to the current state of a resource.
         /// </summary>
         internal static string Conflict {
             get {
@@ -70,7 +70,7 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to El recurso se creó con éxito.
+        ///   Looks up a localized string similar to The resource was successfully created.
         /// </summary>
         internal static string CreatedResource {
             get {
@@ -79,7 +79,7 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ocurrió un error inesperado por parte de un servidor externo.
+        ///   Looks up a localized string similar to An unexpected error has occurred on an external server.
         /// </summary>
         internal static string CriticalError {
             get {
@@ -88,7 +88,7 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to El recurso se eliminó con éxito.
+        ///   Looks up a localized string similar to The resource has been successfully deleted.
         /// </summary>
         internal static string DeletedResource {
             get {
@@ -97,7 +97,7 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No se puede dividir por cero. El parámetro &apos;{0}&apos; no puede ser cero.
+        ///   Looks up a localized string similar to Cannot be divided by zero. The &apos;{0}&apos; parameter cannot be zero.
         /// </summary>
         internal static string DivideByZero {
             get {
@@ -106,7 +106,7 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Se ha producido un error durante la ejecución de un servicio.
+        ///   Looks up a localized string similar to An error occurred during the execution of a service.
         /// </summary>
         internal static string Failure {
             get {
@@ -115,7 +115,7 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ocurrió un error de validación de datos.
+        ///   Looks up a localized string similar to A data validation error occurred.
         /// </summary>
         internal static string Invalid {
             get {
@@ -124,7 +124,7 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No se encontró el recurso.
+        ///   Looks up a localized string similar to Resource not found.
         /// </summary>
         internal static string NotFound {
             get {
@@ -133,7 +133,7 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Recurso obtenido con éxito.
+        ///   Looks up a localized string similar to Resource successfully obtained.
         /// </summary>
         internal static string ObtainedResource {
             get {
@@ -142,7 +142,7 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Recursos obtenidos con éxito.
+        ///   Looks up a localized string similar to Resources successfully obtained.
         /// </summary>
         internal static string ObtainedResources {
             get {
@@ -151,7 +151,7 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Operación ejecutada con éxito.
+        ///   Looks up a localized string similar to Operation successfully executed.
         /// </summary>
         internal static string Success {
             get {
@@ -160,7 +160,7 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No autorizado.
+        ///   Looks up a localized string similar to Not authorized.
         /// </summary>
         internal static string Unauthorized {
             get {
@@ -169,7 +169,7 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to El recurso se actualizó con éxito.
+        ///   Looks up a localized string similar to The resource was successfully updated.
         /// </summary>
         internal static string UpdatedResource {
             get {
