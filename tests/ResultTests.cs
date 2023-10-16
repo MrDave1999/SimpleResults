@@ -40,6 +40,53 @@ public class ResultTests
     }
 
     [Test]
+    public void Success_WhenResultIsSuccessWithMessage_ShouldReturnsPagedResultOfT()
+    {
+        // Arrange
+        var expectedData = new List<Person>
+        {
+            new() { Name = "Test" }
+        };
+        var expectedPagedInfo = new PagedInfo(1, 10, 1);
+        var expectedMessage = "Success";
+
+        // Act
+        PagedResult<Person> actual = Result.Success(expectedData, expectedPagedInfo, expectedMessage);
+
+        // Asserts
+        actual.IsSuccess.Should().BeTrue();
+        actual.IsFailed.Should().BeFalse();
+        actual.Message.Should().Be(expectedMessage);
+        actual.Errors.Should().BeEmpty();
+        actual.Data.Should().BeEquivalentTo(expectedData);
+        actual.PagedInfo.Should().BeEquivalentTo(expectedPagedInfo);
+        actual.Status.Should().Be(ResultStatus.Ok);
+    }
+
+    [Test]
+    public void Success_WhenResultIsSuccessWithoutMessage_ShouldReturnsPagedResultOfT()
+    {
+        // Arrange
+        var expectedData = new List<Person>
+        {
+            new() { Name = "Test" }
+        };
+        var expectedPagedInfo = new PagedInfo(1, 10, 1);
+
+        // Act
+        PagedResult<Person> actual = Result.Success(expectedData, expectedPagedInfo);
+
+        // Asserts
+        actual.IsSuccess.Should().BeTrue();
+        actual.IsFailed.Should().BeFalse();
+        actual.Message.Should().Be(ResponseMessages.ObtainedResources);
+        actual.Errors.Should().BeEmpty();
+        actual.Data.Should().BeEquivalentTo(expectedData);
+        actual.PagedInfo.Should().BeEquivalentTo(expectedPagedInfo);
+        actual.Status.Should().Be(ResultStatus.Ok);
+    }
+
+    [Test]
     public void Success_WhenResultIsSuccessWithMessage_ShouldReturnsResultObject()
     {
         // Arrange

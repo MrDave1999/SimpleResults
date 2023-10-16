@@ -304,4 +304,29 @@ public class ResultExtensionsTests
         actualValue.Data.Should().BeEquivalentTo(expectedData);
         actualValue.Status.Should().Be(ResultStatus.Ok);
     }
+
+    [Test]
+    public void ToActionResult_WhenTypeIsPagedResult_ShouldReturnsActionResultObject()
+    {
+        // Arrange
+        int expectedHttpCode = 200;
+        var expectedData = new List<Person>();
+        var expectedPagedInfo = new PagedInfo(1, 10, 5);
+        PagedResult<Person> pagedResult = Result.Success(expectedData, expectedPagedInfo);
+
+        // Act
+        ActionResult<PagedResult<Person>> actionResult = pagedResult.ToActionResult();
+        var contentResult = actionResult.Result as OkObjectResult;
+        var actualValue = (PagedResult<Person>)contentResult.Value;
+
+        // Asserts
+        contentResult.StatusCode.Should().Be(expectedHttpCode);
+        actualValue.IsSuccess.Should().BeTrue();
+        actualValue.IsFailed.Should().BeFalse();
+        actualValue.Message.Should().Be(ResponseMessages.ObtainedResources);
+        actualValue.Errors.Should().BeEmpty();
+        actualValue.Data.Should().BeEquivalentTo(expectedData);
+        actualValue.PagedInfo.Should().BeEquivalentTo(expectedPagedInfo);
+        actualValue.Status.Should().Be(ResultStatus.Ok);
+    }
 }
