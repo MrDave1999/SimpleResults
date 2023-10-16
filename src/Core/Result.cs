@@ -30,6 +30,30 @@ public sealed class Result : ResultBase
         };
     }
 
+    /// <inheritdoc cref="Success{T}(IEnumerable{T}, PagedInfo, string)" />
+    public static PagedResult<T> Success<T>(IEnumerable<T> data, PagedInfo pagedInfo)
+    {
+        return Success(data, pagedInfo, ResponseMessages.ObtainedResources);
+    }
+
+    /// <summary>
+    /// Represents a successful operation and accepts a set of data and paged information as arguments.
+    /// </summary>
+    /// <param name="data">A set of data.</param>
+    /// <param name="pagedInfo">Some information about the page.</param>
+    /// <param name="message">A message of success.</param>
+    public static PagedResult<T> Success<T>(IEnumerable<T> data, PagedInfo pagedInfo, string message)
+    {
+        return new PagedResult<T>
+        {
+            Data      = data,
+            PagedInfo = pagedInfo,
+            IsSuccess = true,
+            Message   = message,
+            Status    = ResultStatus.Ok
+        };
+    }
+
     /// <summary>
     /// Represents a successful operation.
     /// </summary>

@@ -129,6 +129,9 @@
   <data name="DeletedResource" xml:space="preserve">
     <value>The resource has been successfully deleted</value>
   </data>
+  <data name="DivideByZero" xml:space="preserve">
+    <value>Cannot be divided by zero. The '{0}' parameter cannot be zero</value>
+  </data>
   <data name="Failure" xml:space="preserve">
     <value>An error occurred during the execution of a service</value>
   </data>
@@ -140,6 +143,9 @@
   </data>
   <data name="ObtainedResource" xml:space="preserve">
     <value>Resource successfully obtained</value>
+  </data>
+  <data name="ObtainedResources" xml:space="preserve">
+    <value>Resources successfully obtained</value>
   </data>
   <data name="Success" xml:space="preserve">
     <value>Operation successfully executed</value>

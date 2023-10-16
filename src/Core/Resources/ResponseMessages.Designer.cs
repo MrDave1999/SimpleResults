@@ -97,6 +97,15 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No se puede dividir por cero. El parámetro &apos;{0}&apos; no puede ser cero.
+        /// </summary>
+        internal static string DivideByZero {
+            get {
+                return ResourceManager.GetString("DivideByZero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Se ha producido un error durante la ejecución de un servicio.
         /// </summary>
         internal static string Failure {
@@ -129,6 +138,15 @@ namespace SimpleResults.Resources {
         internal static string ObtainedResource {
             get {
                 return ResourceManager.GetString("ObtainedResource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recursos obtenidos con éxito.
+        /// </summary>
+        internal static string ObtainedResources {
+            get {
+                return ResourceManager.GetString("ObtainedResources", resourceCulture);
             }
         }
         
