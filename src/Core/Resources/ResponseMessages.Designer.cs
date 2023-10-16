@@ -160,6 +160,15 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Test.
+        /// </summary>
+        internal static string Test {
+            get {
+                return ResourceManager.GetString("Test", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not authorized.
         /// </summary>
         internal static string Unauthorized {

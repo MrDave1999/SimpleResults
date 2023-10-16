@@ -150,6 +150,9 @@
   <data name="Success" xml:space="preserve">
     <value>Operation successfully executed</value>
   </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test</value>
+  </data>
   <data name="Unauthorized" xml:space="preserve">
     <value>Not authorized</value>
   </data>
