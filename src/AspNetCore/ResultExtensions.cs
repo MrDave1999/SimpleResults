@@ -6,6 +6,15 @@
 public static class ResultExtensions
 {
     /// <summary>
+    /// Converts the <see cref="PagedResult{T}" /> to <see cref="ActionResult{TValue}"/>
+    /// where <c>TValue</c> is a <see cref="PagedResult{T}" />.
+    /// </summary>
+    public static ActionResult<PagedResult<T>> ToActionResult<T>(this PagedResult<T> result)
+    {
+        return TranslateToActionResult(result);
+    }
+
+    /// <summary>
     /// Converts the <see cref="ResultSet{T}" /> to <see cref="ActionResult{TValue}"/>
     /// where <c>TValue</c> is a <see cref="ResultSet{T}" />.
     /// </summary>
