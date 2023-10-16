@@ -6,6 +6,8 @@
 /// <typeparam name="T">The type of objects to enumerate.</typeparam>
 public sealed class PagedResult<T> : ResultBase
 {
+    public PagedResult() { }
+
     /// <summary>
     /// Gets the data from a page.
     /// </summary>
