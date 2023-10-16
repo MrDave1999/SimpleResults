@@ -18,6 +18,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Allows to load the default resource in English.
 app.UseRequestLocalization("en-US");
 
 app.UseHttpsRedirection();
