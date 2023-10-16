@@ -118,42 +118,42 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Conflict" xml:space="preserve">
-    <value>A conflict occurred due to the current state of a resource</value>
+    <value>Ocurrió un conflicto debido al estado actual de un recurso</value>
   </data>
   <data name="CreatedResource" xml:space="preserve">
-    <value>The resource was successfully created</value>
+    <value>El recurso se creó con éxito</value>
   </data>
   <data name="CriticalError" xml:space="preserve">
-    <value>An unexpected error has occurred on an external server</value>
+    <value>Ocurrió un error inesperado por parte de un servidor externo</value>
   </data>
   <data name="DeletedResource" xml:space="preserve">
-    <value>The resource has been successfully deleted</value>
+    <value>El recurso se eliminó con éxito</value>
   </data>
   <data name="DivideByZero" xml:space="preserve">
-    <value>Cannot be divided by zero. The '{0}' parameter cannot be zero</value>
+    <value>No se puede dividir por cero. El parámetro '{0}' no puede ser cero</value>
   </data>
   <data name="Failure" xml:space="preserve">
-    <value>An error occurred during the execution of a service</value>
+    <value>Se ha producido un error durante la ejecución de un servicio</value>
   </data>
   <data name="Invalid" xml:space="preserve">
-    <value>A data validation error occurred</value>
+    <value>Ocurrió un error de validación de datos</value>
   </data>
   <data name="NotFound" xml:space="preserve">
-    <value>Resource not found</value>
+    <value>No se encontró el recurso</value>
   </data>
   <data name="ObtainedResource" xml:space="preserve">
-    <value>Resource successfully obtained</value>
+    <value>Recurso obtenido con éxito</value>
   </data>
   <data name="ObtainedResources" xml:space="preserve">
-    <value>Resources successfully obtained</value>
+    <value>Recursos obtenidos con éxito</value>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>Operation successfully executed</value>
+    <value>Operación ejecutada con éxito</value>
   </data>
   <data name="Unauthorized" xml:space="preserve">
-    <value>Not authorized</value>
+    <value>No autorizado</value>
   </data>
   <data name="UpdatedResource" xml:space="preserve">
-    <value>The resource was successfully updated</value>
+    <value>El recurso se actualizó con éxito</value>
   </data>
 </root>
