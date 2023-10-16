@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents paged information.
 /// </summary>
-public sealed class PagedInfo
+public class PagedInfo
 {
     /// <summary>
     /// Gets the current page number.
