@@ -1,7 +1,9 @@
 # SimpleResults
 
-[![SimpleResults](https://img.shields.io/nuget/vpre/SimpleResults?label=SimpleResults%20-%20nuget)](https://www.nuget.org/packages/SimpleResults)
-[![SimpleResults-AspNetCore](https://img.shields.io/nuget/vpre/SimpleResults.AspNetCore?label=SimpleResults.AspNetCore%20-%20nuget)](https://www.nuget.org/packages/SimpleResults.AspNetCore)
+[![SimpleResults](https://img.shields.io/nuget/vpre/SimpleResults?label=SimpleResults%20-%20nuget&color=red)](https://www.nuget.org/packages/SimpleResults)
+[![downloads](https://img.shields.io/nuget/dt/SimpleResults?color=yellow)](https://www.nuget.org/packages/SimpleResults)
+[![SimpleResults-AspNetCore](https://img.shields.io/nuget/vpre/SimpleResults.AspNetCore?label=SimpleResults.AspNetCore%20-%20nuget&color=red)](https://www.nuget.org/packages/SimpleResults.AspNetCore)
+[![downloads](https://img.shields.io/nuget/dt/SimpleResults.AspNetCore?color=yellow)](https://www.nuget.org/packages/SimpleResults.AspNetCore)
 
 [![SimpleResults-logo](https://raw.githubusercontent.com/MrDave1999/SimpleResults/master/SimpleResults-logo.png)](https://github.com/MrDave1999/SimpleResults)
 
