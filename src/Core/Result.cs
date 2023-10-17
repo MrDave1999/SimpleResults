@@ -165,6 +165,15 @@ public sealed class Result : ResultBase
         return Success(data, ResponseMessages.ObtainedResource);
     }
 
+    /// <summary>
+    /// Represents a situation in which the service successfully obtains multiple resources.
+    /// </summary>
+    /// <param name="data">A set of data.</param>
+    public static ListedResult<T> ObtainedResources<T>(IEnumerable<T> data)
+    {
+        return Success(data, ResponseMessages.ObtainedResources);
+    }
+
     /// <inheritdoc cref="Failure(string)" />
     public static Result Failure()
     {
