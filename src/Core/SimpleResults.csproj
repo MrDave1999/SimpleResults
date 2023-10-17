@@ -22,7 +22,11 @@
     </Description>
     <Version>0.3.0-alpha</Version>
   </PropertyGroup>
-  
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" />
+  </ItemGroup>
+
   <ItemGroup>
     <None Include="..\..\SimpleResults-icon-nuget.png" Pack="True" PackagePath="" />
     <None Include="..\..\README.md" Pack="True" PackagePath="" />
