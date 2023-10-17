@@ -11,6 +11,15 @@ public class UserController : ControllerBase
         _userService = userService;
     }
 
+    [HttpGet("paged")]
+    public ActionResult<PagedResult<User>> GetPagedList(
+        [FromQuery]PagedRequest request)
+    {
+        return _userService
+            .GetPagedList(request.PageNumber, request.PageSize)
+            .ToActionResult();
+    }
+
     [HttpGet]
     public ActionResult<ListedResult<User>> Get()
     {
