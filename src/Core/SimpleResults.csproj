@@ -1,6 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
     <RootNamespace>SimpleResults</RootNamespace>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <NoWarn>1591</NoWarn>
@@ -20,7 +22,15 @@
     </Description>
     <Version>0.3.0-alpha</Version>
   </PropertyGroup>
-  
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" />
+    <PackageReference Include="IsExternalInit">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
   <ItemGroup>
     <None Include="..\..\SimpleResults-icon-nuget.png" Pack="True" PackagePath="" />
     <None Include="..\..\README.md" Pack="True" PackagePath="" />
