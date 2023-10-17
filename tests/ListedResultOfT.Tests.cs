@@ -1,15 +1,15 @@
 ﻿namespace SimpleResults.Tests;
 
-public class ResultSetOfTTests
+public class ListedResultOfTTests
 {
     [Test]
-    public void ImplicitOperator_WhenConvertedFromResultType_ShouldReturnsResultSetObject()
+    public void ImplicitOperator_WhenConvertedFromResultType_ShouldReturnsListedResultOfT()
     {
         // Arrange
         var expectedMessage = ResponseMessages.NotFound;
 
         // Act
-        ResultSet<Person> actual = Result.NotFound();
+        ListedResult<Person> actual = Result.NotFound();
 
         // Asserts
         actual.Data.Should().BeEmpty();
@@ -21,7 +21,7 @@ public class ResultSetOfTTests
     }
 
     [Test]
-    public void ImplicitOperator_WhenConvertedFromResultOfEnumerableType_ShouldReturnsResultSetObject()
+    public void ImplicitOperator_WhenConvertedFromResultOfEnumerableType_ShouldReturnsListedResultOfT()
     {
         // Arrange
         IEnumerable<Person> expectedData = new List<Person>();
@@ -29,7 +29,7 @@ public class ResultSetOfTTests
         var expectedMessage = ResponseMessages.Success;
 
         // Act
-        ResultSet<Person> actual = result;
+        ListedResult<Person> actual = result;
 
         // Asserts
         actual.Data.Should().BeEquivalentTo(expectedData);
@@ -41,7 +41,7 @@ public class ResultSetOfTTests
     }
 
     [Test]
-    public void ImplicitOperator_WhenConvertedFromResultOfListType_ShouldReturnsResultSetObject()
+    public void ImplicitOperator_WhenConvertedFromResultOfListType_ShouldReturnsListedResultOfT()
     {
         // Arrange
         var expectedData = new List<Person>();
@@ -49,7 +49,7 @@ public class ResultSetOfTTests
         Result<List<Person>> result = Result.Success(expectedData);
 
         // Act
-        ResultSet<Person> actual = result;
+        ListedResult<Person> actual = result;
 
         // Asserts
         actual.Data.Should().BeEquivalentTo(expectedData);
@@ -61,7 +61,7 @@ public class ResultSetOfTTests
     }
 
     [Test]
-    public void ImplicitOperator_WhenConvertedFromResultOfArrayType_ShouldReturnsResultSetObject()
+    public void ImplicitOperator_WhenConvertedFromResultOfArrayType_ShouldReturnsListedResultOfT()
     {
         // Arrange
         var expectedData = new Person[]
@@ -72,7 +72,7 @@ public class ResultSetOfTTests
         Result<Person[]> result = Result.Success(expectedData);
 
         // Act
-        ResultSet<Person> actual = result;
+        ListedResult<Person> actual = result;
 
         // Asserts
         actual.Data.Should().BeEquivalentTo(expectedData);

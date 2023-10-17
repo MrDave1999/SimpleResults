@@ -1,14 +1,14 @@
 ﻿namespace SimpleResults.Tests;
 
-public class SystemTextJsonResultSetOfT
+public class SystemTextJsonListedResultOfT
 {
     [Test]
-    public void ResultSetOfT_ShouldSerializeResultOfValueType()
+    public void ListedResultOfT_ShouldSerializeResultOfValueType()
     {
         // Arrange
         var options = new JsonSerializerOptions { WriteIndented = true };
         var data = new int[] { 1, 2 };
-        ResultSet<int> resultSet = Result.Success(data);
+        ListedResult<int> result = Result.Success(data);
         var expectedJson =
             $$"""
             {
@@ -23,14 +23,14 @@ public class SystemTextJsonResultSetOfT
             """;
 
         // Act
-        var actual = JsonSerializer.Serialize(resultSet, options);
+        var actual = JsonSerializer.Serialize(result, options);
 
         // Assert
         actual.Should().BeEquivalentTo(expectedJson);
     }
 
     [Test]
-    public void ResultSetOfT_ShouldSerializeResultOfReferenceType()
+    public void ListedResultOfT_ShouldSerializeResultOfReferenceType()
     {
         // Arrange
         var options = new JsonSerializerOptions { WriteIndented = true };
@@ -39,7 +39,7 @@ public class SystemTextJsonResultSetOfT
             new() { Name = "Bob" },
             new() { Name = "Alice" }
         };
-        ResultSet<Person> resultSet = Result.Success(data);
+        ListedResult<Person> result = Result.Success(data);
         var expectedJson =
             $$"""
             {
@@ -58,19 +58,19 @@ public class SystemTextJsonResultSetOfT
             """;
 
         // Act
-        var actual = JsonSerializer.Serialize(resultSet, options);
+        var actual = JsonSerializer.Serialize(result, options);
 
         // Assert
         actual.Should().BeEquivalentTo(expectedJson);
     }
 
     [Test]
-    public void ResultSetOfT_ShouldDeserializeResultOfValueType()
+    public void ListedResultOfT_ShouldDeserializeResultOfValueType()
     {
         // Arrange
         var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
         var data = new int[] { 1, 2 };
-        ResultSet<int> expectedResultSet = Result.Success(data);
+        ListedResult<int> expectedResult = Result.Success(data);
         var json =
             $$"""
             {
@@ -85,14 +85,14 @@ public class SystemTextJsonResultSetOfT
             """;
 
         // Act
-        var actual = JsonSerializer.Deserialize<ResultSet<int>>(json, options);
+        var actual = JsonSerializer.Deserialize<ListedResult<int>>(json, options);
 
         // Assert
-        actual.Should().BeEquivalentTo(expectedResultSet);
+        actual.Should().BeEquivalentTo(expectedResult);
     }
 
     [Test]
-    public void ResultSetOfT_ShouldDeserializeResultOfReferenceType()
+    public void ListedResultOfT_ShouldDeserializeResultOfReferenceType()
     {
         // Arrange
         var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
@@ -101,7 +101,7 @@ public class SystemTextJsonResultSetOfT
             new() { Name = "Bob" },
             new() { Name = "Alice" }
         };
-        ResultSet<Person> expectedResultSet = Result.Success(data);
+        ListedResult<Person> expectedResult = Result.Success(data);
         var json =
             $$"""
             {
@@ -120,9 +120,9 @@ public class SystemTextJsonResultSetOfT
             """;
 
         // Act
-        var actual = JsonSerializer.Deserialize<ResultSet<Person>>(json, options);
+        var actual = JsonSerializer.Deserialize<ListedResult<Person>>(json, options);
 
         // Assert
-        actual.Should().BeEquivalentTo(expectedResultSet);
+        actual.Should().BeEquivalentTo(expectedResult);
     }
 }

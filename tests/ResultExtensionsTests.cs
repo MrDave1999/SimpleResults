@@ -283,17 +283,17 @@ public class ResultExtensionsTests
     }
 
     [Test]
-    public void ToActionResult_WhenTypeIsResultSet_ShouldReturnsActionResultObject()
+    public void ToActionResult_WhenTypeIsListedResultOfT_ShouldReturnsActionResultObject()
     {
         // Arrange
         int expectedHttpCode = 200;
         var expectedData = new List<Person>();
-        ResultSet<Person> resultSet = Result.Success(expectedData);
+        ListedResult<Person> result = Result.Success(expectedData);
 
         // Act
-        ActionResult<ResultSet<Person>> actionResult = resultSet.ToActionResult();
+        ActionResult<ListedResult<Person>> actionResult = result.ToActionResult();
         var contentResult = actionResult.Result as OkObjectResult;
-        var actualValue = (ResultSet<Person>)contentResult.Value;
+        var actualValue = (ListedResult<Person>)contentResult.Value;
 
         // Asserts
         contentResult.StatusCode.Should().Be(expectedHttpCode);
@@ -306,16 +306,16 @@ public class ResultExtensionsTests
     }
 
     [Test]
-    public void ToActionResult_WhenTypeIsPagedResult_ShouldReturnsActionResultObject()
+    public void ToActionResult_WhenTypeIsPagedResultOfT_ShouldReturnsActionResultObject()
     {
         // Arrange
         int expectedHttpCode = 200;
         var expectedData = new List<Person>();
         var expectedPagedInfo = new PagedInfo(1, 10, 5);
-        PagedResult<Person> pagedResult = Result.Success(expectedData, expectedPagedInfo);
+        PagedResult<Person> result = Result.Success(expectedData, expectedPagedInfo);
 
         // Act
-        ActionResult<PagedResult<Person>> actionResult = pagedResult.ToActionResult();
+        ActionResult<PagedResult<Person>> actionResult = result.ToActionResult();
         var contentResult = actionResult.Result as OkObjectResult;
         var actualValue = (PagedResult<Person>)contentResult.Value;
 

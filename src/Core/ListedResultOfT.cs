@@ -1,21 +1,21 @@
 ﻿namespace SimpleResults;
 
 /// <summary>
-/// Represents the set of results of an operation.
+/// Represents an enumerated result of an operation.
 /// </summary>
 /// <typeparam name="T">The type of objects to enumerate.</typeparam>
-public sealed class ResultSet<T> : ResultBase
+public sealed class ListedResult<T> : ResultBase
 {
-    public ResultSet() { }
+    public ListedResult() { }
 
     /// <summary>
     /// Gets a list of data associated with the result.
     /// </summary>
     public IEnumerable<T> Data { get; init; }
 
-    private static ResultSet<T> CreateInstance(ResultBase result, IEnumerable<T> data)
+    private static ListedResult<T> CreateInstance(ResultBase result, IEnumerable<T> data)
     {
-        return new ResultSet<T>
+        return new ListedResult<T>
         {
             Data        = data,
             IsSuccess   = result.IsSuccess,
@@ -25,22 +25,22 @@ public sealed class ResultSet<T> : ResultBase
         };
     }
 
-    public static implicit operator ResultSet<T>(Result result)
+    public static implicit operator ListedResult<T>(Result result)
     { 
         return CreateInstance(result, Enumerable.Empty<T>());
     }
 
-    public static implicit operator ResultSet<T>(Result<IEnumerable<T>> result)
+    public static implicit operator ListedResult<T>(Result<IEnumerable<T>> result)
     { 
         return CreateInstance(result, result.Data);
     }
 
-    public static implicit operator ResultSet<T>(Result<List<T>> result)
+    public static implicit operator ListedResult<T>(Result<List<T>> result)
     {
         return CreateInstance(result, result.Data);
     }
 
-    public static implicit operator ResultSet<T>(Result<T[]> result)
+    public static implicit operator ListedResult<T>(Result<T[]> result)
     {
         return CreateInstance(result, result.Data);
     }
