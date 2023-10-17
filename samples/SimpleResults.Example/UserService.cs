@@ -38,7 +38,7 @@ public class UserService
             return Result.Failure("No user found");
         }
 
-        return Result.ObtainedResource(_users);
+        return Result.ObtainedResources(_users);
     }
 
     public Result<User> GetById(string id)
