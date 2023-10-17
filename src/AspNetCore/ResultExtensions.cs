@@ -15,10 +15,10 @@ public static class ResultExtensions
     }
 
     /// <summary>
-    /// Converts the <see cref="ResultSet{T}" /> to <see cref="ActionResult{TValue}"/>
-    /// where <c>TValue</c> is a <see cref="ResultSet{T}" />.
+    /// Converts the <see cref="ListedResult{T}" /> to <see cref="ActionResult{TValue}"/>
+    /// where <c>TValue</c> is a <see cref="ListedResult{T}" />.
     /// </summary>
-    public static ActionResult<ResultSet<T>> ToActionResult<T>(this ResultSet<T> result)
+    public static ActionResult<ListedResult<T>> ToActionResult<T>(this ListedResult<T> result)
     {
         return TranslateToActionResult(result);
     }

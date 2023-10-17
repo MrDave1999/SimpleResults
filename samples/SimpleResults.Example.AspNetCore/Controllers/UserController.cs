@@ -12,7 +12,7 @@ public class UserController : ControllerBase
     }
 
     [HttpGet]
-    public ActionResult<ResultSet<User>> Get()
+    public ActionResult<ListedResult<User>> Get()
     {
         return _userService
             .GetAll()
