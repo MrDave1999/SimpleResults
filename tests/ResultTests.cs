@@ -247,6 +247,28 @@ public class ResultTests
     }
 
     [Test]
+    public void ObtainedResources_WhenResultIsObtainedResources_ShouldReturnsListedResultOfT()
+    {
+        // Arrange
+        var expectedData = new List<Person>
+        {
+            new() { Name = "Test" }
+        };
+        var expectedMessage = ResponseMessages.ObtainedResources;
+
+        // Act
+        ListedResult<Person> actual = Result.ObtainedResources(expectedData);
+
+        // Asserts
+        actual.IsSuccess.Should().BeTrue();
+        actual.IsFailed.Should().BeFalse();
+        actual.Message.Should().Be(expectedMessage);
+        actual.Errors.Should().BeEmpty();
+        actual.Data.Should().BeEquivalentTo(expectedData);
+        actual.Status.Should().Be(ResultStatus.Ok);
+    }
+
+    [Test]
     public void Failure_WhenResultIsFailure_ShouldReturnsResultObject()
     {
         // Arrange
