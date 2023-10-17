@@ -21,7 +21,7 @@
     <Description>
       A simple package that translates the Result object to ActionResult.
     </Description>
-    <Version>0.3.0-alpha</Version>
+    <Version>0.4.0-alpha</Version>
   </PropertyGroup>
 
   <ItemGroup>
