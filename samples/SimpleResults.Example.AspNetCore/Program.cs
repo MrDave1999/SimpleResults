@@ -1,7 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSingleton<List<User>>();
+builder.Services.AddSingleton(DataSeeds.CreateUsers());
 builder.Services.AddSingleton<UserService>();
 
 builder.Services.AddControllers();

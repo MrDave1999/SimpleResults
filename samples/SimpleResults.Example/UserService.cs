@@ -10,6 +10,27 @@ public class UserService
         _users = users;
     }
 
+    public PagedResult<User> GetPagedList(int pageNumber, int pageSize)
+    {
+        if(pageNumber <= 0)
+        {
+            return Result.Invalid("PageNumber must be greater than zero");
+        }
+
+        int itemsToSkip = (pageNumber - 1) * pageSize;
+        var data = _users
+            .Skip(itemsToSkip)
+            .Take(pageSize);
+
+        if (data.Any())
+        {
+            var pagedInfo = new PagedInfo(pageNumber, pageSize, _users.Count);
+            return Result.Success(data, pagedInfo);
+        }
+
+        return Result.Failure("No results found");
+    }
+
     public ListedResult<User> GetAll()
     {
         if(_users.Count == 0)
