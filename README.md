@@ -22,6 +22,7 @@ A simple library to implement the Result pattern for returning from services.
 - [Installation](#installation)
 - [Usage](#usage)
   - [Integration with ASP.NET Core](#integration-with-aspnet-core)
+  - [Translate Result object to HTTP status code](#translate-result-object-to-http-status-code)
 - [Samples](#samples)
 - [Contribution](#contribution)
 
@@ -184,6 +185,25 @@ public class BlogController : ControllerBase
     }
 }
 ```
+### Translate Result object to HTTP status code
+
+[SimpleResults.AspNetCore](https://www.nuget.org/packages/SimpleResults.AspNetCore) package is responsible for translating the status of a Result object into an HTTP status code.
+
+The following table is used as a reference to know which type of result corresponds to an HTTP status code:
+
+| Result type             | HTTP status code            |
+|-------------------------|-----------------------------|
+| Result.Success          | 200 - Ok                    |
+| Result.CreatedResource  | 201 - Created               |
+| Result.UpdatedResource  | 200 - Ok                    |
+| Result.DeletedResource  | 200 - Ok                    |
+| Result.ObtainedResource | 200 - Ok                    |
+| Result.Invalid          | 400 - Bad Request           |
+| Result.NotFound         | 404 - Not Found             |
+| Result.Unauthorized     | 401 - Unauthorized          |
+| Result.Conflict         | 409 - Conflict              |
+| Result.Failure          | 422 - Unprocessable Entity  |
+| Result.CriticalError    | 500 - Internal Server Error |
 
 ## Samples
 
