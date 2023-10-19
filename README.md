@@ -66,9 +66,9 @@ For example, I could throw an exception when a normal user enters empty fields b
 
 And there are many more examples of errors caused by the end user: the email is duplicated or a password that does not comply with security policies, among others.
 
-I only throw exceptions when the exception object is useful to someone (like a developer), otherwise, I use a **Result object** to handle errors.
+I only throw exceptions when the exception object is useful to someone (like a developer); otherwise, I use a **Result object** to handle errors. I use **return statements** in my methods to create the error.
 
-This is just my opinion, it is not an **absolute truth** either.
+This is just my opinion, it is not an **absolute truth** either. My point of view is more philosophical, so the purpose of my paragraphs is not to indicate the disadvantages of using exceptions, but to explain why for me it does not make sense in some cases to throw exceptions.
 
 ### Anecdote
 > At work I had to implement a module to generate a report that performs a monthly comparison of income and expenses for a company, so it was necessary to create a function that is responsible for calculating the percentage of a balance per month:
@@ -78,6 +78,9 @@ Percentage.Calculate(double amount, double total);
 > The `total` parameter if it is zero, will cause a division by zero (undefined operation), however, this value was not provided by an **end user**, but by the **income and expense reporting module**, but since I did not implement this module correctly, I created a bug, so the algorithm was passing a zero value for a strange reason (I call this a logic error, caused by the developer). 
 
 > Since I didn't throw an exception in the `Percentage.Calculate` function, it took me a couple of minutes to find out where the error originated (I didn't know that the problem was a division by zero).
+
+> Dividing a floating-point value by zero doesn't throw an exception; it result is not a number (NaN). 
+This was a surprise to me! I didn't know! I was expecting an exception but it was not the case.
 
 > If I had thrown an exception, I would have found the error very quickly, just by looking at the stack trace, oh yeah. In this case, it is very useful the exception object, for me and other developers.
 
@@ -144,7 +147,7 @@ public class BlogService
     }
 }
 ```
-This approach provides a new way to handle error without the need to use exceptions.
+This approach provides a new way to generate an error using return statements without the need to throw exceptions.
 
 ### Integration with ASP.NET Core
 
