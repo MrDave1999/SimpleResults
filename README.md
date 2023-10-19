@@ -12,6 +12,19 @@ A simple library to implement the Result pattern for returning from services.
 
 > This library was inspired by [Arcadis.Result](https://github.com/ardalis/Result).
 
+## Index
+
+- [Operation Result Pattern](#operation-result-pattern)
+- [Why did I make this library?](#why-did-i-make-this-library)
+- [Why don't I use exceptions?](#why-dont-i-use-exceptions)
+  - [Anecdote](#anecdote)
+  - [Interesting resource about exceptions](#interesting-resource-about-exceptions)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Integration with ASP.NET Core](#integration-with-aspnet-core)
+- [Samples](#samples)
+- [Contribution](#contribution)
+
 ## Operation Result Pattern
 
 The purpose of the Result design pattern is to give an operation (a method) the possibility to return a complex result (an object), allowing the consumer to:
@@ -52,7 +65,7 @@ For example, I could throw an exception when a normal user enters empty fields b
 
 And there are many more examples of errors caused by the end user: the email is duplicated or a password that does not comply with security policies, among others.
 
-I only throw exceptions when the exception object is useful to someone (like a developer), otherwise, I use a result object to handle errors.
+I only throw exceptions when the exception object is useful to someone (like a developer), otherwise, I use a **Result object** to handle errors.
 
 This is just my opinion, it is not an **absolute truth** either.
 
@@ -66,6 +79,10 @@ Percentage.Calculate(double amount, double total);
 > Since I didn't throw an exception in the `Percentage.Calculate` function, it took me a couple of minutes to find out where the error originated (I didn't know that the problem was a division by zero).
 
 > If I had thrown an exception, I would have found the error very quickly, just by looking at the stack trace, oh yeah. In this case, it is very useful the exception object, for me and other developers.
+
+### Interesting resource about exceptions
+
+- [Exceptions for flow control in C# by Vladimir Khorikov](https://enterprisecraftsmanship.com/posts/exceptions-for-flow-control)
 
 ## Installation
 
