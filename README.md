@@ -20,10 +20,15 @@ A simple library to implement the Result pattern for returning from services.
   - [Anecdote](#anecdote)
   - [Interesting resource about exceptions](#interesting-resource-about-exceptions)
 - [Installation](#installation)
-- [Usage](#usage)
+- [Overview](#overview)
+  - [Using the Result type](#using-the-result-type)
+  - [Using the ListedResult type](#using-the-listedresultt-type)
+  - [Using the PagedResult type](#using-the-pagedresultt-type)
+  - [Creating a resource with Result type](#creating-a-resource-with-resultt-type)
   - [Integration with ASP.NET Core](#integration-with-aspnet-core)
   - [Translate Result object to HTTP status code](#translate-result-object-to-http-status-code)
 - [Samples](#samples)
+- [Language settings](#language-settings)
 - [Contribution](#contribution)
 
 ## Operation Result Pattern
@@ -99,93 +104,219 @@ Or you can also install the package for [ASP.NET Core](https://learn.microsoft.c
 dotnet add package SimpleResults.AspNetCore --prerelease
 ```
 
-## Usage
+## Overview
 
-This example is simple and is based on the [EF Core introductory tutorial](https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli).
+You must import the namespace types at the beginning of your class file:
 ```cs
 using SimpleResults;
+```
 
-public class BlogService
+This library provides four main types:
+- `Result`
+- `Result<TValue>`
+- `ListedResult<TValue>`
+- `PagedResult<TValue>` and `PagedInfo`
+
+With any of these types you can handle errors and at the same time generate errors with the `return` statement.
+
+This approach provides a new way to generate an error using return statements without the need to throw exceptions.
+
+### Using the `Result` type
+
+You can use the `Result` class when you do not want to return any value.
+
+**Example:**
+```cs
+public class UserService
 {
-    private readonly BloggingContext _db;
+    private readonly List<User> _users;
+    public UserService(List<User> users) => _users = users;
 
-    public BlogService(BloggingContext db)
+    public Result Update(string id, string name)
     {
-        _db = db;
-    }
+        if (string.IsNullOrWhiteSpace(id))
+            return Result.Invalid("ID is required");
 
-    public Result<CreatedId> Create(string url)
-    {
-        if(string.IsNullOrWhiteSpace(url))
-        {
-            return Result.Invalid();
-        }
+        if (string.IsNullOrWhiteSpace(name))
+            return Result.Invalid("Name is required");
 
-        var blog = new Blog { Url = "http://blogs.msdn.com/adonet" };
-        _db.Add(blog);
-        _db.SaveChanges();
-        return Result.CreatedResource(blog.BlogId);
-    }
-
-    public Result<Blog> Read(int id)
-    {
-        if(id < 0)
-        {
-            return Result.Invalid("ID must not be negative");
-        }
-
-        var blog = _db.Blogs
-            .Where(b => b.BlogId == id)
-            .FirstOrDefault();
-
-        if(blog is null)
-        {
+        var user = _users.Find(u => u.Id == id);
+        if (user is null)
             return Result.NotFound();
-        }
 
-        return Result.Success(blog);
+        user.Name = name;
+        return Result.UpdatedResource();
     }
 }
 ```
-This approach provides a new way to generate an error using return statements without the need to throw exceptions.
+
+You can use the `Result<TValue>` class when you want to return a value (such as a `User` object).
+
+**Example:**
+```cs
+public class UserService
+{
+    private readonly List<User> _users;
+    public UserService(List<User> users) => _users = users;
+
+    public Result<User> GetById(string id)
+    {
+        if(string.IsNullOrWhiteSpace(id))
+            return Result.Invalid("ID is required");
+
+        var user = _users.Find(u => u.Id == id);
+        if(user is null)
+            return Result.NotFound();
+
+        return Result.Success(user, "User found");
+    }
+}
+```
+
+### Using the `ListedResult` type
+
+You can use the `ListedResult<TValue>` class when you want to return a set of values (such as a collection of objects of type `User`).
+
+**Example:**
+```cs
+public class UserService
+{
+    private readonly List<User> _users;
+    public UserService(List<User> users) => _users = users;
+
+    public ListedResult<User> GetAll()
+    {
+        if(_users.Count == 0)
+            return Result.Failure("No user found");
+
+        return Result.ObtainedResources(_users);
+    }
+}
+```
+
+### Using the `PagedResult` type
+
+You can use the `PagedResult<TValue>` class when you want to include paged information and a data collection in the result.
+
+**Example:**
+```cs
+public class UserService
+{
+    private readonly List<User> _users;
+    public UserService(List<User> users) => _users = users;
+
+    public PagedResult<User> GetPagedList(int pageNumber, int pageSize)
+    {
+        if(pageNumber <= 0)
+            return Result.Invalid("PageNumber must be greater than zero");
+
+        int itemsToSkip = (pageNumber - 1) * pageSize;
+        var data = _users
+            .Skip(itemsToSkip)
+            .Take(pageSize);
+
+        if (data.Any())
+        {
+            var pagedInfo = new PagedInfo(pageNumber, pageSize, _users.Count);
+            return Result.Success(data, pagedInfo);
+        }
+
+        return Result.Failure("No results found");
+    }
+}
+```
+### Creating a resource with `Result<T>` type
+
+You can tell the method to return a successfully created resource as a result by using the `Result.CreatedResource` method.
+In addition, you can use the `CreatedGuid` class to specify the ID assigned to the created resource.
+
+**Example:**
+```cs
+public class UserService
+{
+    private readonly List<User> _users;
+    public UserService(List<User> users) => _users = users;
+
+    public Result<CreatedGuid> Create(string name)
+    {
+        if(string.IsNullOrWhiteSpace(name))
+            return Result.Invalid("Name is required");
+
+        var guid = Guid.NewGuid();
+        _users.Add(new User { Id = guid.ToString(), Name = name });
+        return Result.CreatedResource(guid);
+    }
+}
+```
+You can also use the `CreatedId` class when using an **integer** as identifier. 
+
+An example using [Entity Framework Core](https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli):
+```cs
+public class UserModel 
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
+
+public class UserService
+{
+    private readonly DbContext _db;
+    public UserService(DbContext db) => _db = db;
+
+    public Result<CreatedId> Create(string name)
+    {
+        if(string.IsNullOrWhiteSpace(name))
+            return Result.Invalid("Name is required");
+
+        var user = new UserModel { Name = name };
+        _db.Add(user);
+        _db.SaveChanges();
+        return Result.CreatedResource(user.Id);
+    }
+}
+```
 
 ### Integration with ASP.NET Core
 
-You can convert the `Result` object to an [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1?view=aspnetcore-7.0), such as:
-```cs
-using SimpleResults;
+You can convert the `Result` object to an [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1?view=aspnetcore-7.0) using the `ToActionResult` extension method.
 
-public class BlogRequest 
+You need to install the [SimpleResults.AspNetCore](https://www.nuget.org/packages/SimpleResults.AspNetCore) package to have access to the extension method.
+
+**Example:**
+```cs
+public class UserRequest 
 { 
-    public string Url { get; init; }
+    public string Name { get; init; }
 }
 
 [ApiController]
 [Route("[controller]")]
-public class BlogController : ControllerBase
+public class UserController : ControllerBase
 {
-    private readonly BlogService _blogService;
-
-    public BlogController(BlogService blogService)
-    {
-        _blogService = blogService;
-    }
-
-    [HttpGet("{id}")]
-    public ActionResult<Result<Blog>> Get(int id)
-    {
-        return _blogService
-            .Read(id)
-            .ToActionResult();
-    }
+    private readonly UserService _userService;
+    public UserController(UserService userService) => _userService = userService;
 
     [HttpPost]
-    public ActionResult<Result<CreatedId>> Create([FromBody]BlogRequest request)
-    {
-        return _blogService
-            .Create(request.Url)
-            .ToActionResult();
-    }
+    public ActionResult<Result<CreatedGuid>> Create([FromBody]UserRequest request)
+        => _userService.Create(request.Name).ToActionResult();
+
+    [HttpPut("{id}")]
+    public ActionResult<Result> Update(string id, [FromBody]UserRequest request)
+        => _userService.Update(id, request.Name).ToActionResult();
+
+    [HttpGet("{id}")]
+    public ActionResult<Result<User>> Get(string id)
+        => _userService.GetById(id).ToActionResult();
+
+    [HttpGet("paged")]
+    public ActionResult<PagedResult<User>> GetPagedList([FromQuery]PagedRequest request)
+        => _userService
+        .GetPagedList(request.PageNumber, request.PageSize)
+        .ToActionResult();
+
+    [HttpGet]
+    public ActionResult<ListedResult<User>> Get()
+        => _userService.GetAll().ToActionResult();
 }
 ```
 ### Translate Result object to HTTP status code
@@ -213,6 +344,23 @@ The following table is used as a reference to know which type of result correspo
 You can find a complete and functional example in these projects:
 - [SimpleResults.Example](https://github.com/MrDave1999/SimpleResults/tree/master/samples/SimpleResults.Example)
 - [SimpleResults.Example.AspNetCore](https://github.com/MrDave1999/SimpleResults/tree/master/samples/SimpleResults.Example.AspNetCore)
+- [SimpleResults.Example.Web.Tests](https://github.com/MrDave1999/SimpleResults/tree/master/samples/SimpleResults.Example.Web.Tests)
+
+## Language settings
+`SimpleResults` uses default messages in English. You can change the language in this way:
+```cs
+// Allows to load the resource in Spanish.
+Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("es");
+```
+In ASP.NET Core applications, the [UseRequestLocalization](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.applicationbuilderextensions.userequestlocalization?view=aspnetcore-7.0#microsoft-aspnetcore-builder-applicationbuilderextensions-userequestlocalization(microsoft-aspnetcore-builder-iapplicationbuilder-system-string())) extension method is used:
+```cs
+app.UseRequestLocalization("es");
+```
+At the moment, only two languages are available:
+- English
+- Spanish
+
+Feel free to contribute :D
 
 ## Contribution
 
