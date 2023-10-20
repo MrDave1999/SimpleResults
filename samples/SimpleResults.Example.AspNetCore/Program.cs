@@ -21,10 +21,10 @@ if (app.Environment.IsDevelopment())
 // Allows to load the default resource in English.
 app.UseRequestLocalization("en-US");
 
-app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
+public partial class Program { }
