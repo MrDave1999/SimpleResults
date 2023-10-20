@@ -27,6 +27,7 @@ A simple library to implement the Result pattern for returning from services.
   - [Creating a resource with Result type](#creating-a-resource-with-resultt-type)
   - [Integration with ASP.NET Core](#integration-with-aspnet-core)
   - [Translate Result object to HTTP status code](#translate-result-object-to-http-status-code)
+  - [Integration with Fluent Validation](#integration-with-fluent-validation)
 - [Samples](#samples)
 - [Language settings](#language-settings)
 - [Contribution](#contribution)
@@ -338,6 +339,33 @@ The following table is used as a reference to know which type of result correspo
 | Result.Conflict         | 409 - Conflict              |
 | Result.Failure          | 422 - Unprocessable Entity  |
 | Result.CriticalError    | 500 - Internal Server Error |
+
+### Integration with Fluent Validation
+
+You do not need to install any additional packages, you only need [Fluent Validation](https://www.nuget.org/packages/FluentValidation).
+
+**Example:**
+```cs
+// Define extension methods for ValidationResult class.
+public static class ValidationResultExtensions
+{
+    public static bool IsFailed(this ValidationResult result) => !result.IsValid;
+    public static IEnumerable<string> AsErrors(this ValidationResult result)
+        => result.Errors.Select(failure => failure.ErrorMessage);
+}
+
+public class UserService
+{
+    public Result Create(CreateUserRequest request)
+    {
+        ValidationResult result = new CreateUserValidator().Validate(request);
+        if(result.IsFailed())
+            return Result.Invalid(result.AsErrors());
+
+        // Some code..
+    }
+}
+```
 
 ## Samples
 
