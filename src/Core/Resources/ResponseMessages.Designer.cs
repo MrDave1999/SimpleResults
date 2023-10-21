@@ -185,5 +185,14 @@ namespace SimpleResults.Resources {
                 return ResourceManager.GetString("UpdatedResource", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There have been validation errors.
+        /// </summary>
+        internal static string ValidationErrors {
+            get {
+                return ResourceManager.GetString("ValidationErrors", resourceCulture);
+            }
+        }
     }
 }

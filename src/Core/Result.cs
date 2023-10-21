@@ -187,6 +187,12 @@ public sealed class Result : ResultBase
         return Failure(message, Enumerable.Empty<string>());
     }
 
+    /// <inheritdoc cref="Failure(string, IEnumerable{string})" />
+    public static Result Failure(IEnumerable<string> errors)
+    {
+        return Failure(string.Empty, errors);
+    }
+
     /// <summary>
     /// Represents an error that occurred during the execution of a service.
     /// </summary>
@@ -214,6 +220,12 @@ public sealed class Result : ResultBase
     public static Result Invalid(string message)
     {
         return Invalid(message, Enumerable.Empty<string>());
+    }
+
+    /// <inheritdoc cref="Invalid(string, IEnumerable{string})" />
+    public static Result Invalid(IEnumerable<string> errors)
+    {
+        return Invalid(ResponseMessages.ValidationErrors, errors);
     }
 
     /// <summary>
@@ -245,6 +257,12 @@ public sealed class Result : ResultBase
         return NotFound(message, Enumerable.Empty<string>());
     }
 
+    /// <inheritdoc cref="NotFound(string, IEnumerable{string})" />
+    public static Result NotFound(IEnumerable<string> errors)
+    {
+        return NotFound(string.Empty, errors);
+    }
+
     /// <summary>
     /// Represents the situation where a service was unable to find a requested resource.
     /// </summary>
@@ -272,6 +290,12 @@ public sealed class Result : ResultBase
     public static Result Unauthorized(string message)
     {
         return Unauthorized(message, Enumerable.Empty<string>());
+    }
+
+    /// <inheritdoc cref="Unauthorized(string, IEnumerable{string})" />
+    public static Result Unauthorized(IEnumerable<string> errors)
+    {
+        return Unauthorized(string.Empty, errors);
     }
 
     /// <summary>
@@ -304,6 +328,12 @@ public sealed class Result : ResultBase
         return Conflict(message, Enumerable.Empty<string>());
     }
 
+    /// <inheritdoc cref="Conflict(string, IEnumerable{string})" />
+    public static Result Conflict(IEnumerable<string> errors)
+    {
+        return Conflict(string.Empty, errors);
+    }
+
     /// <summary>
     ///  Represents a situation where a service is in conflict due to the current state of a resource.
     /// </summary>
@@ -331,6 +361,12 @@ public sealed class Result : ResultBase
     public static Result CriticalError(string message)
     {
         return CriticalError(message, Enumerable.Empty<string>());
+    }
+
+    /// <inheritdoc cref="CriticalError(string, IEnumerable{string})" />
+    public static Result CriticalError(IEnumerable<string> errors)
+    {
+        return CriticalError(string.Empty, errors);
     }
 
     /// <summary>
