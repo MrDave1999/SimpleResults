@@ -3,6 +3,7 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
+    <PackageVersion Include="FluentValidation" Version="11.8.0" />
     <PackageVersion Include="System.Text.Json" Version="4.6.0" />
     <PackageVersion Include="IsExternalInit" Version="1.0.3" />
     <PackageVersion Include="Bogus" Version="34.0.2" />

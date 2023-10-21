@@ -8,4 +8,8 @@
     <ProjectReference Include="..\..\src\Core\SimpleResults.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" />
+  </ItemGroup>
+
 </Project>
