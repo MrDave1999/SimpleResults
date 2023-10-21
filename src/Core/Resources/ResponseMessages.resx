@@ -159,4 +159,7 @@
   <data name="UpdatedResource" xml:space="preserve">
     <value>The resource was successfully updated</value>
   </data>
+  <data name="ValidationErrors" xml:space="preserve">
+    <value>There have been validation errors</value>
+  </data>
 </root>
