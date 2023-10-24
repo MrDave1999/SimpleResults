@@ -12,5 +12,6 @@ public enum ResultStatus
     Unauthorized,
     Conflict,
     Failure,
-    CriticalError
+    CriticalError,
+    Forbidden
 }
