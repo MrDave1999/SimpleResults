@@ -339,6 +339,7 @@ The following table is used as a reference to know which type of result correspo
 | Result.Conflict         | 409 - Conflict              |
 | Result.Failure          | 422 - Unprocessable Entity  |
 | Result.CriticalError    | 500 - Internal Server Error |
+| Result.Forbidden        | 403 - Forbidden             |
 
 ### Integration with Fluent Validation
 
