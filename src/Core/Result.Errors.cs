@@ -127,7 +127,7 @@ public partial class Result
     }
 
     /// <summary>
-    /// Represents that a user does not have valid authentication credentials for the target resource.
+    /// Represents a situation where a user does not have valid authentication credentials for the target resource.
     /// </summary>
     /// <param name="message">A general description of the error.</param>
     /// <param name="errors">A collection of errors.</param>
