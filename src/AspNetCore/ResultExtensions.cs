@@ -43,6 +43,7 @@ public static class ResultExtensions
         ResultStatus.Conflict      => new ConflictObjectResult(result),
         ResultStatus.Failure       => new UnprocessableContentResult(result),
         ResultStatus.CriticalError => new InternalServerErrorResult(result),
+        ResultStatus.Forbidden     => new ForbiddenResult(result),
         _ => throw new NotSupportedException($"Result {result.Status} conversion is not supported.")
     };
 }
