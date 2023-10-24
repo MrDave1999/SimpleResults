@@ -135,6 +135,9 @@
   <data name="Failure" xml:space="preserve">
     <value>Se ha producido un error durante la ejecución de un servicio</value>
   </data>
+  <data name="Forbidden" xml:space="preserve">
+    <value>No tienes permisos para realizar esta acción</value>
+  </data>
   <data name="Invalid" xml:space="preserve">
     <value>Ocurrió un error de validación de datos</value>
   </data>

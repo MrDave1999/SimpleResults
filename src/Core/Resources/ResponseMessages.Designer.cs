@@ -115,6 +115,15 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You do not have permissions to perform this action.
+        /// </summary>
+        internal static string Forbidden {
+            get {
+                return ResourceManager.GetString("Forbidden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A data validation error occurred.
         /// </summary>
         internal static string Invalid {
