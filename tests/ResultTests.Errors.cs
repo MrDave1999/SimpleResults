@@ -108,5 +108,23 @@ public partial class ResultTests
         actual.Message.Should().Be(expectedMessage);
         actual.Errors.Should().BeEquivalentTo(expectedErrors);
         actual.Status.Should().Be(ResultStatus.CriticalError);
+     }
+
+    [Test]
+    public void Forbidden_WhenResultIsForbidden_ShouldReturnsResultObject()
+    {
+        // Arrange
+        var expectedMessage = "Forbidden";
+        var expectedErrors = new[] { "error" };
+
+        // Act
+        Result actual = Result.Forbidden(expectedMessage, expectedErrors);
+
+        // Asserts
+        actual.IsSuccess.Should().BeFalse();
+        actual.IsFailed.Should().BeTrue();
+        actual.Message.Should().Be(expectedMessage);
+        actual.Errors.Should().BeEquivalentTo(expectedErrors);
+        actual.Status.Should().Be(ResultStatus.Forbidden);
     }
 }

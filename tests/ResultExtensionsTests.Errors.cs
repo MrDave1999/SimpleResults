@@ -133,4 +133,26 @@ public partial class ResultExtensionsTests
         actualValue.Data.Should().BeNull();
         actualValue.Status.Should().Be(ResultStatus.CriticalError);
     }
+
+    [Test]
+    public void ToActionResult_WhenOperationResultIsForbidden_ShouldReturnsForbiddenResult()
+    {
+        // Arrange
+        int expectedHttpCode = 403;
+        Result<Person> result = Result.Forbidden();
+
+        // Act
+        ActionResult<Result<Person>> actionResult = result.ToActionResult();
+        var contentResult = actionResult.Result as ForbiddenResult;
+        var actualValue = (Result<Person>)contentResult.Value;
+
+        // Asserts
+        contentResult.StatusCode.Should().Be(expectedHttpCode);
+        actualValue.IsSuccess.Should().BeFalse();
+        actualValue.IsFailed.Should().BeTrue();
+        actualValue.Message.Should().Be(ResponseMessages.Forbidden);
+        actualValue.Errors.Should().BeEmpty();
+        actualValue.Data.Should().BeNull();
+        actualValue.Status.Should().Be(ResultStatus.Forbidden);
+    }
 }
