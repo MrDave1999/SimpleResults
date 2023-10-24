@@ -96,9 +96,11 @@ public partial class Result
     /// <summary>
     /// Represents a situation where a user does not have valid authentication credentials for the target resource.
     /// </summary>
+    /// <remarks>
+    /// Similar to Forbidden, but specifically for use when authentication is required and has failed or has not yet been provided. 
+    /// </remarks>
     /// <param name="message">A general description of the error.</param>
     /// <param name="errors">A collection of errors.</param>
-    /// <returns></returns>
     public static Result Unauthorized(string message, IEnumerable<string> errors) => new()
     {
         IsSuccess = false,
