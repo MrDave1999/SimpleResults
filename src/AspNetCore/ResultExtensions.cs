@@ -9,51 +9,40 @@ public static class ResultExtensions
     /// Converts the <see cref="PagedResult{T}" /> to <see cref="ActionResult{TValue}"/>
     /// where <c>TValue</c> is a <see cref="PagedResult{T}" />.
     /// </summary>
-    public static ActionResult<PagedResult<T>> ToActionResult<T>(this PagedResult<T> result)
-    {
-        return TranslateToActionResult(result);
-    }
+    public static ActionResult<PagedResult<T>> ToActionResult<T>(this PagedResult<T> result) 
+        => TranslateToActionResult(result);
 
     /// <summary>
     /// Converts the <see cref="ListedResult{T}" /> to <see cref="ActionResult{TValue}"/>
     /// where <c>TValue</c> is a <see cref="ListedResult{T}" />.
     /// </summary>
-    public static ActionResult<ListedResult<T>> ToActionResult<T>(this ListedResult<T> result)
-    {
-        return TranslateToActionResult(result);
-    }
+    public static ActionResult<ListedResult<T>> ToActionResult<T>(this ListedResult<T> result) 
+        => TranslateToActionResult(result);
 
     /// <summary>
     /// Converts the <see cref="Result{T}" /> to <see cref="ActionResult{TValue}"/>
     /// where <c>TValue</c> is a <see cref="Result{T}" />.
     /// </summary>
-    public static ActionResult<Result<T>> ToActionResult<T>(this Result<T> result)
-    {
-        return TranslateToActionResult(result);
-    }
+    public static ActionResult<Result<T>> ToActionResult<T>(this Result<T> result) 
+        => TranslateToActionResult(result);
 
     /// <summary>
     /// Converts the <see cref="Result" /> to <see cref="ActionResult{TValue}"/> 
     /// where <c>TValue</c> is a <see cref="Result" />.
     /// </summary>
-    public static ActionResult<Result> ToActionResult(this Result result)
-    {
-        return TranslateToActionResult(result);
-    }
+    public static ActionResult<Result> ToActionResult(this Result result) 
+        => TranslateToActionResult(result);
 
-    private static ActionResult TranslateToActionResult(this ResultBase result)
+    private static ActionResult TranslateToActionResult(this ResultBase result) => result.Status switch
     {
-        return result.Status switch
-        {
-            ResultStatus.Ok                  => new OkObjectResult(result),
-            ResultStatus.Created             => new CreatedResult(nameof(ToActionResult), result),
-            ResultStatus.Invalid             => new BadRequestObjectResult(result),
-            ResultStatus.NotFound            => new NotFoundObjectResult(result),
-            ResultStatus.Unauthorized        => new UnauthorizedObjectResult(result),
-            ResultStatus.Conflict            => new ConflictObjectResult(result),
-            ResultStatus.Failure             => new UnprocessableContentResult(result),
-            ResultStatus.CriticalError       => new InternalServerErrorResult(result),
-            _ => throw new NotSupportedException($"Result {result.Status} conversion is not supported.")
-        };
-    }
+        ResultStatus.Ok            => new OkObjectResult(result),
+        ResultStatus.Created       => new CreatedResult(nameof(ToActionResult), result),
+        ResultStatus.Invalid       => new BadRequestObjectResult(result),
+        ResultStatus.NotFound      => new NotFoundObjectResult(result),
+        ResultStatus.Unauthorized  => new UnauthorizedObjectResult(result),
+        ResultStatus.Conflict      => new ConflictObjectResult(result),
+        ResultStatus.Failure       => new UnprocessableContentResult(result),
+        ResultStatus.CriticalError => new InternalServerErrorResult(result),
+        _ => throw new NotSupportedException($"Result {result.Status} conversion is not supported.")
+    };
 }

@@ -11,15 +11,12 @@ public sealed class Result<T> : ResultBase
     /// </summary>
     public T Data { get; init; }
 
-    public static implicit operator Result<T>(Result result)
+    public static implicit operator Result<T>(Result result) => new()
     {
-        return new Result<T>
-        {
-            Data        = default,
-            IsSuccess   = result.IsSuccess,
-            Message     = result.Message,
-            Errors      = result.Errors,
-            Status      = result.Status
-        };
-    }
+        Data = default,
+        IsSuccess = result.IsSuccess,
+        Message = result.Message,
+        Errors = result.Errors,
+        Status = result.Status
+    };
 }

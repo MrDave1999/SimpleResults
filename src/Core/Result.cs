@@ -9,32 +9,25 @@ public sealed partial class Result : ResultBase
     public Result() { }
 
     /// <inheritdoc cref="Success{T}(T, string)" />
-    public static Result<T> Success<T>(T data)
-    {
-        return Success(data, ResponseMessages.Success);
-    }
+    public static Result<T> Success<T>(T data) 
+        => Success(data, ResponseMessages.Success);
 
     /// <summary>
     /// Represents a successful operation and accepts a values as the result of the operation.
     /// </summary>
     /// <param name="data">The value to be set.</param>
     /// <param name="message">A message of success.</param>
-    public static Result<T> Success<T>(T data, string message)
-    {
-        return new Result<T>
-        {
-            Data        = data,
-            IsSuccess   = true,
-            Message     = message,
-            Status      = ResultStatus.Ok
-        };
-    }
+    public static Result<T> Success<T>(T data, string message) => new() 
+    { 
+        Data = data, 
+        IsSuccess = true, 
+        Message = message, 
+        Status = ResultStatus.Ok 
+    };
 
     /// <inheritdoc cref="Success{T}(IEnumerable{T}, PagedInfo, string)" />
-    public static PagedResult<T> Success<T>(IEnumerable<T> data, PagedInfo pagedInfo)
-    {
-        return Success(data, pagedInfo, ResponseMessages.ObtainedResources);
-    }
+    public static PagedResult<T> Success<T>(IEnumerable<T> data, PagedInfo pagedInfo) 
+        => Success(data, pagedInfo, ResponseMessages.ObtainedResources);
 
     /// <summary>
     /// Represents a successful operation and accepts a set of data and paged information as arguments.
@@ -42,135 +35,104 @@ public sealed partial class Result : ResultBase
     /// <param name="data">A set of data.</param>
     /// <param name="pagedInfo">Some information about the page.</param>
     /// <param name="message">A message of success.</param>
-    public static PagedResult<T> Success<T>(IEnumerable<T> data, PagedInfo pagedInfo, string message)
+    public static PagedResult<T> Success<T>(IEnumerable<T> data, PagedInfo pagedInfo, string message) => new()
     {
-        return new PagedResult<T>
-        {
-            Data      = data,
-            PagedInfo = pagedInfo,
-            IsSuccess = true,
-            Message   = message,
-            Status    = ResultStatus.Ok
-        };
-    }
+        Data = data,
+        PagedInfo = pagedInfo,
+        IsSuccess = true,
+        Message = message,
+        Status = ResultStatus.Ok
+    };
 
     /// <summary>
     /// Represents a successful operation.
     /// </summary>
-    public static Result Success()
-    {
-        return Success(ResponseMessages.Success);
-    }
+    public static Result Success() 
+        => Success(ResponseMessages.Success);
 
     /// <summary>
     /// Represents a successful operation and accepts a messages that describes the result.
     /// </summary>
     /// <param name="message">A message of success.</param>
-    public static Result Success(string message)
-    {
-        return new Result
-        {
-            IsSuccess   = true,
-            Message     = message,
-            Status      = ResultStatus.Ok
-        };
-    }
+    public static Result Success(string message) => new() 
+    { 
+        IsSuccess = true, 
+        Message = message, 
+        Status = ResultStatus.Ok 
+    };
 
     /// <inheritdoc cref="CreatedResource(string)" />
-    public static Result CreatedResource()
-    {
-        return CreatedResource(ResponseMessages.CreatedResource);
-    }
+    public static Result CreatedResource() 
+        => CreatedResource(ResponseMessages.CreatedResource);
 
     /// <summary>
     /// Represents a situation in which the service successfully creates a resource.
     /// </summary>
     /// <param name="message">A message of success.</param>
-    public static Result CreatedResource(string message)
-    {
-        return new Result
-        {
-            IsSuccess   = true,
-            Message     = message,
-            Status      = ResultStatus.Created
-        };
-    }
+    public static Result CreatedResource(string message) => new() 
+    { 
+        IsSuccess = true, 
+        Message = message, 
+        Status = ResultStatus.Created 
+    };
 
     /// <inheritdoc cref="CreatedResource(int, string)" />
-    public static Result<CreatedId> CreatedResource(int id)
-    {
-        return CreatedResource(id, ResponseMessages.CreatedResource);
-    }
+    public static Result<CreatedId> CreatedResource(int id) 
+        => CreatedResource(id, ResponseMessages.CreatedResource);
 
     /// <summary>
     /// Represents a situation in which the service successfully creates a resource.
     /// </summary>
     /// <param name="id">The ID of the created resource.</param>
     /// <param name="message">A message of success.</param>
-    public static Result<CreatedId> CreatedResource(int id, string message)
+    public static Result<CreatedId> CreatedResource(int id, string message) => new()
     {
-        return new Result<CreatedId>
-        {
-            Data        = new CreatedId { Id = id },
-            IsSuccess   = true,
-            Message     = message,
-            Status      = ResultStatus.Created
-        };
-    }
+        Data = new CreatedId { Id = id },
+        IsSuccess = true,
+        Message = message,
+        Status = ResultStatus.Created
+    };
 
     /// <inheritdoc cref="CreatedResource(Guid, string)" />
-    public static Result<CreatedGuid> CreatedResource(Guid guid)
-    {
-        return CreatedResource(guid, ResponseMessages.CreatedResource);
-    }
+    public static Result<CreatedGuid> CreatedResource(Guid guid) 
+        => CreatedResource(guid, ResponseMessages.CreatedResource);
 
     /// <summary>
     /// Represents a situation in which the service successfully creates a resource.
     /// </summary>
     /// <param name="guid">The GUID assigned to the resource.</param>
     /// <param name="message">A message of success.</param>
-    public static Result<CreatedGuid> CreatedResource(Guid guid, string message)
+    public static Result<CreatedGuid> CreatedResource(Guid guid, string message) => new()
     {
-        return new Result<CreatedGuid>
-        {
-            Data      = new CreatedGuid { Id = guid.ToString() },
-            IsSuccess = true,
-            Message   = message,
-            Status    = ResultStatus.Created
-        };
-    }
+        Data = new CreatedGuid { Id = guid.ToString() },
+        IsSuccess = true,
+        Message = message,
+        Status = ResultStatus.Created
+    };
 
     /// <summary>
     /// Represents a situation in which the service successfully updates a resource.
     /// </summary>
-    public static Result UpdatedResource()
-    {
-        return Success(ResponseMessages.UpdatedResource);
-    }
+    public static Result UpdatedResource() 
+        => Success(ResponseMessages.UpdatedResource);
 
     /// <summary>
     /// Represents a situation in which the service successfully deletes a resource.
     /// </summary>
-    public static Result DeletedResource()
-    {
-        return Success(ResponseMessages.DeletedResource);
-    }
+    public static Result DeletedResource() 
+        => Success(ResponseMessages.DeletedResource);
 
     /// <summary>
     /// Represents a situation in which the service successfully obtains a resource.
     /// </summary>
     /// <param name="data">The value to be set.</param>
     public static Result<T> ObtainedResource<T>(T data)
-    {
-        return Success(data, ResponseMessages.ObtainedResource);
-    }
+        => Success(data, ResponseMessages.ObtainedResource);
 
     /// <summary>
     /// Represents a situation in which the service successfully obtains multiple resources.
     /// </summary>
     /// <param name="data">A set of data.</param>
     public static ListedResult<T> ObtainedResources<T>(IEnumerable<T> data)
-    {
-        return Success(data, ResponseMessages.ObtainedResources);
-    }
+        => Success(data, ResponseMessages.ObtainedResources);
 }

@@ -18,16 +18,13 @@ public sealed class PagedResult<T> : ResultBase
     /// </summary>
     public PagedInfo PagedInfo { get; init; }
 
-    public static implicit operator PagedResult<T>(Result result)
+    public static implicit operator PagedResult<T>(Result result) => new()
     {
-        return new PagedResult<T>
-        {
-            Data        = Enumerable.Empty<T>(),
-            PagedInfo   = default,
-            IsSuccess   = result.IsSuccess,
-            Message     = result.Message,
-            Errors      = result.Errors,
-            Status      = result.Status
-        };
-    }
+        Data = Enumerable.Empty<T>(),
+        PagedInfo = default,
+        IsSuccess = result.IsSuccess,
+        Message = result.Message,
+        Errors = result.Errors,
+        Status = result.Status
+    };
 }
