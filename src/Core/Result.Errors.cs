@@ -2,6 +2,17 @@
 
 public partial class Result
 {
+    private static Result CreateError(
+        string message, 
+        ResultStatus status, 
+        IEnumerable<string> errors) => new() 
+        { 
+            IsSuccess = false, 
+            Message = message, 
+            Status = status, 
+            Errors = errors 
+        };
+
     /// <inheritdoc cref="Failure(string)" />
     public static Result Failure() 
         => Failure(ResponseMessages.Failure);
@@ -20,13 +31,8 @@ public partial class Result
     /// </summary>
     /// <param name="message">A general description of the error.</param>
     /// <param name="errors">A collection of errors.</param>
-    public static Result Failure(string message, IEnumerable<string> errors) => new()
-    {
-        IsSuccess = false,
-        Message = message,
-        Status = ResultStatus.Failure,
-        Errors = errors
-    };
+    public static Result Failure(string message, IEnumerable<string> errors) 
+        => CreateError(message, ResultStatus.Failure, errors);
 
     /// <inheritdoc cref="Invalid(string)" />
     public static Result Invalid() 
@@ -46,13 +52,8 @@ public partial class Result
     /// </summary>
     /// <param name="message">A general description of the error.</param>
     /// <param name="errors">A collection of errors.</param>
-    public static Result Invalid(string message, IEnumerable<string> errors) => new()
-    {
-        IsSuccess = false,
-        Message = message,
-        Status = ResultStatus.Invalid,
-        Errors = errors
-    };
+    public static Result Invalid(string message, IEnumerable<string> errors)
+        => CreateError(message, ResultStatus.Invalid, errors);
 
     /// <inheritdoc cref="NotFound(string)" />
     public static Result NotFound() 
@@ -72,13 +73,8 @@ public partial class Result
     /// </summary>
     /// <param name="message">A general description of the error.</param>
     /// <param name="errors">A collection of errors.</param>
-    public static Result NotFound(string message, IEnumerable<string> errors) => new()
-    {
-        IsSuccess = false,
-        Message = message,
-        Status = ResultStatus.NotFound,
-        Errors = errors
-    };
+    public static Result NotFound(string message, IEnumerable<string> errors)
+        => CreateError(message, ResultStatus.NotFound, errors);
 
     /// <inheritdoc cref="Unauthorized(string)" />
     public static Result Unauthorized() 
@@ -101,13 +97,8 @@ public partial class Result
     /// </remarks>
     /// <param name="message">A general description of the error.</param>
     /// <param name="errors">A collection of errors.</param>
-    public static Result Unauthorized(string message, IEnumerable<string> errors) => new()
-    {
-        IsSuccess = false,
-        Message = message,
-        Status = ResultStatus.Unauthorized,
-        Errors = errors
-    };
+    public static Result Unauthorized(string message, IEnumerable<string> errors) 
+        => CreateError(message, ResultStatus.Unauthorized, errors);
 
     /// <inheritdoc cref="Conflict(string)" />
     public static Result Conflict() 
@@ -127,13 +118,8 @@ public partial class Result
     /// </summary>
     /// <param name="message">A general description of the error.</param>
     /// <param name="errors">A collection of errors.</param>
-    public static Result Conflict(string message, IEnumerable<string> errors) => new()
-    {
-        IsSuccess = false,
-        Message = message,
-        Status = ResultStatus.Conflict,
-        Errors = errors
-    };
+    public static Result Conflict(string message, IEnumerable<string> errors) 
+        => CreateError(message, ResultStatus.Conflict, errors);
 
     /// <inheritdoc cref="CriticalError(string)" />
     public static Result CriticalError() 
@@ -156,13 +142,8 @@ public partial class Result
     /// </remarks>
     /// <param name="message">A general description of the error.</param>
     /// <param name="errors">A collection of errors.</param>
-    public static Result CriticalError(string message, IEnumerable<string> errors) => new()
-    {
-        IsSuccess = false,
-        Message = message,
-        Status = ResultStatus.CriticalError,
-        Errors = errors
-    };
+    public static Result CriticalError(string message, IEnumerable<string> errors) 
+        => CreateError(message, ResultStatus.CriticalError, errors);
 
     /// <inheritdoc cref="Forbidden(string)" />
     public static Result Forbidden()
@@ -182,11 +163,6 @@ public partial class Result
     /// </summary>
     /// <param name="message">A general description of the error.</param>
     /// <param name="errors">A collection of errors.</param>
-    public static Result Forbidden(string message, IEnumerable<string> errors) => new()
-    {
-        IsSuccess = false,
-        Message = message,
-        Status = ResultStatus.Forbidden,
-        Errors = errors
-    };
+    public static Result Forbidden(string message, IEnumerable<string> errors) 
+        => CreateError(message, ResultStatus.Forbidden, errors);
 }
