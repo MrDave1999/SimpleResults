@@ -163,4 +163,30 @@ public partial class Result
         Status = ResultStatus.CriticalError,
         Errors = errors
     };
+
+    /// <inheritdoc cref="Forbidden(string)" />
+    public static Result Forbidden()
+        => Forbidden(ResponseMessages.Forbidden);
+
+    /// <param name="message">An error message.</param>
+    /// <inheritdoc cref="Forbidden(string, IEnumerable{string})" />
+    public static Result Forbidden(string message)
+        => Forbidden(message, Enumerable.Empty<string>());
+
+    /// <inheritdoc cref="Forbidden(string, IEnumerable{string})" />
+    public static Result Forbidden(IEnumerable<string> errors)
+        => Forbidden(string.Empty, errors);
+
+    /// <summary>
+    /// Represents a situation where the user does not have permission to perform some action.
+    /// </summary>
+    /// <param name="message">A general description of the error.</param>
+    /// <param name="errors">A collection of errors.</param>
+    public static Result Forbidden(string message, IEnumerable<string> errors) => new()
+    {
+        IsSuccess = false,
+        Message = message,
+        Status = ResultStatus.Forbidden,
+        Errors = errors
+    };
 }
