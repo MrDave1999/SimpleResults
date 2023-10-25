@@ -132,6 +132,9 @@
   <data name="DivideByZero" xml:space="preserve">
     <value>No se puede dividir por cero. El parámetro '{0}' no puede ser cero</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="Failure" xml:space="preserve">
     <value>Se ha producido un error durante la ejecución de un servicio</value>
   </data>
