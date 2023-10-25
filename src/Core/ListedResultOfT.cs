@@ -11,7 +11,7 @@ public sealed class ListedResult<T> : ResultBase
     /// <summary>
     /// Gets a list of data associated with the result.
     /// </summary>
-    public IEnumerable<T> Data { get; init; }
+    public IEnumerable<T> Data { get; init; } = Enumerable.Empty<T>();
 
     private static ListedResult<T> CreateInstance(ResultBase result, IEnumerable<T> data) => new()
     {
