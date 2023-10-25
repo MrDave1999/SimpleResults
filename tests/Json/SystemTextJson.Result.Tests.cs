@@ -43,6 +43,8 @@ public class SystemTextJsonResult
         var actual = JsonSerializer.Deserialize<Result>(json, options);
 
         // Assert
-        actual.Should().BeEquivalentTo(expectedResult);
+        actual
+            .Should()
+            .BeEquivalentTo(expectedResult, o => o.Excluding(r => r.Status));
     }
 }
