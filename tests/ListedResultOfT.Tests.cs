@@ -3,6 +3,19 @@
 public class ListedResultOfTTests
 {
     [Test]
+    public void ListedResultOfT_ShouldCreateInstanceWithDefaultValues()
+    {
+        // Act
+        var actual = new ListedResult<Person>();
+
+        // Asserts
+        actual.Data.Should().BeEmpty();
+        actual.IsSuccess.Should().BeFalse();
+        actual.IsFailed.Should().BeTrue();
+        actual.Errors.Should().BeEmpty();
+    }
+
+    [Test]
     public void ImplicitOperator_WhenConvertedFromResultType_ShouldReturnsListedResultOfT()
     {
         // Arrange

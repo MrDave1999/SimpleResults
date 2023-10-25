@@ -11,7 +11,7 @@ public sealed class PagedResult<T> : ResultBase
     /// <summary>
     /// Gets the data from a page.
     /// </summary>
-    public IEnumerable<T> Data { get; init; }
+    public IEnumerable<T> Data { get; init; } = Enumerable.Empty<T>();
 
     /// <summary>
     /// Gets information about the page.
