@@ -20,7 +20,7 @@ public abstract class ResultBase
     /// <summary>
     /// Gets the description of a result.
     /// </summary>
-    public string Message { get; init; }
+    public string Message { get; init; } = ResponseMessages.Error;
 
     /// <summary>
     /// Gets a collection of errors.
@@ -31,5 +31,5 @@ public abstract class ResultBase
     /// Gets the current status of a result.
     /// </summary>
     [JsonIgnore]
-    public ResultStatus Status { get; init; }
+    public ResultStatus Status { get; init; } = ResultStatus.Failure;
 }
