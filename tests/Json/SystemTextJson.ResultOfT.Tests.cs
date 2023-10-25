@@ -70,7 +70,9 @@ public class SystemTextJsonResultOfT
         var actual = JsonSerializer.Deserialize<Result<int>>(json, options);
 
         // Assert
-        actual.Should().BeEquivalentTo(expectedResult);
+        actual
+            .Should()
+            .BeEquivalentTo(expectedResult, o => o.Excluding(r => r.Status));
     }
 
     [Test]
@@ -95,7 +97,9 @@ public class SystemTextJsonResultOfT
         var actual = JsonSerializer.Deserialize<Result<CreatedId>>(json, options);
 
         // Assert
-        actual.Should().BeEquivalentTo(expectedResult);
+        actual
+            .Should()
+            .BeEquivalentTo(expectedResult, o => o.Excluding(r => r.Status));
     }
 
     [Test]
@@ -121,6 +125,8 @@ public class SystemTextJsonResultOfT
         var actual = JsonSerializer.Deserialize<Result<CreatedGuid>>(json, options);
 
         // Assert
-        actual.Should().BeEquivalentTo(expectedResult);
+        actual
+            .Should()
+            .BeEquivalentTo(expectedResult, o => o.Excluding(r => r.Status));
     }
 }

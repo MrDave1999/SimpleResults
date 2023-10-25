@@ -3,6 +3,23 @@
 public partial class ResultTests
 {
     [Test]
+    public void Result_ShouldCreateInstanceWithDefaultValues()
+    {
+        // Arrange
+        var expectedMessage = ResponseMessages.Error;
+
+        // Act
+        var actual = new Result();
+
+        // Asserts
+        actual.IsSuccess.Should().BeFalse();
+        actual.IsFailed.Should().BeTrue();
+        actual.Message.Should().Be(expectedMessage);
+        actual.Errors.Should().BeEmpty();
+        actual.Status.Should().Be(ResultStatus.Failure);
+    }
+
+    [Test]
     public void Success_WhenResultIsSuccessWithMessage_ShouldReturnsResultOfT()
     {
         // Arrange

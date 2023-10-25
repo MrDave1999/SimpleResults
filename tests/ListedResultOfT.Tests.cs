@@ -5,6 +5,9 @@ public class ListedResultOfTTests
     [Test]
     public void ListedResultOfT_ShouldCreateInstanceWithDefaultValues()
     {
+        // Arrange
+        var expectedMessage = ResponseMessages.Error;
+
         // Act
         var actual = new ListedResult<Person>();
 
@@ -12,7 +15,9 @@ public class ListedResultOfTTests
         actual.Data.Should().BeEmpty();
         actual.IsSuccess.Should().BeFalse();
         actual.IsFailed.Should().BeTrue();
+        actual.Message.Should().Be(expectedMessage);
         actual.Errors.Should().BeEmpty();
+        actual.Status.Should().Be(ResultStatus.Failure);
     }
 
     [Test]

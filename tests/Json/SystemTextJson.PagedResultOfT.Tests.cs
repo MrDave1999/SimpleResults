@@ -117,7 +117,9 @@ public class SystemTextJsonPagedResultOfT
         var actual = JsonSerializer.Deserialize<PagedResult<int>>(json, options);
 
         // Assert
-        actual.Should().BeEquivalentTo(expectedResult);
+        actual
+            .Should()
+            .BeEquivalentTo(expectedResult, o => o.Excluding(r => r.Status));
     }
 
     [Test]
@@ -161,6 +163,8 @@ public class SystemTextJsonPagedResultOfT
         var actual = JsonSerializer.Deserialize<PagedResult<Person>>(json, options);
 
         // Assert
-        actual.Should().BeEquivalentTo(expectedResult);
+        actual
+            .Should()
+            .BeEquivalentTo(expectedResult, o => o.Excluding(r => r.Status));
     }
 }
