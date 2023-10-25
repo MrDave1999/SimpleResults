@@ -5,6 +5,9 @@ public class PagedResultOfTTests
     [Test]
     public void PagedResultOfT_ShouldCreateInstanceWithDefaultValues()
     {
+        // Arrange
+        var expectedMessage = ResponseMessages.Error;
+
         // Act
         var actual = new PagedResult<Person>();
 
@@ -13,7 +16,9 @@ public class PagedResultOfTTests
         actual.PagedInfo.Should().BeNull();
         actual.IsSuccess.Should().BeFalse();
         actual.IsFailed.Should().BeTrue();
+        actual.Message.Should().Be(expectedMessage);
         actual.Errors.Should().BeEmpty();
+        actual.Status.Should().Be(ResultStatus.Failure);
     }
 
     [Test]
