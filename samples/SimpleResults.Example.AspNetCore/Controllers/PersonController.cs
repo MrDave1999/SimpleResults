@@ -12,18 +12,14 @@ public class PersonController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<Result> Create([FromBody]Person person)
+    public Result Create([FromBody]Person person)
     {
-        return _personService
-            .Create(person)
-            .ToActionResult();
+        return _personService.Create(person);
     }
 
     [HttpGet]
-    public ActionResult<ListedResult<Person>> Get() 
+    public ListedResult<Person> Get() 
     {
-        return _personService
-            .GetAll()
-            .ToActionResult();
+        return _personService.GetAll();
     }
 }

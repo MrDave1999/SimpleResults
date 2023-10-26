@@ -1,21 +1,17 @@
-﻿namespace SimpleResults.Tests;
+﻿namespace SimpleResults.Tests.Core.Json;
 
-public class SystemTextJsonListedResultOfT
+public class SystemTextJsonResultOfT
 {
     [Test]
-    public void ListedResultOfT_ShouldSerializeResultOfValueType()
+    public void ResultOfT_ShouldSerializeResultOfValueType()
     {
         // Arrange
         var options = new JsonSerializerOptions { WriteIndented = true };
-        var data = new int[] { 1, 2 };
-        ListedResult<int> result = Result.Success(data);
+        Result<int> result = Result.Success(1);
         var expectedJson =
             $$"""
             {
-              "data": [
-                1,
-                2
-              ],
+              "data": 1,
               "success": true,
               "message": "{{ResponseMessages.Success}}",
               "errors": []
@@ -30,27 +26,17 @@ public class SystemTextJsonListedResultOfT
     }
 
     [Test]
-    public void ListedResultOfT_ShouldSerializeResultOfReferenceType()
+    public void ResultOfT_ShouldSerializeResultOfReferenceType()
     {
         // Arrange
         var options = new JsonSerializerOptions { WriteIndented = true };
-        var data = new Person[]
-        { 
-            new() { Name = "Bob" },
-            new() { Name = "Alice" }
-        };
-        ListedResult<Person> result = Result.Success(data);
+        Result<Person> result = Result.Success(new Person { Name = "Test" });
         var expectedJson =
             $$"""
             {
-              "data": [
-                {
-                  "name": "Bob"
-                },
-                {
-                  "name": "Alice"
-                }
-              ],
+              "data": {
+                "name": "Test"
+              },
               "success": true,
               "message": "{{ResponseMessages.Success}}",
               "errors": []
@@ -65,19 +51,15 @@ public class SystemTextJsonListedResultOfT
     }
 
     [Test]
-    public void ListedResultOfT_ShouldDeserializeResultOfValueType()
+    public void ResultOfT_ShouldDeserializeResultOfValueType()
     {
         // Arrange
         var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-        var data = new int[] { 1, 2 };
-        ListedResult<int> expectedResult = Result.Success(data);
+        Result<int> expectedResult = Result.Success(1);
         var json =
             $$"""
             {
-              "data": [
-                1,
-                2
-              ],
+              "data": 1,
               "success": true,
               "message": "{{ResponseMessages.Success}}",
               "errors": []
@@ -85,7 +67,7 @@ public class SystemTextJsonListedResultOfT
             """;
 
         // Act
-        var actual = JsonSerializer.Deserialize<ListedResult<int>>(json, options);
+        var actual = JsonSerializer.Deserialize<Result<int>>(json, options);
 
         // Assert
         actual
@@ -94,27 +76,17 @@ public class SystemTextJsonListedResultOfT
     }
 
     [Test]
-    public void ListedResultOfT_ShouldDeserializeResultOfReferenceType()
+    public void ResultOfT_ShouldDeserializeResultOfCreatedIdType()
     {
         // Arrange
         var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-        var data = new Person[]
-        {
-            new() { Name = "Bob" },
-            new() { Name = "Alice" }
-        };
-        ListedResult<Person> expectedResult = Result.Success(data);
+        Result<CreatedId> expectedResult = Result.Success(new CreatedId { Id = 1 } );
         var json =
             $$"""
             {
-              "data": [
-                {
-                  "name": "Bob"
-                },
-                {
-                  "name": "Alice"
-                }
-              ],
+              "data": {
+                "Id": 1
+              },
               "success": true,
               "message": "{{ResponseMessages.Success}}",
               "errors": []
@@ -122,7 +94,35 @@ public class SystemTextJsonListedResultOfT
             """;
 
         // Act
-        var actual = JsonSerializer.Deserialize<ListedResult<Person>>(json, options);
+        var actual = JsonSerializer.Deserialize<Result<CreatedId>>(json, options);
+
+        // Assert
+        actual
+            .Should()
+            .BeEquivalentTo(expectedResult, o => o.Excluding(r => r.Status));
+    }
+
+    [Test]
+    public void ResultOfT_ShouldDeserializeResultOfCreatedGuidType()
+    {
+        // Arrange
+        var guid = Guid.NewGuid();
+        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+        Result<CreatedGuid> expectedResult = Result.Success(new CreatedGuid { Id = guid.ToString() });
+        var json =
+            $$"""
+            {
+              "data": {
+                "Id": "{{guid}}"
+              },
+              "success": true,
+              "message": "{{ResponseMessages.Success}}",
+              "errors": []
+            }
+            """;
+
+        // Act
+        var actual = JsonSerializer.Deserialize<Result<CreatedGuid>>(json, options);
 
         // Assert
         actual

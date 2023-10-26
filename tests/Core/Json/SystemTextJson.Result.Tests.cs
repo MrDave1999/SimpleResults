@@ -1,4 +1,4 @@
-﻿namespace SimpleResults.Tests;
+﻿namespace SimpleResults.Tests.Core.Json;
 
 public class SystemTextJsonResult
 {

@@ -1,18 +1,19 @@
-﻿namespace SimpleResults.Tests;
+﻿namespace SimpleResults.Tests.Core;
 
-public class ResultOfTTests
+public class PagedResultOfTTests
 {
     [Test]
-    public void ResultOfT_ShouldCreateInstanceWithDefaultValues()
+    public void PagedResultOfT_ShouldCreateInstanceWithDefaultValues()
     {
         // Arrange
         var expectedMessage = ResponseMessages.Error;
 
         // Act
-        var actual = new Result<Person>();
+        var actual = new PagedResult<Person>();
 
         // Asserts
-        actual.Data.Should().BeNull();
+        actual.Data.Should().BeEmpty();
+        actual.PagedInfo.Should().BeNull();
         actual.IsSuccess.Should().BeFalse();
         actual.IsFailed.Should().BeTrue();
         actual.Message.Should().Be(expectedMessage);
@@ -21,16 +22,17 @@ public class ResultOfTTests
     }
 
     [Test]
-    public void ImplicitOperator_WhenConvertedFromResultType_ShouldReturnsResultOfT()
+    public void ImplicitOperator_WhenConvertedFromResultType_ShouldReturnsPagedResultOfT()
     {
         // Arrange
         var expectedMessage = ResponseMessages.NotFound;
 
         // Act
-        Result<List<Person>> actual = Result.NotFound();
+        PagedResult<Person> actual = Result.NotFound();
 
         // Asserts
-        actual.Data.Should().BeNull();
+        actual.Data.Should().BeEmpty();
+        actual.PagedInfo.Should().BeNull();
         actual.IsSuccess.Should().BeFalse();
         actual.IsFailed.Should().BeTrue();
         actual.Message.Should().Be(expectedMessage);

@@ -1,4 +1,4 @@
-﻿namespace SimpleResults.Tests;
+﻿namespace SimpleResults.Tests.Core;
 
 public partial class ResultTests
 {

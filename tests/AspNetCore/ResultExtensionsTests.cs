@@ -1,4 +1,4 @@
-﻿namespace SimpleResults.Tests;
+﻿namespace SimpleResults.Tests.AspNetCore;
 
 public partial class ResultExtensionsTests
 {
