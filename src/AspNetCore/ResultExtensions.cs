@@ -33,7 +33,7 @@ public static class ResultExtensions
     public static ActionResult<Result> ToActionResult(this Result result) 
         => TranslateToActionResult(result);
 
-    private static ActionResult TranslateToActionResult(this ResultBase result) => result.Status switch
+    internal static ActionResult TranslateToActionResult(this ResultBase result) => result.Status switch
     {
         ResultStatus.Ok            => new OkObjectResult(result),
         ResultStatus.Created       => new CreatedResult(nameof(ToActionResult), result),
