@@ -7,7 +7,11 @@ builder.Services
     .AddSingleton<UserService>()
     .AddSingleton<PersonService>();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    // Add filter for all controllers.
+    options.Filters.Add<TranslateResultToActionResultAttribute>();
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
