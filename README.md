@@ -8,7 +8,7 @@
 
 [![SimpleResults-logo](https://raw.githubusercontent.com/MrDave1999/SimpleResults/master/SimpleResults-logo.png)](https://github.com/MrDave1999/SimpleResults)
 
-A simple library to implement the Result pattern for returning from services.
+A simple library to implement the Result pattern for returning from services. It also provides a mechanism for translating the Result object to an [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult?view=aspnetcore-7.0).
 
 > This library was inspired by [Arcadis.Result](https://github.com/ardalis/Result).
 
@@ -26,6 +26,8 @@ A simple library to implement the Result pattern for returning from services.
   - [Using the PagedResult type](#using-the-pagedresult-type)
   - [Creating a resource with Result type](#creating-a-resource-with-resultt-type)
   - [Integration with ASP.NET Core](#integration-with-aspnet-core)
+    - [Using TranslateResultToActionResult as an action filter](#using-translateresulttoactionresult-as-an-action-filter)
+    - [Add action filter as global](#add-action-filter-as-global)
   - [Translate Result object to HTTP status code](#translate-result-object-to-http-status-code)
   - [Integration with Fluent Validation](#integration-with-fluent-validation)
 - [Samples](#samples)
@@ -320,6 +322,40 @@ public class UserController : ControllerBase
         => _userService.GetAll().ToActionResult();
 }
 ```
+#### Using TranslateResultToActionResult as an action filter
+
+You can also use the `TranslateResultToActionResult` filter to translate the Result object to [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult?view=aspnetcore-7.0). 
+
+`TranslateResultToActionResult` class will internally call the `ToActionResult` method and perform the translation.
+
+**Example:**
+```cs
+[TranslateResultToActionResult]
+[ApiController]
+[Route("[controller]")]
+public class UserController : ControllerBase
+{
+    private readonly UserService _userService;
+    public UserController(UserService userService) => _userService = userService;
+
+    [HttpGet("{id}")]
+    public Result<User> Get(string id) => _userService.GetById(id);
+}
+```
+The return value of `Get` action is a `Result<User>`. **After the action is executed**, the filter (i.e. `TranslateResultToActionResult`) will run and translate the `Result<User>` to [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult?view=aspnetcore-7.0).
+
+#### Add action filter as global
+
+If you do not want to use the filter on each controller, you can add it globally for all controllers (see [sample](https://github.com/MrDave1999/SimpleResults/blob/master/samples/SimpleResults.Example.AspNetCore/Program.cs#L10C1-L14C4)).
+```cs
+builder.Services.AddControllers(options =>
+{
+    // Add filter for all controllers.
+    options.Filters.Add<TranslateResultToActionResultAttribute>();
+});
+```
+This way you no longer need to add the `TranslateResultToActionResult` attribute on each controller or individual action.
+
 ### Translate Result object to HTTP status code
 
 [SimpleResults.AspNetCore](https://www.nuget.org/packages/SimpleResults.AspNetCore) package is responsible for translating the status of a Result object into an HTTP status code.
