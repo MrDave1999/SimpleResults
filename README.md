@@ -344,11 +344,11 @@ public class UserController : ControllerBase
 ```
 The return value of `Get` action is a `Result<User>`. **After the action is executed**, the filter (i.e. `TranslateResultToActionResult`) will run and translate the `Result<User>` to [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult?view=aspnetcore-7.0).
 
-[See the source code](https://github.com/MrDave1999/SimpleResults/blob/master/src/AspNetCore/TranslateResultToActionResultAttribute.cs#L12), it is very simple.
+[See the source code](https://github.com/MrDave1999/SimpleResults/blob/e0b4bf02c77c02862f0a95ded268ee05cbc6d033/src/AspNetCore/TranslateResultToActionResultAttribute.cs#L12), it is very simple.
 
 #### Add action filter as global
 
-If you do not want to use the filter on each controller, you can add it globally for all controllers (see [sample](https://github.com/MrDave1999/SimpleResults/blob/master/samples/SimpleResults.Example.AspNetCore/Program.cs#L10C1-L14C4)).
+If you do not want to use the filter on each controller, you can add it globally for all controllers (see [sample](https://github.com/MrDave1999/SimpleResults/blob/e0b4bf02c77c02862f0a95ded268ee05cbc6d033/samples/SimpleResults.Example.AspNetCore/Program.cs#L10C1-L14C4)).
 ```cs
 builder.Services.AddControllers(options =>
 {
