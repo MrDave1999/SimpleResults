@@ -19,7 +19,7 @@ public class PersonService
         }
 
         _persons.Add(person);
-        return Result.Success();
+        return Result.CreatedResource();
     }
 
     public ListedResult<Person> GetAll() 
