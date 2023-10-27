@@ -14,6 +14,10 @@ public sealed class Result<T> : ResultBase
     /// </summary>
     public T Data { get; init; }
 
+    /// <summary>
+    /// Converts an instance of type <see cref="Result"/> to <see cref="Result{T}"/>.
+    /// </summary>
+    /// <param name="result">An instance of type <see cref="Result"/>.</param>
     public static implicit operator Result<T>(Result result) => new()
     {
         Data = default,
