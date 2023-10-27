@@ -142,12 +142,15 @@ public partial class ResultExtensionsTests
     {
         // Arrange
         var result = new Result<Person> { Status = (ResultStatus)5000 };
+        var expectedMessage = string.Format(ResponseMessages.UnsupportedStatus, result.Status);
 
         // Act
         Action act = () => result.ToActionResult();
 
         // Assert
-        act.Should().Throw<NotSupportedException>();
+        act.Should()
+           .Throw<NotSupportedException>()
+           .WithMessage(expectedMessage);
     }
 
     [Test]

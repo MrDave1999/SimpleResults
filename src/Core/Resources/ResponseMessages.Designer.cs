@@ -196,6 +196,15 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Result &apos;{0}&apos; conversion is not supported.
+        /// </summary>
+        internal static string UnsupportedStatus {
+            get {
+                return ResourceManager.GetString("UnsupportedStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The resource was successfully updated.
         /// </summary>
         internal static string UpdatedResource {
