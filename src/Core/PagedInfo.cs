@@ -35,6 +35,16 @@ public class PagedInfo
     /// </summary>
     public bool HasNext => PageNumber < TotalPages;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="PagedInfo"/> class 
+    /// with the page number, size and total records.
+    /// </summary>
+    /// <param name="pageNumber">The current page number.</param>
+    /// <param name="pageSize">The size per page.</param>
+    /// <param name="totalRecords">The total records of a resource.</param>
+    /// <exception cref="DivideByZeroException">
+    /// <c>pageSize</c> is equal to 0.
+    /// </exception>
     public PagedInfo(int pageNumber, int pageSize, int totalRecords)
     {
         if (pageSize == 0)

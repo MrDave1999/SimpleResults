@@ -6,6 +6,9 @@
 /// <typeparam name="T">The type of objects to enumerate.</typeparam>
 public sealed class ListedResult<T> : ResultBase
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ListedResult{T}"/> class.
+    /// </summary>
     public ListedResult() { }
 
     /// <summary>
@@ -22,6 +25,10 @@ public sealed class ListedResult<T> : ResultBase
         Status = result.Status
     };
 
+    /// <summary>
+    /// Converts an instance of type <see cref="Result"/> to <see cref="ListedResult{T}"/>.
+    /// </summary>
+    /// <param name="result">An instance of type <see cref="Result"/>.</param>
     public static implicit operator ListedResult<T>(Result result)
         => CreateInstance(result, Enumerable.Empty<T>());
 

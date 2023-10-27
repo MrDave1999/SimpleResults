@@ -50,6 +50,7 @@ public partial class Result
     /// <summary>
     /// Represents a validation error that prevents the underlying service from completing.
     /// </summary>
+    /// <remarks>Used in situations where the consumer provides invalid data.</remarks>
     /// <param name="message">A general description of the error.</param>
     /// <param name="errors">A collection of errors.</param>
     public static Result Invalid(string message, IEnumerable<string> errors)
@@ -93,7 +94,8 @@ public partial class Result
     /// Represents a situation where a user does not have valid authentication credentials for the target resource.
     /// </summary>
     /// <remarks>
-    /// Similar to Forbidden, but specifically for use when authentication is required and has failed or has not yet been provided. 
+    /// Similar to <see cref="Forbidden()"/>, but specifically for use when authentication 
+    /// is required and has failed or has not yet been provided. 
     /// </remarks>
     /// <param name="message">A general description of the error.</param>
     /// <param name="errors">A collection of errors.</param>
