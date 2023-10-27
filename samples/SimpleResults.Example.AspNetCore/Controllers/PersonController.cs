@@ -12,14 +12,16 @@ public class PersonController : ControllerBase
     }
 
     [HttpPost]
-    public Result Create([FromBody]Person person)
+    public async Task<Result> Create([FromBody]Person person)
     {
+        await Task.Delay(100);
         return _personService.Create(person);
     }
 
     [HttpGet]
-    public ListedResult<Person> Get() 
+    public async Task<ListedResult<Person>> Get() 
     {
+        await Task.Delay(100);
         return _personService.GetAll();
     }
 }
