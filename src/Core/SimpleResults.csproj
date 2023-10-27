@@ -39,6 +39,7 @@
 
   <ItemGroup>
     <InternalsVisibleTo Include="SimpleResults.Tests" />
+    <InternalsVisibleTo Include="SimpleResults.AspNetCore" />
   </ItemGroup>
 
   <ItemGroup>
