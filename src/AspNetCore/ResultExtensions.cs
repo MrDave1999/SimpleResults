@@ -44,6 +44,6 @@ public static class ResultExtensions
         ResultStatus.Failure       => new UnprocessableContentResult(result),
         ResultStatus.CriticalError => new InternalServerErrorResult(result),
         ResultStatus.Forbidden     => new ForbiddenResult(result),
-        _ => throw new NotSupportedException($"Result {result.Status} conversion is not supported.")
+        _ => throw new NotSupportedException(string.Format(ResponseMessages.UnsupportedStatus, result.Status))
     };
 }
