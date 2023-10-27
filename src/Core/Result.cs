@@ -6,6 +6,9 @@
 /// <remarks>This class defines different types of results for an operation.</remarks>
 public sealed partial class Result : ResultBase
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Result"/> class.
+    /// </summary>
     public Result() { }
 
     /// <inheritdoc cref="Success{T}(T, string)" />

@@ -6,6 +6,9 @@
 /// <typeparam name="T">The type of objects to enumerate.</typeparam>
 public sealed class PagedResult<T> : ResultBase
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="PagedResult{T}"/> class.
+    /// </summary>
     public PagedResult() { }
 
     /// <summary>

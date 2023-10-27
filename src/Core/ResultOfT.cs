@@ -4,6 +4,9 @@
 /// <inheritdoc cref="ResultBase" />
 public sealed class Result<T> : ResultBase
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Result{T}"/> class.
+    /// </summary>
     public Result() { }
 
     /// <summary>

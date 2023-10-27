@@ -6,6 +6,9 @@
 /// <typeparam name="T">The type of objects to enumerate.</typeparam>
 public sealed class ListedResult<T> : ResultBase
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ListedResult{T}"/> class.
+    /// </summary>
     public ListedResult() { }
 
     /// <summary>
