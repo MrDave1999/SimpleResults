@@ -162,6 +162,9 @@
   <data name="Unauthorized" xml:space="preserve">
     <value>Not authorized</value>
   </data>
+  <data name="UnsupportedStatus" xml:space="preserve">
+    <value>Result '{0}' conversion is not supported</value>
+  </data>
   <data name="UpdatedResource" xml:space="preserve">
     <value>The resource was successfully updated</value>
   </data>
