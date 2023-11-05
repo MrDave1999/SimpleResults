@@ -30,7 +30,7 @@ public sealed class ListedResult<T> : ResultBase
     /// </summary>
     /// <param name="result">An instance of type <see cref="Result"/>.</param>
     public static implicit operator ListedResult<T>(Result result)
-        => CreateInstance(result, Enumerable.Empty<T>());
+        => result.ToListedResult(Enumerable.Empty<T>());
 
     public static implicit operator ListedResult<T>(Result<IEnumerable<T>> result)
         => CreateInstance(result, result.Data);
