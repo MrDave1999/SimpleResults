@@ -18,12 +18,6 @@ public sealed class Result<T> : ResultBase
     /// Converts an instance of type <see cref="Result"/> to <see cref="Result{T}"/>.
     /// </summary>
     /// <param name="result">An instance of type <see cref="Result"/>.</param>
-    public static implicit operator Result<T>(Result result) => new()
-    {
-        Data = default,
-        IsSuccess = result.IsSuccess,
-        Message = result.Message,
-        Errors = result.Errors,
-        Status = result.Status
-    };
+    public static implicit operator Result<T>(Result result) 
+        => result.ToResult(default(T));
 }

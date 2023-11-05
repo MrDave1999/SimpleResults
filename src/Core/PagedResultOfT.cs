@@ -25,13 +25,6 @@ public sealed class PagedResult<T> : ResultBase
     /// Converts an instance of type <see cref="Result"/> to <see cref="PagedResult{T}"/>.
     /// </summary>
     /// <param name="result">An instance of type <see cref="Result"/>.</param>
-    public static implicit operator PagedResult<T>(Result result) => new()
-    {
-        Data = Enumerable.Empty<T>(),
-        PagedInfo = default,
-        IsSuccess = result.IsSuccess,
-        Message = result.Message,
-        Errors = result.Errors,
-        Status = result.Status
-    };
+    public static implicit operator PagedResult<T>(Result result)
+        => result.ToPagedResult(Enumerable.Empty<T>(), default);
 }
