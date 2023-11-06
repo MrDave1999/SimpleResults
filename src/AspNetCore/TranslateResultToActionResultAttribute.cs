@@ -1,4 +1,7 @@
-﻿namespace SimpleResults;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+
+namespace SimpleResults;
 
 /// <summary>
 /// Translates the Result object to an <see cref="ActionResult"/>.

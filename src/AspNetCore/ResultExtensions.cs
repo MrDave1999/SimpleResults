@@ -1,4 +1,8 @@
-﻿namespace SimpleResults;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
+using SimpleResults.Resources;
+
+namespace SimpleResults;
 
 /// <summary>
 /// Defines extension methods for the <c>Result</c> object.

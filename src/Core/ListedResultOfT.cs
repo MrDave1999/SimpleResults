@@ -1,4 +1,8 @@
-﻿namespace SimpleResults;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace SimpleResults;
 
 /// <summary>
 /// Represents an enumerated result of an operation.

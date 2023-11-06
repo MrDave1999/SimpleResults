@@ -1,4 +1,8 @@
-﻿namespace SimpleResults;
+﻿using System.Collections.Generic;
+using System.Linq;
+using SimpleResults.Resources;
+
+namespace SimpleResults;
 
 public partial class Result
 {

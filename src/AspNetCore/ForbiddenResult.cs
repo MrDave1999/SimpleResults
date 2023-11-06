@@ -1,4 +1,6 @@
-﻿namespace SimpleResults;
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace SimpleResults;
 
 internal class ForbiddenResult : ObjectResult
 {

@@ -1,4 +1,7 @@
-﻿namespace SimpleResults;
+﻿using System;
+using SimpleResults.Resources;
+
+namespace SimpleResults;
 
 /// <summary>
 /// Represents paged information.

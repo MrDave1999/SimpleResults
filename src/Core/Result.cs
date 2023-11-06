@@ -1,4 +1,8 @@
-﻿namespace SimpleResults;
+﻿using System;
+using System.Collections.Generic;
+using SimpleResults.Resources;
+
+namespace SimpleResults;
 
 /// <summary>
 /// Represents the result of an operation that does not return a value.

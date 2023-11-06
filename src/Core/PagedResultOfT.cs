@@ -1,4 +1,7 @@
-﻿namespace SimpleResults;
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace SimpleResults;
 
 /// <summary>
 /// Represents the paged result of an operation.

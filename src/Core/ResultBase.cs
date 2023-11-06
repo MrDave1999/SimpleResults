@@ -1,4 +1,9 @@
-﻿namespace SimpleResults;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text.Json.Serialization;
+using SimpleResults.Resources;
+
+namespace SimpleResults;
 
 /// <summary>
 /// Represents the result of an operation.
