@@ -12,6 +12,8 @@ A simple library to implement the Result pattern for returning from services. It
 
 > This library was inspired by [Arcadis.Result](https://github.com/ardalis/Result).
 
+See the [API documentation](https://mrdave1999.github.io/SimpleResults/api/SimpleResults.html) for more information on this project.
+
 ## Index
 
 - [Operation Result Pattern](#operation-result-pattern)
@@ -123,6 +125,8 @@ This library provides four main types:
 With any of these types you can handle errors and at the same time generate errors with the `return` statement.
 
 This approach provides a new way to generate an error using return statements without the need to throw exceptions.
+
+See the [API documentation](https://mrdave1999.github.io/SimpleResults/api/SimpleResults.html) for more information on these types.
 
 ### Using the `Result` type
 
