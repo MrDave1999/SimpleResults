@@ -1,9 +1,12 @@
 ﻿namespace SimpleResults;
 
 /// <summary>
-/// Represents the result of an operation. 
+/// Represents the result of an operation that does not return a value.
 /// </summary>
-/// <remarks>This class defines different types of results for an operation.</remarks>
+/// <remarks>
+/// <para>This class defines different types of results for an operation.</para>
+/// For example: <c>Result.Invalid</c>, <c>Result.NotFound</c>, among others.
+/// </remarks>
 public sealed partial class Result : ResultBase
 {
     /// <summary>

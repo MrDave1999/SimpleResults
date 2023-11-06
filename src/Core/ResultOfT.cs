@@ -1,7 +1,9 @@
 ﻿namespace SimpleResults;
 
+/// <summary>
+/// Represents the result of an operation that returns a value.
+/// </summary>
 /// <typeparam name="T">A value associated to the result.</typeparam>
-/// <inheritdoc cref="ResultBase" />
 public sealed class Result<T> : ResultBase
 {
     /// <summary>

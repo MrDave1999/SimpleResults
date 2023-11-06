@@ -32,12 +32,30 @@ public sealed class ListedResult<T> : ResultBase
     public static implicit operator ListedResult<T>(Result result)
         => result.ToListedResult(Enumerable.Empty<T>());
 
+    /// <summary>
+    /// Converts an instance of type <see cref="Result{T}"/> to <see cref="ListedResult{T}"/>.
+    /// </summary>
+    /// <param name="result">
+    /// An instance of type <see cref="Result{T}"/> where <c>T</c> is of type <see cref="IEnumerable{T}"/>.
+    /// </param>
     public static implicit operator ListedResult<T>(Result<IEnumerable<T>> result)
         => CreateInstance(result, result.Data);
 
+    /// <summary>
+    /// Converts an instance of type <see cref="Result{T}"/> to <see cref="ListedResult{T}"/>.
+    /// </summary>
+    /// <param name="result">
+    /// An instance of type <see cref="Result{T}"/> where <c>T</c> is of type <see cref="List{T}"/>.
+    /// </param>
     public static implicit operator ListedResult<T>(Result<List<T>> result)
         => CreateInstance(result, result.Data);
 
+    /// <summary>
+    /// Converts an instance of type <see cref="Result{T}"/> to <see cref="ListedResult{T}"/>.
+    /// </summary>
+    /// <param name="result">
+    /// An instance of type <see cref="Result{T}"/> where <c>T</c> is of type <see cref="Array"/>.
+    /// </param>
     public static implicit operator ListedResult<T>(Result<T[]> result)
         => CreateInstance(result, result.Data);
 }
