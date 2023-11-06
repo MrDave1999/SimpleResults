@@ -1,0 +1,1033 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: SimpleResults
+  name: SimpleResults
+  href: api/SimpleResults.html
+  commentId: N:SimpleResults
+  fullName: SimpleResults
+  nameWithType: SimpleResults
+- uid: SimpleResults.CreatedGuid
+  name: CreatedGuid
+  href: api/SimpleResults.CreatedGuid.html
+  commentId: T:SimpleResults.CreatedGuid
+  fullName: SimpleResults.CreatedGuid
+  nameWithType: CreatedGuid
+- uid: SimpleResults.CreatedGuid.#ctor
+  name: CreatedGuid()
+  href: api/SimpleResults.CreatedGuid.-ctor.html#SimpleResults_CreatedGuid__ctor
+  commentId: M:SimpleResults.CreatedGuid.#ctor
+  fullName: SimpleResults.CreatedGuid.CreatedGuid()
+  nameWithType: CreatedGuid.CreatedGuid()
+- uid: SimpleResults.CreatedGuid.#ctor*
+  name: CreatedGuid
+  href: api/SimpleResults.CreatedGuid.-ctor.html
+  commentId: Overload:SimpleResults.CreatedGuid.#ctor
+  fullName: SimpleResults.CreatedGuid.CreatedGuid
+  nameWithType: CreatedGuid.CreatedGuid
+- uid: SimpleResults.CreatedGuid.Id
+  name: Id
+  href: api/SimpleResults.CreatedGuid.Id.html#SimpleResults_CreatedGuid_Id
+  commentId: P:SimpleResults.CreatedGuid.Id
+  fullName: SimpleResults.CreatedGuid.Id
+  nameWithType: CreatedGuid.Id
+- uid: SimpleResults.CreatedGuid.Id*
+  name: Id
+  href: api/SimpleResults.CreatedGuid.Id.html
+  commentId: Overload:SimpleResults.CreatedGuid.Id
+  fullName: SimpleResults.CreatedGuid.Id
+  nameWithType: CreatedGuid.Id
+- uid: SimpleResults.CreatedId
+  name: CreatedId
+  href: api/SimpleResults.CreatedId.html
+  commentId: T:SimpleResults.CreatedId
+  fullName: SimpleResults.CreatedId
+  nameWithType: CreatedId
+- uid: SimpleResults.CreatedId.#ctor
+  name: CreatedId()
+  href: api/SimpleResults.CreatedId.-ctor.html#SimpleResults_CreatedId__ctor
+  commentId: M:SimpleResults.CreatedId.#ctor
+  fullName: SimpleResults.CreatedId.CreatedId()
+  nameWithType: CreatedId.CreatedId()
+- uid: SimpleResults.CreatedId.#ctor*
+  name: CreatedId
+  href: api/SimpleResults.CreatedId.-ctor.html
+  commentId: Overload:SimpleResults.CreatedId.#ctor
+  fullName: SimpleResults.CreatedId.CreatedId
+  nameWithType: CreatedId.CreatedId
+- uid: SimpleResults.CreatedId.Id
+  name: Id
+  href: api/SimpleResults.CreatedId.Id.html#SimpleResults_CreatedId_Id
+  commentId: P:SimpleResults.CreatedId.Id
+  fullName: SimpleResults.CreatedId.Id
+  nameWithType: CreatedId.Id
+- uid: SimpleResults.CreatedId.Id*
+  name: Id
+  href: api/SimpleResults.CreatedId.Id.html
+  commentId: Overload:SimpleResults.CreatedId.Id
+  fullName: SimpleResults.CreatedId.Id
+  nameWithType: CreatedId.Id
+- uid: SimpleResults.ListedResult`1
+  name: ListedResult<T>
+  href: api/SimpleResults.ListedResult-1.html
+  commentId: T:SimpleResults.ListedResult`1
+  name.vb: ListedResult(Of T)
+  fullName: SimpleResults.ListedResult<T>
+  fullName.vb: SimpleResults.ListedResult(Of T)
+  nameWithType: ListedResult<T>
+  nameWithType.vb: ListedResult(Of T)
+- uid: SimpleResults.ListedResult`1.#ctor
+  name: ListedResult()
+  href: api/SimpleResults.ListedResult-1.-ctor.html#SimpleResults_ListedResult_1__ctor
+  commentId: M:SimpleResults.ListedResult`1.#ctor
+  fullName: SimpleResults.ListedResult<T>.ListedResult()
+  fullName.vb: SimpleResults.ListedResult(Of T).ListedResult()
+  nameWithType: ListedResult<T>.ListedResult()
+  nameWithType.vb: ListedResult(Of T).ListedResult()
+- uid: SimpleResults.ListedResult`1.#ctor*
+  name: ListedResult
+  href: api/SimpleResults.ListedResult-1.-ctor.html
+  commentId: Overload:SimpleResults.ListedResult`1.#ctor
+  fullName: SimpleResults.ListedResult<T>.ListedResult
+  fullName.vb: SimpleResults.ListedResult(Of T).ListedResult
+  nameWithType: ListedResult<T>.ListedResult
+  nameWithType.vb: ListedResult(Of T).ListedResult
+- uid: SimpleResults.ListedResult`1.Data
+  name: Data
+  href: api/SimpleResults.ListedResult-1.Data.html#SimpleResults_ListedResult_1_Data
+  commentId: P:SimpleResults.ListedResult`1.Data
+  fullName: SimpleResults.ListedResult<T>.Data
+  fullName.vb: SimpleResults.ListedResult(Of T).Data
+  nameWithType: ListedResult<T>.Data
+  nameWithType.vb: ListedResult(Of T).Data
+- uid: SimpleResults.ListedResult`1.Data*
+  name: Data
+  href: api/SimpleResults.ListedResult-1.Data.html
+  commentId: Overload:SimpleResults.ListedResult`1.Data
+  fullName: SimpleResults.ListedResult<T>.Data
+  fullName.vb: SimpleResults.ListedResult(Of T).Data
+  nameWithType: ListedResult<T>.Data
+  nameWithType.vb: ListedResult(Of T).Data
+- uid: SimpleResults.ListedResult`1.op_Implicit(SimpleResults.Result)~SimpleResults.ListedResult{`0}
+  name: Implicit(Result to ListedResult<T>)
+  href: api/SimpleResults.ListedResult-1.op_Implicit.html#SimpleResults_ListedResult_1_op_Implicit_SimpleResults_Result__SimpleResults_ListedResult__0_
+  commentId: M:SimpleResults.ListedResult`1.op_Implicit(SimpleResults.Result)~SimpleResults.ListedResult{`0}
+  name.vb: Widening(Result to ListedResult(Of T))
+  fullName: SimpleResults.ListedResult<T>.Implicit(SimpleResults.Result to SimpleResults.ListedResult<T>)
+  fullName.vb: SimpleResults.ListedResult(Of T).Widening(SimpleResults.Result to SimpleResults.ListedResult(Of T))
+  nameWithType: ListedResult<T>.Implicit(Result to ListedResult<T>)
+  nameWithType.vb: ListedResult(Of T).Widening(Result to ListedResult(Of T))
+- uid: SimpleResults.ListedResult`1.op_Implicit(SimpleResults.Result{`0[]})~SimpleResults.ListedResult{`0}
+  name: Implicit(Result<T[]> to ListedResult<T>)
+  href: api/SimpleResults.ListedResult-1.op_Implicit.html#SimpleResults_ListedResult_1_op_Implicit_SimpleResults_Result__0_____SimpleResults_ListedResult__0_
+  commentId: M:SimpleResults.ListedResult`1.op_Implicit(SimpleResults.Result{`0[]})~SimpleResults.ListedResult{`0}
+  name.vb: Widening(Result(Of T()) to ListedResult(Of T))
+  fullName: SimpleResults.ListedResult<T>.Implicit(SimpleResults.Result<T[]> to SimpleResults.ListedResult<T>)
+  fullName.vb: SimpleResults.ListedResult(Of T).Widening(SimpleResults.Result(Of T()) to SimpleResults.ListedResult(Of T))
+  nameWithType: ListedResult<T>.Implicit(Result<T[]> to ListedResult<T>)
+  nameWithType.vb: ListedResult(Of T).Widening(Result(Of T()) to ListedResult(Of T))
+- uid: SimpleResults.ListedResult`1.op_Implicit(SimpleResults.Result{System.Collections.Generic.IEnumerable{`0}})~SimpleResults.ListedResult{`0}
+  name: Implicit(Result<IEnumerable<T>> to ListedResult<T>)
+  href: api/SimpleResults.ListedResult-1.op_Implicit.html#SimpleResults_ListedResult_1_op_Implicit_SimpleResults_Result_System_Collections_Generic_IEnumerable__0____SimpleResults_ListedResult__0_
+  commentId: M:SimpleResults.ListedResult`1.op_Implicit(SimpleResults.Result{System.Collections.Generic.IEnumerable{`0}})~SimpleResults.ListedResult{`0}
+  name.vb: Widening(Result(Of IEnumerable(Of T)) to ListedResult(Of T))
+  fullName: SimpleResults.ListedResult<T>.Implicit(SimpleResults.Result<System.Collections.Generic.IEnumerable<T>> to SimpleResults.ListedResult<T>)
+  fullName.vb: SimpleResults.ListedResult(Of T).Widening(SimpleResults.Result(Of System.Collections.Generic.IEnumerable(Of T)) to SimpleResults.ListedResult(Of T))
+  nameWithType: ListedResult<T>.Implicit(Result<IEnumerable<T>> to ListedResult<T>)
+  nameWithType.vb: ListedResult(Of T).Widening(Result(Of IEnumerable(Of T)) to ListedResult(Of T))
+- uid: SimpleResults.ListedResult`1.op_Implicit(SimpleResults.Result{System.Collections.Generic.List{`0}})~SimpleResults.ListedResult{`0}
+  name: Implicit(Result<List<T>> to ListedResult<T>)
+  href: api/SimpleResults.ListedResult-1.op_Implicit.html#SimpleResults_ListedResult_1_op_Implicit_SimpleResults_Result_System_Collections_Generic_List__0____SimpleResults_ListedResult__0_
+  commentId: M:SimpleResults.ListedResult`1.op_Implicit(SimpleResults.Result{System.Collections.Generic.List{`0}})~SimpleResults.ListedResult{`0}
+  name.vb: Widening(Result(Of List(Of T)) to ListedResult(Of T))
+  fullName: SimpleResults.ListedResult<T>.Implicit(SimpleResults.Result<System.Collections.Generic.List<T>> to SimpleResults.ListedResult<T>)
+  fullName.vb: SimpleResults.ListedResult(Of T).Widening(SimpleResults.Result(Of System.Collections.Generic.List(Of T)) to SimpleResults.ListedResult(Of T))
+  nameWithType: ListedResult<T>.Implicit(Result<List<T>> to ListedResult<T>)
+  nameWithType.vb: ListedResult(Of T).Widening(Result(Of List(Of T)) to ListedResult(Of T))
+- uid: SimpleResults.ListedResult`1.op_Implicit*
+  name: Implicit
+  href: api/SimpleResults.ListedResult-1.op_Implicit.html
+  commentId: Overload:SimpleResults.ListedResult`1.op_Implicit
+  name.vb: Widening
+  fullName: SimpleResults.ListedResult<T>.Implicit
+  fullName.vb: SimpleResults.ListedResult(Of T).Widening
+  nameWithType: ListedResult<T>.Implicit
+  nameWithType.vb: ListedResult(Of T).Widening
+- uid: SimpleResults.PagedInfo
+  name: PagedInfo
+  href: api/SimpleResults.PagedInfo.html
+  commentId: T:SimpleResults.PagedInfo
+  fullName: SimpleResults.PagedInfo
+  nameWithType: PagedInfo
+- uid: SimpleResults.PagedInfo.#ctor(System.Int32,System.Int32,System.Int32)
+  name: PagedInfo(Int32, Int32, Int32)
+  href: api/SimpleResults.PagedInfo.-ctor.html#SimpleResults_PagedInfo__ctor_System_Int32_System_Int32_System_Int32_
+  commentId: M:SimpleResults.PagedInfo.#ctor(System.Int32,System.Int32,System.Int32)
+  fullName: SimpleResults.PagedInfo.PagedInfo(System.Int32, System.Int32, System.Int32)
+  nameWithType: PagedInfo.PagedInfo(Int32, Int32, Int32)
+- uid: SimpleResults.PagedInfo.#ctor*
+  name: PagedInfo
+  href: api/SimpleResults.PagedInfo.-ctor.html
+  commentId: Overload:SimpleResults.PagedInfo.#ctor
+  fullName: SimpleResults.PagedInfo.PagedInfo
+  nameWithType: PagedInfo.PagedInfo
+- uid: SimpleResults.PagedInfo.HasNext
+  name: HasNext
+  href: api/SimpleResults.PagedInfo.HasNext.html#SimpleResults_PagedInfo_HasNext
+  commentId: P:SimpleResults.PagedInfo.HasNext
+  fullName: SimpleResults.PagedInfo.HasNext
+  nameWithType: PagedInfo.HasNext
+- uid: SimpleResults.PagedInfo.HasNext*
+  name: HasNext
+  href: api/SimpleResults.PagedInfo.HasNext.html
+  commentId: Overload:SimpleResults.PagedInfo.HasNext
+  fullName: SimpleResults.PagedInfo.HasNext
+  nameWithType: PagedInfo.HasNext
+- uid: SimpleResults.PagedInfo.HasPrevious
+  name: HasPrevious
+  href: api/SimpleResults.PagedInfo.HasPrevious.html#SimpleResults_PagedInfo_HasPrevious
+  commentId: P:SimpleResults.PagedInfo.HasPrevious
+  fullName: SimpleResults.PagedInfo.HasPrevious
+  nameWithType: PagedInfo.HasPrevious
+- uid: SimpleResults.PagedInfo.HasPrevious*
+  name: HasPrevious
+  href: api/SimpleResults.PagedInfo.HasPrevious.html
+  commentId: Overload:SimpleResults.PagedInfo.HasPrevious
+  fullName: SimpleResults.PagedInfo.HasPrevious
+  nameWithType: PagedInfo.HasPrevious
+- uid: SimpleResults.PagedInfo.PageNumber
+  name: PageNumber
+  href: api/SimpleResults.PagedInfo.PageNumber.html#SimpleResults_PagedInfo_PageNumber
+  commentId: P:SimpleResults.PagedInfo.PageNumber
+  fullName: SimpleResults.PagedInfo.PageNumber
+  nameWithType: PagedInfo.PageNumber
+- uid: SimpleResults.PagedInfo.PageNumber*
+  name: PageNumber
+  href: api/SimpleResults.PagedInfo.PageNumber.html
+  commentId: Overload:SimpleResults.PagedInfo.PageNumber
+  fullName: SimpleResults.PagedInfo.PageNumber
+  nameWithType: PagedInfo.PageNumber
+- uid: SimpleResults.PagedInfo.PageSize
+  name: PageSize
+  href: api/SimpleResults.PagedInfo.PageSize.html#SimpleResults_PagedInfo_PageSize
+  commentId: P:SimpleResults.PagedInfo.PageSize
+  fullName: SimpleResults.PagedInfo.PageSize
+  nameWithType: PagedInfo.PageSize
+- uid: SimpleResults.PagedInfo.PageSize*
+  name: PageSize
+  href: api/SimpleResults.PagedInfo.PageSize.html
+  commentId: Overload:SimpleResults.PagedInfo.PageSize
+  fullName: SimpleResults.PagedInfo.PageSize
+  nameWithType: PagedInfo.PageSize
+- uid: SimpleResults.PagedInfo.TotalPages
+  name: TotalPages
+  href: api/SimpleResults.PagedInfo.TotalPages.html#SimpleResults_PagedInfo_TotalPages
+  commentId: P:SimpleResults.PagedInfo.TotalPages
+  fullName: SimpleResults.PagedInfo.TotalPages
+  nameWithType: PagedInfo.TotalPages
+- uid: SimpleResults.PagedInfo.TotalPages*
+  name: TotalPages
+  href: api/SimpleResults.PagedInfo.TotalPages.html
+  commentId: Overload:SimpleResults.PagedInfo.TotalPages
+  fullName: SimpleResults.PagedInfo.TotalPages
+  nameWithType: PagedInfo.TotalPages
+- uid: SimpleResults.PagedInfo.TotalRecords
+  name: TotalRecords
+  href: api/SimpleResults.PagedInfo.TotalRecords.html#SimpleResults_PagedInfo_TotalRecords
+  commentId: P:SimpleResults.PagedInfo.TotalRecords
+  fullName: SimpleResults.PagedInfo.TotalRecords
+  nameWithType: PagedInfo.TotalRecords
+- uid: SimpleResults.PagedInfo.TotalRecords*
+  name: TotalRecords
+  href: api/SimpleResults.PagedInfo.TotalRecords.html
+  commentId: Overload:SimpleResults.PagedInfo.TotalRecords
+  fullName: SimpleResults.PagedInfo.TotalRecords
+  nameWithType: PagedInfo.TotalRecords
+- uid: SimpleResults.PagedResult`1
+  name: PagedResult<T>
+  href: api/SimpleResults.PagedResult-1.html
+  commentId: T:SimpleResults.PagedResult`1
+  name.vb: PagedResult(Of T)
+  fullName: SimpleResults.PagedResult<T>
+  fullName.vb: SimpleResults.PagedResult(Of T)
+  nameWithType: PagedResult<T>
+  nameWithType.vb: PagedResult(Of T)
+- uid: SimpleResults.PagedResult`1.#ctor
+  name: PagedResult()
+  href: api/SimpleResults.PagedResult-1.-ctor.html#SimpleResults_PagedResult_1__ctor
+  commentId: M:SimpleResults.PagedResult`1.#ctor
+  fullName: SimpleResults.PagedResult<T>.PagedResult()
+  fullName.vb: SimpleResults.PagedResult(Of T).PagedResult()
+  nameWithType: PagedResult<T>.PagedResult()
+  nameWithType.vb: PagedResult(Of T).PagedResult()
+- uid: SimpleResults.PagedResult`1.#ctor*
+  name: PagedResult
+  href: api/SimpleResults.PagedResult-1.-ctor.html
+  commentId: Overload:SimpleResults.PagedResult`1.#ctor
+  fullName: SimpleResults.PagedResult<T>.PagedResult
+  fullName.vb: SimpleResults.PagedResult(Of T).PagedResult
+  nameWithType: PagedResult<T>.PagedResult
+  nameWithType.vb: PagedResult(Of T).PagedResult
+- uid: SimpleResults.PagedResult`1.Data
+  name: Data
+  href: api/SimpleResults.PagedResult-1.Data.html#SimpleResults_PagedResult_1_Data
+  commentId: P:SimpleResults.PagedResult`1.Data
+  fullName: SimpleResults.PagedResult<T>.Data
+  fullName.vb: SimpleResults.PagedResult(Of T).Data
+  nameWithType: PagedResult<T>.Data
+  nameWithType.vb: PagedResult(Of T).Data
+- uid: SimpleResults.PagedResult`1.Data*
+  name: Data
+  href: api/SimpleResults.PagedResult-1.Data.html
+  commentId: Overload:SimpleResults.PagedResult`1.Data
+  fullName: SimpleResults.PagedResult<T>.Data
+  fullName.vb: SimpleResults.PagedResult(Of T).Data
+  nameWithType: PagedResult<T>.Data
+  nameWithType.vb: PagedResult(Of T).Data
+- uid: SimpleResults.PagedResult`1.op_Implicit(SimpleResults.Result)~SimpleResults.PagedResult{`0}
+  name: Implicit(Result to PagedResult<T>)
+  href: api/SimpleResults.PagedResult-1.op_Implicit.html#SimpleResults_PagedResult_1_op_Implicit_SimpleResults_Result__SimpleResults_PagedResult__0_
+  commentId: M:SimpleResults.PagedResult`1.op_Implicit(SimpleResults.Result)~SimpleResults.PagedResult{`0}
+  name.vb: Widening(Result to PagedResult(Of T))
+  fullName: SimpleResults.PagedResult<T>.Implicit(SimpleResults.Result to SimpleResults.PagedResult<T>)
+  fullName.vb: SimpleResults.PagedResult(Of T).Widening(SimpleResults.Result to SimpleResults.PagedResult(Of T))
+  nameWithType: PagedResult<T>.Implicit(Result to PagedResult<T>)
+  nameWithType.vb: PagedResult(Of T).Widening(Result to PagedResult(Of T))
+- uid: SimpleResults.PagedResult`1.op_Implicit*
+  name: Implicit
+  href: api/SimpleResults.PagedResult-1.op_Implicit.html
+  commentId: Overload:SimpleResults.PagedResult`1.op_Implicit
+  name.vb: Widening
+  fullName: SimpleResults.PagedResult<T>.Implicit
+  fullName.vb: SimpleResults.PagedResult(Of T).Widening
+  nameWithType: PagedResult<T>.Implicit
+  nameWithType.vb: PagedResult(Of T).Widening
+- uid: SimpleResults.PagedResult`1.PagedInfo
+  name: PagedInfo
+  href: api/SimpleResults.PagedResult-1.PagedInfo.html#SimpleResults_PagedResult_1_PagedInfo
+  commentId: P:SimpleResults.PagedResult`1.PagedInfo
+  fullName: SimpleResults.PagedResult<T>.PagedInfo
+  fullName.vb: SimpleResults.PagedResult(Of T).PagedInfo
+  nameWithType: PagedResult<T>.PagedInfo
+  nameWithType.vb: PagedResult(Of T).PagedInfo
+- uid: SimpleResults.PagedResult`1.PagedInfo*
+  name: PagedInfo
+  href: api/SimpleResults.PagedResult-1.PagedInfo.html
+  commentId: Overload:SimpleResults.PagedResult`1.PagedInfo
+  fullName: SimpleResults.PagedResult<T>.PagedInfo
+  fullName.vb: SimpleResults.PagedResult(Of T).PagedInfo
+  nameWithType: PagedResult<T>.PagedInfo
+  nameWithType.vb: PagedResult(Of T).PagedInfo
+- uid: SimpleResults.Result
+  name: Result
+  href: api/SimpleResults.Result.html
+  commentId: T:SimpleResults.Result
+  fullName: SimpleResults.Result
+  nameWithType: Result
+- uid: SimpleResults.Result.#ctor
+  name: Result()
+  href: api/SimpleResults.Result.-ctor.html#SimpleResults_Result__ctor
+  commentId: M:SimpleResults.Result.#ctor
+  fullName: SimpleResults.Result.Result()
+  nameWithType: Result.Result()
+- uid: SimpleResults.Result.#ctor*
+  name: Result
+  href: api/SimpleResults.Result.-ctor.html
+  commentId: Overload:SimpleResults.Result.#ctor
+  fullName: SimpleResults.Result.Result
+  nameWithType: Result.Result
+- uid: SimpleResults.Result.Conflict
+  name: Conflict()
+  href: api/SimpleResults.Result.Conflict.html#SimpleResults_Result_Conflict
+  commentId: M:SimpleResults.Result.Conflict
+  fullName: SimpleResults.Result.Conflict()
+  nameWithType: Result.Conflict()
+- uid: SimpleResults.Result.Conflict(System.Collections.Generic.IEnumerable{System.String})
+  name: Conflict(IEnumerable<String>)
+  href: api/SimpleResults.Result.Conflict.html#SimpleResults_Result_Conflict_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:SimpleResults.Result.Conflict(System.Collections.Generic.IEnumerable{System.String})
+  name.vb: Conflict(IEnumerable(Of String))
+  fullName: SimpleResults.Result.Conflict(System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: SimpleResults.Result.Conflict(System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: Result.Conflict(IEnumerable<String>)
+  nameWithType.vb: Result.Conflict(IEnumerable(Of String))
+- uid: SimpleResults.Result.Conflict(System.String)
+  name: Conflict(String)
+  href: api/SimpleResults.Result.Conflict.html#SimpleResults_Result_Conflict_System_String_
+  commentId: M:SimpleResults.Result.Conflict(System.String)
+  fullName: SimpleResults.Result.Conflict(System.String)
+  nameWithType: Result.Conflict(String)
+- uid: SimpleResults.Result.Conflict(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name: Conflict(String, IEnumerable<String>)
+  href: api/SimpleResults.Result.Conflict.html#SimpleResults_Result_Conflict_System_String_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:SimpleResults.Result.Conflict(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name.vb: Conflict(String, IEnumerable(Of String))
+  fullName: SimpleResults.Result.Conflict(System.String, System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: SimpleResults.Result.Conflict(System.String, System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: Result.Conflict(String, IEnumerable<String>)
+  nameWithType.vb: Result.Conflict(String, IEnumerable(Of String))
+- uid: SimpleResults.Result.Conflict*
+  name: Conflict
+  href: api/SimpleResults.Result.Conflict.html
+  commentId: Overload:SimpleResults.Result.Conflict
+  fullName: SimpleResults.Result.Conflict
+  nameWithType: Result.Conflict
+- uid: SimpleResults.Result.CreatedResource
+  name: CreatedResource()
+  href: api/SimpleResults.Result.CreatedResource.html#SimpleResults_Result_CreatedResource
+  commentId: M:SimpleResults.Result.CreatedResource
+  fullName: SimpleResults.Result.CreatedResource()
+  nameWithType: Result.CreatedResource()
+- uid: SimpleResults.Result.CreatedResource(System.Guid)
+  name: CreatedResource(Guid)
+  href: api/SimpleResults.Result.CreatedResource.html#SimpleResults_Result_CreatedResource_System_Guid_
+  commentId: M:SimpleResults.Result.CreatedResource(System.Guid)
+  fullName: SimpleResults.Result.CreatedResource(System.Guid)
+  nameWithType: Result.CreatedResource(Guid)
+- uid: SimpleResults.Result.CreatedResource(System.Guid,System.String)
+  name: CreatedResource(Guid, String)
+  href: api/SimpleResults.Result.CreatedResource.html#SimpleResults_Result_CreatedResource_System_Guid_System_String_
+  commentId: M:SimpleResults.Result.CreatedResource(System.Guid,System.String)
+  fullName: SimpleResults.Result.CreatedResource(System.Guid, System.String)
+  nameWithType: Result.CreatedResource(Guid, String)
+- uid: SimpleResults.Result.CreatedResource(System.Int32)
+  name: CreatedResource(Int32)
+  href: api/SimpleResults.Result.CreatedResource.html#SimpleResults_Result_CreatedResource_System_Int32_
+  commentId: M:SimpleResults.Result.CreatedResource(System.Int32)
+  fullName: SimpleResults.Result.CreatedResource(System.Int32)
+  nameWithType: Result.CreatedResource(Int32)
+- uid: SimpleResults.Result.CreatedResource(System.Int32,System.String)
+  name: CreatedResource(Int32, String)
+  href: api/SimpleResults.Result.CreatedResource.html#SimpleResults_Result_CreatedResource_System_Int32_System_String_
+  commentId: M:SimpleResults.Result.CreatedResource(System.Int32,System.String)
+  fullName: SimpleResults.Result.CreatedResource(System.Int32, System.String)
+  nameWithType: Result.CreatedResource(Int32, String)
+- uid: SimpleResults.Result.CreatedResource(System.String)
+  name: CreatedResource(String)
+  href: api/SimpleResults.Result.CreatedResource.html#SimpleResults_Result_CreatedResource_System_String_
+  commentId: M:SimpleResults.Result.CreatedResource(System.String)
+  fullName: SimpleResults.Result.CreatedResource(System.String)
+  nameWithType: Result.CreatedResource(String)
+- uid: SimpleResults.Result.CreatedResource*
+  name: CreatedResource
+  href: api/SimpleResults.Result.CreatedResource.html
+  commentId: Overload:SimpleResults.Result.CreatedResource
+  fullName: SimpleResults.Result.CreatedResource
+  nameWithType: Result.CreatedResource
+- uid: SimpleResults.Result.CriticalError
+  name: CriticalError()
+  href: api/SimpleResults.Result.CriticalError.html#SimpleResults_Result_CriticalError
+  commentId: M:SimpleResults.Result.CriticalError
+  fullName: SimpleResults.Result.CriticalError()
+  nameWithType: Result.CriticalError()
+- uid: SimpleResults.Result.CriticalError(System.Collections.Generic.IEnumerable{System.String})
+  name: CriticalError(IEnumerable<String>)
+  href: api/SimpleResults.Result.CriticalError.html#SimpleResults_Result_CriticalError_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:SimpleResults.Result.CriticalError(System.Collections.Generic.IEnumerable{System.String})
+  name.vb: CriticalError(IEnumerable(Of String))
+  fullName: SimpleResults.Result.CriticalError(System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: SimpleResults.Result.CriticalError(System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: Result.CriticalError(IEnumerable<String>)
+  nameWithType.vb: Result.CriticalError(IEnumerable(Of String))
+- uid: SimpleResults.Result.CriticalError(System.String)
+  name: CriticalError(String)
+  href: api/SimpleResults.Result.CriticalError.html#SimpleResults_Result_CriticalError_System_String_
+  commentId: M:SimpleResults.Result.CriticalError(System.String)
+  fullName: SimpleResults.Result.CriticalError(System.String)
+  nameWithType: Result.CriticalError(String)
+- uid: SimpleResults.Result.CriticalError(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name: CriticalError(String, IEnumerable<String>)
+  href: api/SimpleResults.Result.CriticalError.html#SimpleResults_Result_CriticalError_System_String_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:SimpleResults.Result.CriticalError(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name.vb: CriticalError(String, IEnumerable(Of String))
+  fullName: SimpleResults.Result.CriticalError(System.String, System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: SimpleResults.Result.CriticalError(System.String, System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: Result.CriticalError(String, IEnumerable<String>)
+  nameWithType.vb: Result.CriticalError(String, IEnumerable(Of String))
+- uid: SimpleResults.Result.CriticalError*
+  name: CriticalError
+  href: api/SimpleResults.Result.CriticalError.html
+  commentId: Overload:SimpleResults.Result.CriticalError
+  fullName: SimpleResults.Result.CriticalError
+  nameWithType: Result.CriticalError
+- uid: SimpleResults.Result.DeletedResource
+  name: DeletedResource()
+  href: api/SimpleResults.Result.DeletedResource.html#SimpleResults_Result_DeletedResource
+  commentId: M:SimpleResults.Result.DeletedResource
+  fullName: SimpleResults.Result.DeletedResource()
+  nameWithType: Result.DeletedResource()
+- uid: SimpleResults.Result.DeletedResource*
+  name: DeletedResource
+  href: api/SimpleResults.Result.DeletedResource.html
+  commentId: Overload:SimpleResults.Result.DeletedResource
+  fullName: SimpleResults.Result.DeletedResource
+  nameWithType: Result.DeletedResource
+- uid: SimpleResults.Result.Failure
+  name: Failure()
+  href: api/SimpleResults.Result.Failure.html#SimpleResults_Result_Failure
+  commentId: M:SimpleResults.Result.Failure
+  fullName: SimpleResults.Result.Failure()
+  nameWithType: Result.Failure()
+- uid: SimpleResults.Result.Failure(System.Collections.Generic.IEnumerable{System.String})
+  name: Failure(IEnumerable<String>)
+  href: api/SimpleResults.Result.Failure.html#SimpleResults_Result_Failure_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:SimpleResults.Result.Failure(System.Collections.Generic.IEnumerable{System.String})
+  name.vb: Failure(IEnumerable(Of String))
+  fullName: SimpleResults.Result.Failure(System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: SimpleResults.Result.Failure(System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: Result.Failure(IEnumerable<String>)
+  nameWithType.vb: Result.Failure(IEnumerable(Of String))
+- uid: SimpleResults.Result.Failure(System.String)
+  name: Failure(String)
+  href: api/SimpleResults.Result.Failure.html#SimpleResults_Result_Failure_System_String_
+  commentId: M:SimpleResults.Result.Failure(System.String)
+  fullName: SimpleResults.Result.Failure(System.String)
+  nameWithType: Result.Failure(String)
+- uid: SimpleResults.Result.Failure(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name: Failure(String, IEnumerable<String>)
+  href: api/SimpleResults.Result.Failure.html#SimpleResults_Result_Failure_System_String_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:SimpleResults.Result.Failure(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name.vb: Failure(String, IEnumerable(Of String))
+  fullName: SimpleResults.Result.Failure(System.String, System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: SimpleResults.Result.Failure(System.String, System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: Result.Failure(String, IEnumerable<String>)
+  nameWithType.vb: Result.Failure(String, IEnumerable(Of String))
+- uid: SimpleResults.Result.Failure*
+  name: Failure
+  href: api/SimpleResults.Result.Failure.html
+  commentId: Overload:SimpleResults.Result.Failure
+  fullName: SimpleResults.Result.Failure
+  nameWithType: Result.Failure
+- uid: SimpleResults.Result.Forbidden
+  name: Forbidden()
+  href: api/SimpleResults.Result.Forbidden.html#SimpleResults_Result_Forbidden
+  commentId: M:SimpleResults.Result.Forbidden
+  fullName: SimpleResults.Result.Forbidden()
+  nameWithType: Result.Forbidden()
+- uid: SimpleResults.Result.Forbidden(System.Collections.Generic.IEnumerable{System.String})
+  name: Forbidden(IEnumerable<String>)
+  href: api/SimpleResults.Result.Forbidden.html#SimpleResults_Result_Forbidden_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:SimpleResults.Result.Forbidden(System.Collections.Generic.IEnumerable{System.String})
+  name.vb: Forbidden(IEnumerable(Of String))
+  fullName: SimpleResults.Result.Forbidden(System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: SimpleResults.Result.Forbidden(System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: Result.Forbidden(IEnumerable<String>)
+  nameWithType.vb: Result.Forbidden(IEnumerable(Of String))
+- uid: SimpleResults.Result.Forbidden(System.String)
+  name: Forbidden(String)
+  href: api/SimpleResults.Result.Forbidden.html#SimpleResults_Result_Forbidden_System_String_
+  commentId: M:SimpleResults.Result.Forbidden(System.String)
+  fullName: SimpleResults.Result.Forbidden(System.String)
+  nameWithType: Result.Forbidden(String)
+- uid: SimpleResults.Result.Forbidden(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name: Forbidden(String, IEnumerable<String>)
+  href: api/SimpleResults.Result.Forbidden.html#SimpleResults_Result_Forbidden_System_String_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:SimpleResults.Result.Forbidden(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name.vb: Forbidden(String, IEnumerable(Of String))
+  fullName: SimpleResults.Result.Forbidden(System.String, System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: SimpleResults.Result.Forbidden(System.String, System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: Result.Forbidden(String, IEnumerable<String>)
+  nameWithType.vb: Result.Forbidden(String, IEnumerable(Of String))
+- uid: SimpleResults.Result.Forbidden*
+  name: Forbidden
+  href: api/SimpleResults.Result.Forbidden.html
+  commentId: Overload:SimpleResults.Result.Forbidden
+  fullName: SimpleResults.Result.Forbidden
+  nameWithType: Result.Forbidden
+- uid: SimpleResults.Result.Invalid
+  name: Invalid()
+  href: api/SimpleResults.Result.Invalid.html#SimpleResults_Result_Invalid
+  commentId: M:SimpleResults.Result.Invalid
+  fullName: SimpleResults.Result.Invalid()
+  nameWithType: Result.Invalid()
+- uid: SimpleResults.Result.Invalid(System.Collections.Generic.IEnumerable{System.String})
+  name: Invalid(IEnumerable<String>)
+  href: api/SimpleResults.Result.Invalid.html#SimpleResults_Result_Invalid_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:SimpleResults.Result.Invalid(System.Collections.Generic.IEnumerable{System.String})
+  name.vb: Invalid(IEnumerable(Of String))
+  fullName: SimpleResults.Result.Invalid(System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: SimpleResults.Result.Invalid(System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: Result.Invalid(IEnumerable<String>)
+  nameWithType.vb: Result.Invalid(IEnumerable(Of String))
+- uid: SimpleResults.Result.Invalid(System.String)
+  name: Invalid(String)
+  href: api/SimpleResults.Result.Invalid.html#SimpleResults_Result_Invalid_System_String_
+  commentId: M:SimpleResults.Result.Invalid(System.String)
+  fullName: SimpleResults.Result.Invalid(System.String)
+  nameWithType: Result.Invalid(String)
+- uid: SimpleResults.Result.Invalid(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name: Invalid(String, IEnumerable<String>)
+  href: api/SimpleResults.Result.Invalid.html#SimpleResults_Result_Invalid_System_String_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:SimpleResults.Result.Invalid(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name.vb: Invalid(String, IEnumerable(Of String))
+  fullName: SimpleResults.Result.Invalid(System.String, System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: SimpleResults.Result.Invalid(System.String, System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: Result.Invalid(String, IEnumerable<String>)
+  nameWithType.vb: Result.Invalid(String, IEnumerable(Of String))
+- uid: SimpleResults.Result.Invalid*
+  name: Invalid
+  href: api/SimpleResults.Result.Invalid.html
+  commentId: Overload:SimpleResults.Result.Invalid
+  fullName: SimpleResults.Result.Invalid
+  nameWithType: Result.Invalid
+- uid: SimpleResults.Result.NotFound
+  name: NotFound()
+  href: api/SimpleResults.Result.NotFound.html#SimpleResults_Result_NotFound
+  commentId: M:SimpleResults.Result.NotFound
+  fullName: SimpleResults.Result.NotFound()
+  nameWithType: Result.NotFound()
+- uid: SimpleResults.Result.NotFound(System.Collections.Generic.IEnumerable{System.String})
+  name: NotFound(IEnumerable<String>)
+  href: api/SimpleResults.Result.NotFound.html#SimpleResults_Result_NotFound_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:SimpleResults.Result.NotFound(System.Collections.Generic.IEnumerable{System.String})
+  name.vb: NotFound(IEnumerable(Of String))
+  fullName: SimpleResults.Result.NotFound(System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: SimpleResults.Result.NotFound(System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: Result.NotFound(IEnumerable<String>)
+  nameWithType.vb: Result.NotFound(IEnumerable(Of String))
+- uid: SimpleResults.Result.NotFound(System.String)
+  name: NotFound(String)
+  href: api/SimpleResults.Result.NotFound.html#SimpleResults_Result_NotFound_System_String_
+  commentId: M:SimpleResults.Result.NotFound(System.String)
+  fullName: SimpleResults.Result.NotFound(System.String)
+  nameWithType: Result.NotFound(String)
+- uid: SimpleResults.Result.NotFound(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name: NotFound(String, IEnumerable<String>)
+  href: api/SimpleResults.Result.NotFound.html#SimpleResults_Result_NotFound_System_String_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:SimpleResults.Result.NotFound(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name.vb: NotFound(String, IEnumerable(Of String))
+  fullName: SimpleResults.Result.NotFound(System.String, System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: SimpleResults.Result.NotFound(System.String, System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: Result.NotFound(String, IEnumerable<String>)
+  nameWithType.vb: Result.NotFound(String, IEnumerable(Of String))
+- uid: SimpleResults.Result.NotFound*
+  name: NotFound
+  href: api/SimpleResults.Result.NotFound.html
+  commentId: Overload:SimpleResults.Result.NotFound
+  fullName: SimpleResults.Result.NotFound
+  nameWithType: Result.NotFound
+- uid: SimpleResults.Result.ObtainedResource*
+  name: ObtainedResource
+  href: api/SimpleResults.Result.ObtainedResource.html
+  commentId: Overload:SimpleResults.Result.ObtainedResource
+  fullName: SimpleResults.Result.ObtainedResource
+  nameWithType: Result.ObtainedResource
+- uid: SimpleResults.Result.ObtainedResource``1(``0)
+  name: ObtainedResource<T>(T)
+  href: api/SimpleResults.Result.ObtainedResource.html#SimpleResults_Result_ObtainedResource__1___0_
+  commentId: M:SimpleResults.Result.ObtainedResource``1(``0)
+  name.vb: ObtainedResource(Of T)(T)
+  fullName: SimpleResults.Result.ObtainedResource<T>(T)
+  fullName.vb: SimpleResults.Result.ObtainedResource(Of T)(T)
+  nameWithType: Result.ObtainedResource<T>(T)
+  nameWithType.vb: Result.ObtainedResource(Of T)(T)
+- uid: SimpleResults.Result.ObtainedResources*
+  name: ObtainedResources
+  href: api/SimpleResults.Result.ObtainedResources.html
+  commentId: Overload:SimpleResults.Result.ObtainedResources
+  fullName: SimpleResults.Result.ObtainedResources
+  nameWithType: Result.ObtainedResources
+- uid: SimpleResults.Result.ObtainedResources``1(System.Collections.Generic.IEnumerable{``0})
+  name: ObtainedResources<T>(IEnumerable<T>)
+  href: api/SimpleResults.Result.ObtainedResources.html#SimpleResults_Result_ObtainedResources__1_System_Collections_Generic_IEnumerable___0__
+  commentId: M:SimpleResults.Result.ObtainedResources``1(System.Collections.Generic.IEnumerable{``0})
+  name.vb: ObtainedResources(Of T)(IEnumerable(Of T))
+  fullName: SimpleResults.Result.ObtainedResources<T>(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: SimpleResults.Result.ObtainedResources(Of T)(System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: Result.ObtainedResources<T>(IEnumerable<T>)
+  nameWithType.vb: Result.ObtainedResources(Of T)(IEnumerable(Of T))
+- uid: SimpleResults.Result.Success
+  name: Success()
+  href: api/SimpleResults.Result.Success.html#SimpleResults_Result_Success
+  commentId: M:SimpleResults.Result.Success
+  fullName: SimpleResults.Result.Success()
+  nameWithType: Result.Success()
+- uid: SimpleResults.Result.Success(System.String)
+  name: Success(String)
+  href: api/SimpleResults.Result.Success.html#SimpleResults_Result_Success_System_String_
+  commentId: M:SimpleResults.Result.Success(System.String)
+  fullName: SimpleResults.Result.Success(System.String)
+  nameWithType: Result.Success(String)
+- uid: SimpleResults.Result.Success*
+  name: Success
+  href: api/SimpleResults.Result.Success.html
+  commentId: Overload:SimpleResults.Result.Success
+  fullName: SimpleResults.Result.Success
+  nameWithType: Result.Success
+- uid: SimpleResults.Result.Success``1(``0)
+  name: Success<T>(T)
+  href: api/SimpleResults.Result.Success.html#SimpleResults_Result_Success__1___0_
+  commentId: M:SimpleResults.Result.Success``1(``0)
+  name.vb: Success(Of T)(T)
+  fullName: SimpleResults.Result.Success<T>(T)
+  fullName.vb: SimpleResults.Result.Success(Of T)(T)
+  nameWithType: Result.Success<T>(T)
+  nameWithType.vb: Result.Success(Of T)(T)
+- uid: SimpleResults.Result.Success``1(``0,System.String)
+  name: Success<T>(T, String)
+  href: api/SimpleResults.Result.Success.html#SimpleResults_Result_Success__1___0_System_String_
+  commentId: M:SimpleResults.Result.Success``1(``0,System.String)
+  name.vb: Success(Of T)(T, String)
+  fullName: SimpleResults.Result.Success<T>(T, System.String)
+  fullName.vb: SimpleResults.Result.Success(Of T)(T, System.String)
+  nameWithType: Result.Success<T>(T, String)
+  nameWithType.vb: Result.Success(Of T)(T, String)
+- uid: SimpleResults.Result.Success``1(System.Collections.Generic.IEnumerable{``0},SimpleResults.PagedInfo)
+  name: Success<T>(IEnumerable<T>, PagedInfo)
+  href: api/SimpleResults.Result.Success.html#SimpleResults_Result_Success__1_System_Collections_Generic_IEnumerable___0__SimpleResults_PagedInfo_
+  commentId: M:SimpleResults.Result.Success``1(System.Collections.Generic.IEnumerable{``0},SimpleResults.PagedInfo)
+  name.vb: Success(Of T)(IEnumerable(Of T), PagedInfo)
+  fullName: SimpleResults.Result.Success<T>(System.Collections.Generic.IEnumerable<T>, SimpleResults.PagedInfo)
+  fullName.vb: SimpleResults.Result.Success(Of T)(System.Collections.Generic.IEnumerable(Of T), SimpleResults.PagedInfo)
+  nameWithType: Result.Success<T>(IEnumerable<T>, PagedInfo)
+  nameWithType.vb: Result.Success(Of T)(IEnumerable(Of T), PagedInfo)
+- uid: SimpleResults.Result.Success``1(System.Collections.Generic.IEnumerable{``0},SimpleResults.PagedInfo,System.String)
+  name: Success<T>(IEnumerable<T>, PagedInfo, String)
+  href: api/SimpleResults.Result.Success.html#SimpleResults_Result_Success__1_System_Collections_Generic_IEnumerable___0__SimpleResults_PagedInfo_System_String_
+  commentId: M:SimpleResults.Result.Success``1(System.Collections.Generic.IEnumerable{``0},SimpleResults.PagedInfo,System.String)
+  name.vb: Success(Of T)(IEnumerable(Of T), PagedInfo, String)
+  fullName: SimpleResults.Result.Success<T>(System.Collections.Generic.IEnumerable<T>, SimpleResults.PagedInfo, System.String)
+  fullName.vb: SimpleResults.Result.Success(Of T)(System.Collections.Generic.IEnumerable(Of T), SimpleResults.PagedInfo, System.String)
+  nameWithType: Result.Success<T>(IEnumerable<T>, PagedInfo, String)
+  nameWithType.vb: Result.Success(Of T)(IEnumerable(Of T), PagedInfo, String)
+- uid: SimpleResults.Result.ToListedResult*
+  name: ToListedResult
+  href: api/SimpleResults.Result.ToListedResult.html
+  commentId: Overload:SimpleResults.Result.ToListedResult
+  fullName: SimpleResults.Result.ToListedResult
+  nameWithType: Result.ToListedResult
+- uid: SimpleResults.Result.ToListedResult``1(System.Collections.Generic.IEnumerable{``0})
+  name: ToListedResult<T>(IEnumerable<T>)
+  href: api/SimpleResults.Result.ToListedResult.html#SimpleResults_Result_ToListedResult__1_System_Collections_Generic_IEnumerable___0__
+  commentId: M:SimpleResults.Result.ToListedResult``1(System.Collections.Generic.IEnumerable{``0})
+  name.vb: ToListedResult(Of T)(IEnumerable(Of T))
+  fullName: SimpleResults.Result.ToListedResult<T>(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: SimpleResults.Result.ToListedResult(Of T)(System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: Result.ToListedResult<T>(IEnumerable<T>)
+  nameWithType.vb: Result.ToListedResult(Of T)(IEnumerable(Of T))
+- uid: SimpleResults.Result.ToPagedResult*
+  name: ToPagedResult
+  href: api/SimpleResults.Result.ToPagedResult.html
+  commentId: Overload:SimpleResults.Result.ToPagedResult
+  fullName: SimpleResults.Result.ToPagedResult
+  nameWithType: Result.ToPagedResult
+- uid: SimpleResults.Result.ToPagedResult``1(System.Collections.Generic.IEnumerable{``0},SimpleResults.PagedInfo)
+  name: ToPagedResult<T>(IEnumerable<T>, PagedInfo)
+  href: api/SimpleResults.Result.ToPagedResult.html#SimpleResults_Result_ToPagedResult__1_System_Collections_Generic_IEnumerable___0__SimpleResults_PagedInfo_
+  commentId: M:SimpleResults.Result.ToPagedResult``1(System.Collections.Generic.IEnumerable{``0},SimpleResults.PagedInfo)
+  name.vb: ToPagedResult(Of T)(IEnumerable(Of T), PagedInfo)
+  fullName: SimpleResults.Result.ToPagedResult<T>(System.Collections.Generic.IEnumerable<T>, SimpleResults.PagedInfo)
+  fullName.vb: SimpleResults.Result.ToPagedResult(Of T)(System.Collections.Generic.IEnumerable(Of T), SimpleResults.PagedInfo)
+  nameWithType: Result.ToPagedResult<T>(IEnumerable<T>, PagedInfo)
+  nameWithType.vb: Result.ToPagedResult(Of T)(IEnumerable(Of T), PagedInfo)
+- uid: SimpleResults.Result.ToResult*
+  name: ToResult
+  href: api/SimpleResults.Result.ToResult.html
+  commentId: Overload:SimpleResults.Result.ToResult
+  fullName: SimpleResults.Result.ToResult
+  nameWithType: Result.ToResult
+- uid: SimpleResults.Result.ToResult``1(``0)
+  name: ToResult<T>(T)
+  href: api/SimpleResults.Result.ToResult.html#SimpleResults_Result_ToResult__1___0_
+  commentId: M:SimpleResults.Result.ToResult``1(``0)
+  name.vb: ToResult(Of T)(T)
+  fullName: SimpleResults.Result.ToResult<T>(T)
+  fullName.vb: SimpleResults.Result.ToResult(Of T)(T)
+  nameWithType: Result.ToResult<T>(T)
+  nameWithType.vb: Result.ToResult(Of T)(T)
+- uid: SimpleResults.Result.Unauthorized
+  name: Unauthorized()
+  href: api/SimpleResults.Result.Unauthorized.html#SimpleResults_Result_Unauthorized
+  commentId: M:SimpleResults.Result.Unauthorized
+  fullName: SimpleResults.Result.Unauthorized()
+  nameWithType: Result.Unauthorized()
+- uid: SimpleResults.Result.Unauthorized(System.Collections.Generic.IEnumerable{System.String})
+  name: Unauthorized(IEnumerable<String>)
+  href: api/SimpleResults.Result.Unauthorized.html#SimpleResults_Result_Unauthorized_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:SimpleResults.Result.Unauthorized(System.Collections.Generic.IEnumerable{System.String})
+  name.vb: Unauthorized(IEnumerable(Of String))
+  fullName: SimpleResults.Result.Unauthorized(System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: SimpleResults.Result.Unauthorized(System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: Result.Unauthorized(IEnumerable<String>)
+  nameWithType.vb: Result.Unauthorized(IEnumerable(Of String))
+- uid: SimpleResults.Result.Unauthorized(System.String)
+  name: Unauthorized(String)
+  href: api/SimpleResults.Result.Unauthorized.html#SimpleResults_Result_Unauthorized_System_String_
+  commentId: M:SimpleResults.Result.Unauthorized(System.String)
+  fullName: SimpleResults.Result.Unauthorized(System.String)
+  nameWithType: Result.Unauthorized(String)
+- uid: SimpleResults.Result.Unauthorized(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name: Unauthorized(String, IEnumerable<String>)
+  href: api/SimpleResults.Result.Unauthorized.html#SimpleResults_Result_Unauthorized_System_String_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:SimpleResults.Result.Unauthorized(System.String,System.Collections.Generic.IEnumerable{System.String})
+  name.vb: Unauthorized(String, IEnumerable(Of String))
+  fullName: SimpleResults.Result.Unauthorized(System.String, System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: SimpleResults.Result.Unauthorized(System.String, System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: Result.Unauthorized(String, IEnumerable<String>)
+  nameWithType.vb: Result.Unauthorized(String, IEnumerable(Of String))
+- uid: SimpleResults.Result.Unauthorized*
+  name: Unauthorized
+  href: api/SimpleResults.Result.Unauthorized.html
+  commentId: Overload:SimpleResults.Result.Unauthorized
+  fullName: SimpleResults.Result.Unauthorized
+  nameWithType: Result.Unauthorized
+- uid: SimpleResults.Result.UpdatedResource
+  name: UpdatedResource()
+  href: api/SimpleResults.Result.UpdatedResource.html#SimpleResults_Result_UpdatedResource
+  commentId: M:SimpleResults.Result.UpdatedResource
+  fullName: SimpleResults.Result.UpdatedResource()
+  nameWithType: Result.UpdatedResource()
+- uid: SimpleResults.Result.UpdatedResource*
+  name: UpdatedResource
+  href: api/SimpleResults.Result.UpdatedResource.html
+  commentId: Overload:SimpleResults.Result.UpdatedResource
+  fullName: SimpleResults.Result.UpdatedResource
+  nameWithType: Result.UpdatedResource
+- uid: SimpleResults.Result`1
+  name: Result<T>
+  href: api/SimpleResults.Result-1.html
+  commentId: T:SimpleResults.Result`1
+  name.vb: Result(Of T)
+  fullName: SimpleResults.Result<T>
+  fullName.vb: SimpleResults.Result(Of T)
+  nameWithType: Result<T>
+  nameWithType.vb: Result(Of T)
+- uid: SimpleResults.Result`1.#ctor
+  name: Result()
+  href: api/SimpleResults.Result-1.-ctor.html#SimpleResults_Result_1__ctor
+  commentId: M:SimpleResults.Result`1.#ctor
+  fullName: SimpleResults.Result<T>.Result()
+  fullName.vb: SimpleResults.Result(Of T).Result()
+  nameWithType: Result<T>.Result()
+  nameWithType.vb: Result(Of T).Result()
+- uid: SimpleResults.Result`1.#ctor*
+  name: Result
+  href: api/SimpleResults.Result-1.-ctor.html
+  commentId: Overload:SimpleResults.Result`1.#ctor
+  fullName: SimpleResults.Result<T>.Result
+  fullName.vb: SimpleResults.Result(Of T).Result
+  nameWithType: Result<T>.Result
+  nameWithType.vb: Result(Of T).Result
+- uid: SimpleResults.Result`1.Data
+  name: Data
+  href: api/SimpleResults.Result-1.Data.html#SimpleResults_Result_1_Data
+  commentId: P:SimpleResults.Result`1.Data
+  fullName: SimpleResults.Result<T>.Data
+  fullName.vb: SimpleResults.Result(Of T).Data
+  nameWithType: Result<T>.Data
+  nameWithType.vb: Result(Of T).Data
+- uid: SimpleResults.Result`1.Data*
+  name: Data
+  href: api/SimpleResults.Result-1.Data.html
+  commentId: Overload:SimpleResults.Result`1.Data
+  fullName: SimpleResults.Result<T>.Data
+  fullName.vb: SimpleResults.Result(Of T).Data
+  nameWithType: Result<T>.Data
+  nameWithType.vb: Result(Of T).Data
+- uid: SimpleResults.Result`1.op_Implicit(SimpleResults.Result)~SimpleResults.Result{`0}
+  name: Implicit(Result to Result<T>)
+  href: api/SimpleResults.Result-1.op_Implicit.html#SimpleResults_Result_1_op_Implicit_SimpleResults_Result__SimpleResults_Result__0_
+  commentId: M:SimpleResults.Result`1.op_Implicit(SimpleResults.Result)~SimpleResults.Result{`0}
+  name.vb: Widening(Result to Result(Of T))
+  fullName: SimpleResults.Result<T>.Implicit(SimpleResults.Result to SimpleResults.Result<T>)
+  fullName.vb: SimpleResults.Result(Of T).Widening(SimpleResults.Result to SimpleResults.Result(Of T))
+  nameWithType: Result<T>.Implicit(Result to Result<T>)
+  nameWithType.vb: Result(Of T).Widening(Result to Result(Of T))
+- uid: SimpleResults.Result`1.op_Implicit*
+  name: Implicit
+  href: api/SimpleResults.Result-1.op_Implicit.html
+  commentId: Overload:SimpleResults.Result`1.op_Implicit
+  name.vb: Widening
+  fullName: SimpleResults.Result<T>.Implicit
+  fullName.vb: SimpleResults.Result(Of T).Widening
+  nameWithType: Result<T>.Implicit
+  nameWithType.vb: Result(Of T).Widening
+- uid: SimpleResults.ResultBase
+  name: ResultBase
+  href: api/SimpleResults.ResultBase.html
+  commentId: T:SimpleResults.ResultBase
+  fullName: SimpleResults.ResultBase
+  nameWithType: ResultBase
+- uid: SimpleResults.ResultBase.Errors
+  name: Errors
+  href: api/SimpleResults.ResultBase.Errors.html#SimpleResults_ResultBase_Errors
+  commentId: P:SimpleResults.ResultBase.Errors
+  fullName: SimpleResults.ResultBase.Errors
+  nameWithType: ResultBase.Errors
+- uid: SimpleResults.ResultBase.Errors*
+  name: Errors
+  href: api/SimpleResults.ResultBase.Errors.html
+  commentId: Overload:SimpleResults.ResultBase.Errors
+  fullName: SimpleResults.ResultBase.Errors
+  nameWithType: ResultBase.Errors
+- uid: SimpleResults.ResultBase.IsFailed
+  name: IsFailed
+  href: api/SimpleResults.ResultBase.IsFailed.html#SimpleResults_ResultBase_IsFailed
+  commentId: P:SimpleResults.ResultBase.IsFailed
+  fullName: SimpleResults.ResultBase.IsFailed
+  nameWithType: ResultBase.IsFailed
+- uid: SimpleResults.ResultBase.IsFailed*
+  name: IsFailed
+  href: api/SimpleResults.ResultBase.IsFailed.html
+  commentId: Overload:SimpleResults.ResultBase.IsFailed
+  fullName: SimpleResults.ResultBase.IsFailed
+  nameWithType: ResultBase.IsFailed
+- uid: SimpleResults.ResultBase.IsSuccess
+  name: IsSuccess
+  href: api/SimpleResults.ResultBase.IsSuccess.html#SimpleResults_ResultBase_IsSuccess
+  commentId: P:SimpleResults.ResultBase.IsSuccess
+  fullName: SimpleResults.ResultBase.IsSuccess
+  nameWithType: ResultBase.IsSuccess
+- uid: SimpleResults.ResultBase.IsSuccess*
+  name: IsSuccess
+  href: api/SimpleResults.ResultBase.IsSuccess.html
+  commentId: Overload:SimpleResults.ResultBase.IsSuccess
+  fullName: SimpleResults.ResultBase.IsSuccess
+  nameWithType: ResultBase.IsSuccess
+- uid: SimpleResults.ResultBase.Message
+  name: Message
+  href: api/SimpleResults.ResultBase.Message.html#SimpleResults_ResultBase_Message
+  commentId: P:SimpleResults.ResultBase.Message
+  fullName: SimpleResults.ResultBase.Message
+  nameWithType: ResultBase.Message
+- uid: SimpleResults.ResultBase.Message*
+  name: Message
+  href: api/SimpleResults.ResultBase.Message.html
+  commentId: Overload:SimpleResults.ResultBase.Message
+  fullName: SimpleResults.ResultBase.Message
+  nameWithType: ResultBase.Message
+- uid: SimpleResults.ResultBase.Status
+  name: Status
+  href: api/SimpleResults.ResultBase.Status.html#SimpleResults_ResultBase_Status
+  commentId: P:SimpleResults.ResultBase.Status
+  fullName: SimpleResults.ResultBase.Status
+  nameWithType: ResultBase.Status
+- uid: SimpleResults.ResultBase.Status*
+  name: Status
+  href: api/SimpleResults.ResultBase.Status.html
+  commentId: Overload:SimpleResults.ResultBase.Status
+  fullName: SimpleResults.ResultBase.Status
+  nameWithType: ResultBase.Status
+- uid: SimpleResults.ResultExtensions
+  name: ResultExtensions
+  href: api/SimpleResults.ResultExtensions.html
+  commentId: T:SimpleResults.ResultExtensions
+  fullName: SimpleResults.ResultExtensions
+  nameWithType: ResultExtensions
+- uid: SimpleResults.ResultExtensions.ToActionResult(SimpleResults.Result)
+  name: ToActionResult(Result)
+  href: api/SimpleResults.ResultExtensions.ToActionResult.html#SimpleResults_ResultExtensions_ToActionResult_SimpleResults_Result_
+  commentId: M:SimpleResults.ResultExtensions.ToActionResult(SimpleResults.Result)
+  fullName: SimpleResults.ResultExtensions.ToActionResult(SimpleResults.Result)
+  nameWithType: ResultExtensions.ToActionResult(Result)
+- uid: SimpleResults.ResultExtensions.ToActionResult*
+  name: ToActionResult
+  href: api/SimpleResults.ResultExtensions.ToActionResult.html
+  commentId: Overload:SimpleResults.ResultExtensions.ToActionResult
+  fullName: SimpleResults.ResultExtensions.ToActionResult
+  nameWithType: ResultExtensions.ToActionResult
+- uid: SimpleResults.ResultExtensions.ToActionResult``1(SimpleResults.ListedResult{``0})
+  name: ToActionResult<T>(ListedResult<T>)
+  href: api/SimpleResults.ResultExtensions.ToActionResult.html#SimpleResults_ResultExtensions_ToActionResult__1_SimpleResults_ListedResult___0__
+  commentId: M:SimpleResults.ResultExtensions.ToActionResult``1(SimpleResults.ListedResult{``0})
+  name.vb: ToActionResult(Of T)(ListedResult(Of T))
+  fullName: SimpleResults.ResultExtensions.ToActionResult<T>(SimpleResults.ListedResult<T>)
+  fullName.vb: SimpleResults.ResultExtensions.ToActionResult(Of T)(SimpleResults.ListedResult(Of T))
+  nameWithType: ResultExtensions.ToActionResult<T>(ListedResult<T>)
+  nameWithType.vb: ResultExtensions.ToActionResult(Of T)(ListedResult(Of T))
+- uid: SimpleResults.ResultExtensions.ToActionResult``1(SimpleResults.PagedResult{``0})
+  name: ToActionResult<T>(PagedResult<T>)
+  href: api/SimpleResults.ResultExtensions.ToActionResult.html#SimpleResults_ResultExtensions_ToActionResult__1_SimpleResults_PagedResult___0__
+  commentId: M:SimpleResults.ResultExtensions.ToActionResult``1(SimpleResults.PagedResult{``0})
+  name.vb: ToActionResult(Of T)(PagedResult(Of T))
+  fullName: SimpleResults.ResultExtensions.ToActionResult<T>(SimpleResults.PagedResult<T>)
+  fullName.vb: SimpleResults.ResultExtensions.ToActionResult(Of T)(SimpleResults.PagedResult(Of T))
+  nameWithType: ResultExtensions.ToActionResult<T>(PagedResult<T>)
+  nameWithType.vb: ResultExtensions.ToActionResult(Of T)(PagedResult(Of T))
+- uid: SimpleResults.ResultExtensions.ToActionResult``1(SimpleResults.Result{``0})
+  name: ToActionResult<T>(Result<T>)
+  href: api/SimpleResults.ResultExtensions.ToActionResult.html#SimpleResults_ResultExtensions_ToActionResult__1_SimpleResults_Result___0__
+  commentId: M:SimpleResults.ResultExtensions.ToActionResult``1(SimpleResults.Result{``0})
+  name.vb: ToActionResult(Of T)(Result(Of T))
+  fullName: SimpleResults.ResultExtensions.ToActionResult<T>(SimpleResults.Result<T>)
+  fullName.vb: SimpleResults.ResultExtensions.ToActionResult(Of T)(SimpleResults.Result(Of T))
+  nameWithType: ResultExtensions.ToActionResult<T>(Result<T>)
+  nameWithType.vb: ResultExtensions.ToActionResult(Of T)(Result(Of T))
+- uid: SimpleResults.ResultStatus
+  name: ResultStatus
+  href: api/SimpleResults.ResultStatus.html
+  commentId: T:SimpleResults.ResultStatus
+  fullName: SimpleResults.ResultStatus
+  nameWithType: ResultStatus
+- uid: SimpleResults.ResultStatus.Conflict
+  name: Conflict
+  href: api/SimpleResults.ResultStatus.html#SimpleResults_ResultStatus_Conflict
+  commentId: F:SimpleResults.ResultStatus.Conflict
+  fullName: SimpleResults.ResultStatus.Conflict
+  nameWithType: ResultStatus.Conflict
+- uid: SimpleResults.ResultStatus.Created
+  name: Created
+  href: api/SimpleResults.ResultStatus.html#SimpleResults_ResultStatus_Created
+  commentId: F:SimpleResults.ResultStatus.Created
+  fullName: SimpleResults.ResultStatus.Created
+  nameWithType: ResultStatus.Created
+- uid: SimpleResults.ResultStatus.CriticalError
+  name: CriticalError
+  href: api/SimpleResults.ResultStatus.html#SimpleResults_ResultStatus_CriticalError
+  commentId: F:SimpleResults.ResultStatus.CriticalError
+  fullName: SimpleResults.ResultStatus.CriticalError
+  nameWithType: ResultStatus.CriticalError
+- uid: SimpleResults.ResultStatus.Failure
+  name: Failure
+  href: api/SimpleResults.ResultStatus.html#SimpleResults_ResultStatus_Failure
+  commentId: F:SimpleResults.ResultStatus.Failure
+  fullName: SimpleResults.ResultStatus.Failure
+  nameWithType: ResultStatus.Failure
+- uid: SimpleResults.ResultStatus.Forbidden
+  name: Forbidden
+  href: api/SimpleResults.ResultStatus.html#SimpleResults_ResultStatus_Forbidden
+  commentId: F:SimpleResults.ResultStatus.Forbidden
+  fullName: SimpleResults.ResultStatus.Forbidden
+  nameWithType: ResultStatus.Forbidden
+- uid: SimpleResults.ResultStatus.Invalid
+  name: Invalid
+  href: api/SimpleResults.ResultStatus.html#SimpleResults_ResultStatus_Invalid
+  commentId: F:SimpleResults.ResultStatus.Invalid
+  fullName: SimpleResults.ResultStatus.Invalid
+  nameWithType: ResultStatus.Invalid
+- uid: SimpleResults.ResultStatus.NotFound
+  name: NotFound
+  href: api/SimpleResults.ResultStatus.html#SimpleResults_ResultStatus_NotFound
+  commentId: F:SimpleResults.ResultStatus.NotFound
+  fullName: SimpleResults.ResultStatus.NotFound
+  nameWithType: ResultStatus.NotFound
+- uid: SimpleResults.ResultStatus.Ok
+  name: Ok
+  href: api/SimpleResults.ResultStatus.html#SimpleResults_ResultStatus_Ok
+  commentId: F:SimpleResults.ResultStatus.Ok
+  fullName: SimpleResults.ResultStatus.Ok
+  nameWithType: ResultStatus.Ok
+- uid: SimpleResults.ResultStatus.Unauthorized
+  name: Unauthorized
+  href: api/SimpleResults.ResultStatus.html#SimpleResults_ResultStatus_Unauthorized
+  commentId: F:SimpleResults.ResultStatus.Unauthorized
+  fullName: SimpleResults.ResultStatus.Unauthorized
+  nameWithType: ResultStatus.Unauthorized
+- uid: SimpleResults.TranslateResultToActionResultAttribute
+  name: TranslateResultToActionResultAttribute
+  href: api/SimpleResults.TranslateResultToActionResultAttribute.html
+  commentId: T:SimpleResults.TranslateResultToActionResultAttribute
+  fullName: SimpleResults.TranslateResultToActionResultAttribute
+  nameWithType: TranslateResultToActionResultAttribute
+- uid: SimpleResults.TranslateResultToActionResultAttribute.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)
+  name: OnActionExecuted(ActionExecutedContext)
+  href: api/SimpleResults.TranslateResultToActionResultAttribute.OnActionExecuted.html#SimpleResults_TranslateResultToActionResultAttribute_OnActionExecuted_Microsoft_AspNetCore_Mvc_Filters_ActionExecutedContext_
+  commentId: M:SimpleResults.TranslateResultToActionResultAttribute.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)
+  fullName: SimpleResults.TranslateResultToActionResultAttribute.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)
+  nameWithType: TranslateResultToActionResultAttribute.OnActionExecuted(ActionExecutedContext)
+- uid: SimpleResults.TranslateResultToActionResultAttribute.OnActionExecuted*
+  name: OnActionExecuted
+  href: api/SimpleResults.TranslateResultToActionResultAttribute.OnActionExecuted.html
+  commentId: Overload:SimpleResults.TranslateResultToActionResultAttribute.OnActionExecuted
+  fullName: SimpleResults.TranslateResultToActionResultAttribute.OnActionExecuted
+  nameWithType: TranslateResultToActionResultAttribute.OnActionExecuted
