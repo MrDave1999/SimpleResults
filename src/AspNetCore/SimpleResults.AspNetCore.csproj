@@ -13,7 +13,7 @@
     <Copyright>Copyright (c) Dave Roman</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>SimpleResults-icon-nuget.png</PackageIcon>
-    <PackageProjectUrl>https://github.com/MrDave1999/SimpleResults</PackageProjectUrl>
+    <PackageProjectUrl>https://mrdave1999.github.io/SimpleResults</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MrDave1999/SimpleResults</RepositoryUrl>
     <PackageTags>result, pattern, web, api, aspnetcore</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
