@@ -13,6 +13,13 @@ public static class ResultExtensions
     /// Converts the <see cref="PagedResult{T}" /> to <see cref="ActionResult{TValue}"/>
     /// where <c>TValue</c> is a <see cref="PagedResult{T}" />.
     /// </summary>
+    /// <param name="result">
+    /// An instance of type <see cref="PagedResult{T}"/>.
+    /// </param>
+    /// <returns>
+    /// An instance of type <see cref="ActionResult{TValue}"/> 
+    /// where <c>TValue</c> is a <see cref="PagedResult{T}"/>.
+    /// </returns>
     /// <exception cref="NotSupportedException">
     /// <see cref="ResultBase.Status"/> is invalid.
     /// </exception>
@@ -23,6 +30,13 @@ public static class ResultExtensions
     /// Converts the <see cref="ListedResult{T}" /> to <see cref="ActionResult{TValue}"/>
     /// where <c>TValue</c> is a <see cref="ListedResult{T}" />.
     /// </summary>
+    /// <param name="result">
+    /// An instance of type <see cref="ListedResult{T}"/>.
+    /// </param>
+    /// <returns>
+    /// An instance of type <see cref="ActionResult{TValue}"/> 
+    /// where <c>TValue</c> is a <see cref="ListedResult{T}"/>.
+    /// </returns>
     /// <exception cref="NotSupportedException">
     /// <see cref="ResultBase.Status"/> is invalid.
     /// </exception>
@@ -33,6 +47,13 @@ public static class ResultExtensions
     /// Converts the <see cref="Result{T}" /> to <see cref="ActionResult{TValue}"/>
     /// where <c>TValue</c> is a <see cref="Result{T}" />.
     /// </summary>
+    /// <param name="result">
+    /// An instance of type <see cref="Result{T}"/>.
+    /// </param>
+    /// <returns>
+    /// An instance of type <see cref="ActionResult{TValue}"/> 
+    /// where <c>TValue</c> is a <see cref="Result{T}"/>.
+    /// </returns>
     /// <exception cref="NotSupportedException">
     /// <see cref="ResultBase.Status"/> is invalid.
     /// </exception>
@@ -43,6 +64,11 @@ public static class ResultExtensions
     /// Converts the <see cref="Result" /> to <see cref="ActionResult{TValue}"/> 
     /// where <c>TValue</c> is a <see cref="Result" />.
     /// </summary>
+    /// <param name="result">An instance of type <see cref="Result"/>.</param>
+    /// <returns>
+    /// An instance of type <see cref="ActionResult{TValue}"/> 
+    /// where <c>TValue</c> is a <see cref="Result"/>.
+    /// </returns>
     /// <exception cref="NotSupportedException">
     /// <see cref="ResultBase.Status"/> is invalid.
     /// </exception>
