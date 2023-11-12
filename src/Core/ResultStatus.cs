@@ -34,7 +34,8 @@ public enum ResultStatus
     /// </summary>
     Failure,
     /// <summary>
-    /// Represents a status in which a server has caused a critical error instead of the client.
+    /// Represents a status where unexpected behavior has occurred and 
+    /// the service does not know how to handle it (e.g., database connection error).
     /// </summary>
     CriticalError,
     /// <summary>
