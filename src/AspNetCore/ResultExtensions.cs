@@ -13,6 +13,7 @@ public static class ResultExtensions
     /// Converts the <see cref="PagedResult{T}" /> to <see cref="ActionResult{TValue}"/>
     /// where <c>TValue</c> is a <see cref="PagedResult{T}" />.
     /// </summary>
+    /// <typeparam name="T">The type of objects to enumerate.</typeparam>
     /// <param name="result">
     /// An instance of type <see cref="PagedResult{T}"/>.
     /// </param>
@@ -30,6 +31,7 @@ public static class ResultExtensions
     /// Converts the <see cref="ListedResult{T}" /> to <see cref="ActionResult{TValue}"/>
     /// where <c>TValue</c> is a <see cref="ListedResult{T}" />.
     /// </summary>
+    /// <typeparam name="T">The type of objects to enumerate.</typeparam>
     /// <param name="result">
     /// An instance of type <see cref="ListedResult{T}"/>.
     /// </param>
@@ -47,6 +49,7 @@ public static class ResultExtensions
     /// Converts the <see cref="Result{T}" /> to <see cref="ActionResult{TValue}"/>
     /// where <c>TValue</c> is a <see cref="Result{T}" />.
     /// </summary>
+    /// <typeparam name="T">A value associated to the result.</typeparam>
     /// <param name="result">
     /// An instance of type <see cref="Result{T}"/>.
     /// </param>
