@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\src\AspNetCore\SimpleResults.AspNetCore.csproj" />
+    <ProjectReference Include="..\src\FluentValidation\SimpleResults.FluentValidation.csproj" />
   </ItemGroup>
 
 </Project>
