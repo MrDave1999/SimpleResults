@@ -13,5 +13,9 @@ public sealed class CreatedGuid
     /// <summary>
     /// Gets or sets the identification of a resource.
     /// </summary>
-    public string Id { get; init; }
+    /// <value>
+    /// The identification of a resource.
+    /// Its default value is an empty string.
+    /// </value> 
+    public string Id { get; init; } = string.Empty;
 }
