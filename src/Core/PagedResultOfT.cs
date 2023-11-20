@@ -26,6 +26,10 @@ public sealed class PagedResult<T> : ResultBase
     /// <summary>
     /// Gets information about the page.
     /// </summary>
+    /// <value>
+    /// The information about the page.
+    /// Its default value is <c>null</c>.
+    /// </value>
     public PagedInfo PagedInfo { get; init; }
 
     /// <summary>

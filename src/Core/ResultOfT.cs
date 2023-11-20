@@ -14,6 +14,10 @@ public sealed class Result<T> : ResultBase
     /// <summary>
     /// Gets the data associated with the result.
     /// </summary>
+    /// <value>
+    /// The data associated with the result.
+    /// Its default value is <c>null</c>.
+    /// </value>
     public T Data { get; init; }
 
     /// <summary>
