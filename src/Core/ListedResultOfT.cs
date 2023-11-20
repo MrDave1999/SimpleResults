@@ -18,6 +18,10 @@ public sealed class ListedResult<T> : ResultBase
     /// <summary>
     /// Gets a list of data associated with the result.
     /// </summary>
+    /// <value>
+    /// A list of data associated with the result.
+    /// Its default value is never a null value.
+    /// </value>
     public IEnumerable<T> Data { get; init; } = Enumerable.Empty<T>();
 
     private static ListedResult<T> CreateInstance(ResultBase result, IEnumerable<T> data) => new()

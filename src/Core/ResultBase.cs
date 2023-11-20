@@ -25,11 +25,19 @@ public abstract class ResultBase
     /// <summary>
     /// Gets the description of a result.
     /// </summary>
+    /// <value>
+    /// The description of a result.
+    /// Its default value is never a null value.
+    /// </value>
     public string Message { get; init; } = ResponseMessages.Error;
 
     /// <summary>
     /// Gets a collection of errors.
     /// </summary>
+    /// <value>
+    /// A collection that contains error messages.
+    /// Its default value is never a null value.
+    /// </value>
     public IEnumerable<string> Errors { get; init; } = Enumerable.Empty<string>();
 
     /// <summary>
