@@ -6,10 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Core\SimpleResults.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="FluentValidation" />
+    <ProjectReference Include="..\..\src\FluentValidation\SimpleResults.FluentValidation.csproj" />
   </ItemGroup>
 
 </Project>
