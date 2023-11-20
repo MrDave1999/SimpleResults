@@ -6,6 +6,9 @@
 [![SimpleResults-AspNetCore](https://img.shields.io/nuget/vpre/SimpleResults.AspNetCore?label=SimpleResults.AspNetCore%20-%20nuget&color=red)](https://www.nuget.org/packages/SimpleResults.AspNetCore)
 [![downloads](https://img.shields.io/nuget/dt/SimpleResults.AspNetCore?color=yellow)](https://www.nuget.org/packages/SimpleResults.AspNetCore)
 
+[![SimpleResults-FluentValidation](https://img.shields.io/nuget/vpre/SimpleResults.FluentValidation?label=SimpleResults.FluentValidation%20-%20nuget&color=red)](https://www.nuget.org/packages/SimpleResults.FluentValidation)
+[![downloads](https://img.shields.io/nuget/dt/SimpleResults.FluentValidation?color=yellow)](https://www.nuget.org/packages/SimpleResults.FluentValidation)
+
 [![SimpleResults-logo](https://raw.githubusercontent.com/MrDave1999/SimpleResults/master/SimpleResults-logo.png)](https://github.com/MrDave1999/SimpleResults)
 
 A simple library to implement the Result pattern for returning from services. It also provides a mechanism for translating the Result object to an [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult?view=aspnetcore-7.0).
