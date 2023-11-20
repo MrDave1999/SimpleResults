@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>SimpleResults</RootNamespace>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <PackageId>SimpleResults.FluentValidation</PackageId>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Dave Roman</Authors>
+    <Copyright>Copyright (c) Dave Roman</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>SimpleResults-icon-nuget.png</PackageIcon>
+    <PackageProjectUrl>https://mrdave1999.github.io/SimpleResults</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MrDave1999/SimpleResults</RepositoryUrl>
+    <PackageTags>result, pattern, fluentvalidation, fluent-validation, validation</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <Description>
+      A simple package that provides extension methods for the Fluent Validation library.
+    </Description>
+    <Version>2.2.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Core\SimpleResults.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\SimpleResults-icon-nuget.png" Pack="True" PackagePath="" />
+    <None Include="..\..\README.md" Pack="True" PackagePath="" />
+    <None Include="..\..\LICENSE" Pack="True" PackagePath="" />
+  </ItemGroup>
+
+</Project>
