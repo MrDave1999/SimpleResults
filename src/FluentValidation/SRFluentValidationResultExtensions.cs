@@ -2,6 +2,9 @@
 
 namespace SimpleResults;
 
+/// <summary>
+/// Defines extension methods for the <seealso href="https://www.nuget.org/packages/FluentValidation">Fluent Validation</seealso> package.
+/// </summary>
 public static class SRFluentValidationResultExtensions
 {
     /// <summary>
