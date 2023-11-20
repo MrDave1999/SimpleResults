@@ -6,6 +6,9 @@
 [![SimpleResults-AspNetCore](https://img.shields.io/nuget/vpre/SimpleResults.AspNetCore?label=SimpleResults.AspNetCore%20-%20nuget&color=red)](https://www.nuget.org/packages/SimpleResults.AspNetCore)
 [![downloads](https://img.shields.io/nuget/dt/SimpleResults.AspNetCore?color=yellow)](https://www.nuget.org/packages/SimpleResults.AspNetCore)
 
+[![SimpleResults-FluentValidation](https://img.shields.io/nuget/vpre/SimpleResults.FluentValidation?label=SimpleResults.FluentValidation%20-%20nuget&color=red)](https://www.nuget.org/packages/SimpleResults.FluentValidation)
+[![downloads](https://img.shields.io/nuget/dt/SimpleResults.FluentValidation?color=yellow)](https://www.nuget.org/packages/SimpleResults.FluentValidation)
+
 [![SimpleResults-logo](https://raw.githubusercontent.com/MrDave1999/SimpleResults/master/SimpleResults-logo.png)](https://github.com/MrDave1999/SimpleResults)
 
 A simple library to implement the Result pattern for returning from services. It also provides a mechanism for translating the Result object to an [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult?view=aspnetcore-7.0).
@@ -100,14 +103,13 @@ This was a surprise to me! I didn't know! I was expecting an exception but it wa
 
 ## Installation
 
-Run the following command from the terminal:
+You can run any of these commands from the terminal:
+```sh
+dotnet add package SimpleResults
+dotnet add package SimpleResults.AspNetCore
+dotnet add package SimpleResults.FluentValidation
 ```
-dotnet add package SimpleResults --prerelease
-```
-Or you can also install the package for [ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-7.0):
-```
-dotnet add package SimpleResults.AspNetCore --prerelease
-```
+[SimpleResults](https://www.nuget.org/packages/SimpleResults) package is the main library (the core). The other two packages complement the main library (they are like add-ons).
 
 ## Overview
 
@@ -326,6 +328,8 @@ public class UserController : ControllerBase
         => _userService.GetAll().ToActionResult();
 }
 ```
+See the [API documentation](https://mrdave1999.github.io/SimpleResults/api/SimpleResults.ResultExtensions.html#methods) for a list of available extension methods.
+
 #### Using TranslateResultToActionResult as an action filter
 
 You can also use the `TranslateResultToActionResult` filter to translate the Result object to [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult?view=aspnetcore-7.0). 
@@ -385,18 +389,10 @@ The following table is used as a reference to know which type of result correspo
 
 ### Integration with Fluent Validation
 
-You do not need to install any additional packages, you only need [Fluent Validation](https://www.nuget.org/packages/FluentValidation).
+You need to install the [SimpleResults.FluentValidation](https://www.nuget.org/packages/SimpleResults.FluentValidation) package to have access to the extension methods.
 
 **Example:**
 ```cs
-// Define extension methods for ValidationResult class.
-public static class ValidationResultExtensions
-{
-    public static bool IsFailed(this ValidationResult result) => !result.IsValid;
-    public static IEnumerable<string> AsErrors(this ValidationResult result)
-        => result.Errors.Select(failure => failure.ErrorMessage);
-}
-
 public class UserService
 {
     public Result Create(CreateUserRequest request)
@@ -409,6 +405,7 @@ public class UserService
     }
 }
 ```
+See the [API documentation](https://mrdave1999.github.io/SimpleResults/api/SimpleResults.SRFluentValidationResultExtensions.html#methods) for a list of available extension methods.
 
 ## Samples
 
