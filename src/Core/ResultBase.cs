@@ -43,6 +43,10 @@ public abstract class ResultBase
     /// <summary>
     /// Gets the current status of a result.
     /// </summary>
+    /// <value>
+    /// The current status of a result.
+    /// Its default value is a <see cref="ResultStatus.Failure"/>.
+    /// </value>
     [JsonIgnore]
     public ResultStatus Status { get; init; } = ResultStatus.Failure;
 }
