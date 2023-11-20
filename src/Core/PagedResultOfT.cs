@@ -15,8 +15,12 @@ public sealed class PagedResult<T> : ResultBase
     public PagedResult() { }
 
     /// <summary>
-    /// Gets the data from a page.
+    /// Gets the data of a page.
     /// </summary>
+    /// <value>
+    /// The data of a page. 
+    /// Its default value is never a null value.
+    /// </value>
     public IEnumerable<T> Data { get; init; } = Enumerable.Empty<T>();
 
     /// <summary>
