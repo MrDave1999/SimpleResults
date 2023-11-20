@@ -20,7 +20,7 @@
     <Description>
       A simple package that provides extension methods for the Fluent Validation library.
     </Description>
-    <Version>2.2.1</Version>
+    <Version>2.2.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
