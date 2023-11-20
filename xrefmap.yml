@@ -1013,6 +1013,54 @@ references:
   commentId: F:SimpleResults.ResultStatus.Unauthorized
   fullName: SimpleResults.ResultStatus.Unauthorized
   nameWithType: ResultStatus.Unauthorized
+- uid: SimpleResults.SRFluentValidationResultExtensions
+  name: SRFluentValidationResultExtensions
+  href: api/SimpleResults.SRFluentValidationResultExtensions.html
+  commentId: T:SimpleResults.SRFluentValidationResultExtensions
+  fullName: SimpleResults.SRFluentValidationResultExtensions
+  nameWithType: SRFluentValidationResultExtensions
+- uid: SimpleResults.SRFluentValidationResultExtensions.AsErrors(FluentValidation.Results.ValidationResult)
+  name: AsErrors(ValidationResult)
+  href: api/SimpleResults.SRFluentValidationResultExtensions.AsErrors.html#SimpleResults_SRFluentValidationResultExtensions_AsErrors_FluentValidation_Results_ValidationResult_
+  commentId: M:SimpleResults.SRFluentValidationResultExtensions.AsErrors(FluentValidation.Results.ValidationResult)
+  fullName: SimpleResults.SRFluentValidationResultExtensions.AsErrors(FluentValidation.Results.ValidationResult)
+  nameWithType: SRFluentValidationResultExtensions.AsErrors(ValidationResult)
+- uid: SimpleResults.SRFluentValidationResultExtensions.AsErrors*
+  name: AsErrors
+  href: api/SimpleResults.SRFluentValidationResultExtensions.AsErrors.html
+  commentId: Overload:SimpleResults.SRFluentValidationResultExtensions.AsErrors
+  fullName: SimpleResults.SRFluentValidationResultExtensions.AsErrors
+  nameWithType: SRFluentValidationResultExtensions.AsErrors
+- uid: SimpleResults.SRFluentValidationResultExtensions.Invalid(FluentValidation.Results.ValidationResult)
+  name: Invalid(ValidationResult)
+  href: api/SimpleResults.SRFluentValidationResultExtensions.Invalid.html#SimpleResults_SRFluentValidationResultExtensions_Invalid_FluentValidation_Results_ValidationResult_
+  commentId: M:SimpleResults.SRFluentValidationResultExtensions.Invalid(FluentValidation.Results.ValidationResult)
+  fullName: SimpleResults.SRFluentValidationResultExtensions.Invalid(FluentValidation.Results.ValidationResult)
+  nameWithType: SRFluentValidationResultExtensions.Invalid(ValidationResult)
+- uid: SimpleResults.SRFluentValidationResultExtensions.Invalid(FluentValidation.Results.ValidationResult,System.String)
+  name: Invalid(ValidationResult, String)
+  href: api/SimpleResults.SRFluentValidationResultExtensions.Invalid.html#SimpleResults_SRFluentValidationResultExtensions_Invalid_FluentValidation_Results_ValidationResult_System_String_
+  commentId: M:SimpleResults.SRFluentValidationResultExtensions.Invalid(FluentValidation.Results.ValidationResult,System.String)
+  fullName: SimpleResults.SRFluentValidationResultExtensions.Invalid(FluentValidation.Results.ValidationResult, System.String)
+  nameWithType: SRFluentValidationResultExtensions.Invalid(ValidationResult, String)
+- uid: SimpleResults.SRFluentValidationResultExtensions.Invalid*
+  name: Invalid
+  href: api/SimpleResults.SRFluentValidationResultExtensions.Invalid.html
+  commentId: Overload:SimpleResults.SRFluentValidationResultExtensions.Invalid
+  fullName: SimpleResults.SRFluentValidationResultExtensions.Invalid
+  nameWithType: SRFluentValidationResultExtensions.Invalid
+- uid: SimpleResults.SRFluentValidationResultExtensions.IsFailed(FluentValidation.Results.ValidationResult)
+  name: IsFailed(ValidationResult)
+  href: api/SimpleResults.SRFluentValidationResultExtensions.IsFailed.html#SimpleResults_SRFluentValidationResultExtensions_IsFailed_FluentValidation_Results_ValidationResult_
+  commentId: M:SimpleResults.SRFluentValidationResultExtensions.IsFailed(FluentValidation.Results.ValidationResult)
+  fullName: SimpleResults.SRFluentValidationResultExtensions.IsFailed(FluentValidation.Results.ValidationResult)
+  nameWithType: SRFluentValidationResultExtensions.IsFailed(ValidationResult)
+- uid: SimpleResults.SRFluentValidationResultExtensions.IsFailed*
+  name: IsFailed
+  href: api/SimpleResults.SRFluentValidationResultExtensions.IsFailed.html
+  commentId: Overload:SimpleResults.SRFluentValidationResultExtensions.IsFailed
+  fullName: SimpleResults.SRFluentValidationResultExtensions.IsFailed
+  nameWithType: SRFluentValidationResultExtensions.IsFailed
 - uid: SimpleResults.TranslateResultToActionResultAttribute
   name: TranslateResultToActionResultAttribute
   href: api/SimpleResults.TranslateResultToActionResultAttribute.html
