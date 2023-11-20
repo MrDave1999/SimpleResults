@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework></TargetFramework>
-    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
     <LangVersion>latest</LangVersion>
     <RootNamespace>SimpleResults</RootNamespace>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -25,6 +25,7 @@
       A simple package that translates the Result object to ActionResult.
     </Description>
     <Version>2.2.1</Version>
+    <PackageReleaseNotes>- Add support for .NET 8</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
