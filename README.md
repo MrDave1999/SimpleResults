@@ -414,6 +414,7 @@ You can find a complete and functional example in these projects:
 - [SimpleResults.Example.AspNetCore](https://github.com/MrDave1999/SimpleResults/tree/master/samples/SimpleResults.Example.AspNetCore)
 - [SimpleResults.Example.Web.Tests](https://github.com/MrDave1999/SimpleResults/tree/master/samples/SimpleResults.Example.Web.Tests)
 - [SimpleResults.Example.FluentValidation](https://github.com/MrDave1999/SimpleResults/tree/master/samples/SimpleResults.Example/FluentValidation)
+- [Double-V-Partners](https://github.com/MrDave1999/double-v-partners/tree/master/backend/src/Features/Users)
 
 ## Language settings
 `SimpleResults` uses default messages in English. You can change the language in this way:
