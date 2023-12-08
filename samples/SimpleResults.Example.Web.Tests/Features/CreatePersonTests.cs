@@ -2,8 +2,9 @@
 
 public class CreatePersonTests
 {
-    [Test]
-    public async Task Post_WhenPersonIsCreated_ShouldReturnsHttpStatusCodeCreated()
+    [TestCase(Routes.Person.WebApi)]
+    [TestCase(Routes.Person.MinimalApi)]
+    public async Task Post_WhenPersonIsCreated_ShouldReturnsHttpStatusCodeCreated(string requestUri)
     {
         // Arrange
         using var factory = new WebApplicationFactory<Program>();
@@ -15,7 +16,7 @@ public class CreatePersonTests
         };
 
         // Act
-        var httpResponse = await client.PostAsJsonAsync("/Person", request);
+        var httpResponse = await client.PostAsJsonAsync(requestUri, request);
         var result = await httpResponse
             .Content
             .ReadFromJsonAsync<Result>();
@@ -27,8 +28,9 @@ public class CreatePersonTests
         result.Errors.Should().BeEmpty();
     }
 
-    [Test]
-    public async Task Post_WhenPropertiesAreEmpty_ShouldReturnsHttpStatusCodeBadRequest()
+    [TestCase(Routes.Person.WebApi)]
+    [TestCase(Routes.Person.MinimalApi)]
+    public async Task Post_WhenPropertiesAreEmpty_ShouldReturnsHttpStatusCodeBadRequest(string requestUri)
     {
         // Arrange
         using var factory = new WebApplicationFactory<Program>();
@@ -40,7 +42,7 @@ public class CreatePersonTests
         };
 
         // Act
-        var httpResponse = await client.PostAsJsonAsync("/Person", request);
+        var httpResponse = await client.PostAsJsonAsync(requestUri, request);
         var result = await httpResponse
             .Content
             .ReadFromJsonAsync<Result>();
