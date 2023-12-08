@@ -1,6 +1,6 @@
 ﻿namespace SimpleResults.Tests.AspNetCore;
 
-public partial class ResultExtensionsTests
+public partial class ToActionResultTests
 {
     [Test]
     public void ToActionResult_WhenOperationResultIsSuccess_ShouldReturnsOkObjectResult()
