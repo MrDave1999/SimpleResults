@@ -82,7 +82,7 @@ public static class ResultExtensions
     internal static ActionResult TranslateToActionResult(this ResultBase result) => result.Status switch
     {
         ResultStatus.Ok            => new OkObjectResult(result),
-        ResultStatus.Created       => new CreatedResult(nameof(TranslateToActionResult), result),
+        ResultStatus.Created       => new CreatedResult(string.Empty, result),
         ResultStatus.Invalid       => new BadRequestObjectResult(result),
         ResultStatus.NotFound      => new NotFoundObjectResult(result),
         ResultStatus.Unauthorized  => new UnauthorizedObjectResult(result),
