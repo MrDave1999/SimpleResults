@@ -2,13 +2,14 @@
 
 public class GetPagedUsersTests
 {
-    [Test]
-    public async Task Get_WhenPaginatedListIsObtained_ShouldReturnsHttpStatusCodeOk()
+    [TestCase(Routes.User.WebApi)]
+    [TestCase(Routes.User.MinimalApi)]
+    public async Task Get_WhenPaginatedListIsObtained_ShouldReturnsHttpStatusCodeOk(string requestUri)
     {
         // Arrange
         using var factory = new WebApplicationFactory<Program>();
         var client = factory.CreateClient();
-        var requestUri = "/User/paged?pageNumber=1&pageSize=3";
+        requestUri = $"{requestUri}/paged?pageNumber=1&pageSize=3";
 
         // Act
         var httpResponse = await client.GetAsync(requestUri);
@@ -25,13 +26,14 @@ public class GetPagedUsersTests
         result.Errors.Should().BeEmpty();
     }
 
-    [Test]
-    public async Task Get_WhenNoResultsFound_ShouldReturnsHttpStatusCodeUnprocessableEntity()
+    [TestCase(Routes.User.WebApi)]
+    [TestCase(Routes.User.MinimalApi)]
+    public async Task Get_WhenNoResultsFound_ShouldReturnsHttpStatusCodeUnprocessableEntity(string requestUri)
     {
         // Arrange
         using var factory = new WebApplicationFactory<Program>();
         var client = factory.CreateClient();
-        var requestUri = "/User/paged?pageNumber=10&pageSize=3";
+        requestUri = $"{requestUri}/paged?pageNumber=10&pageSize=3";
 
         // Act
         var httpResponse = await client.GetAsync(requestUri);
@@ -48,13 +50,14 @@ public class GetPagedUsersTests
         result.Errors.Should().BeEmpty();
     }
 
-    [Test]
-    public async Task Get_WhenPageNumberIsZero_ShouldReturnsHttpStatusCodeBadRequest()
+    [TestCase(Routes.User.WebApi)]
+    [TestCase(Routes.User.MinimalApi)]
+    public async Task Get_WhenPageNumberIsZero_ShouldReturnsHttpStatusCodeBadRequest(string requestUri)
     {
         // Arrange
         using var factory = new WebApplicationFactory<Program>();
         var client = factory.CreateClient();
-        var requestUri = "/User/paged?pageNumber=0&pageSize=3";
+        requestUri = $"{requestUri}/paged?pageNumber=0&pageSize=3";
 
         // Act
         var httpResponse = await client.GetAsync(requestUri);

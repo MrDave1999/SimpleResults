@@ -2,8 +2,9 @@
 
 public class UpdateUserTests
 {
-    [Test]
-    public async Task Put_WhenUserIsUpdated_ShouldReturnsHttpStatusCodeOk()
+    [TestCase(Routes.User.WebApi)]
+    [TestCase(Routes.User.MinimalApi)]
+    public async Task Put_WhenUserIsUpdated_ShouldReturnsHttpStatusCodeOk(string requestUri)
     {
         // Arrange
         using var factory = new WebApplicationFactory<Program>();
@@ -11,10 +12,9 @@ public class UpdateUserTests
         var request = new UserRequest { Name = "Alice" };
         var users = factory.Services.GetService<List<User>>();
         var guid = users[0].Id;
-        var requestUri = $"/User/{guid}";
 
         // Act
-        var httpResponse = await client.PutAsJsonAsync(requestUri, request);
+        var httpResponse = await client.PutAsJsonAsync($"{requestUri}/{guid}", request);
         var result = await httpResponse
             .Content
             .ReadFromJsonAsync<Result>();
@@ -26,8 +26,9 @@ public class UpdateUserTests
         result.Errors.Should().BeEmpty();
     }
 
-    [Test]
-    public async Task Put_WhenUserIsNotFound_ShouldReturnsHttpStatusCodeNotFound()
+    [TestCase(Routes.User.WebApi)]
+    [TestCase(Routes.User.MinimalApi)]
+    public async Task Put_WhenUserIsNotFound_ShouldReturnsHttpStatusCodeNotFound(string requestUri)
     {
         // Arrange
         using var factory = new WebApplicationFactory<Program>();
@@ -35,7 +36,7 @@ public class UpdateUserTests
         var request = new UserRequest { Name = "Alice" };
 
         // Act
-        var httpResponse = await client.PutAsJsonAsync("/User/5000", request);
+        var httpResponse = await client.PutAsJsonAsync($"{requestUri}/5000", request);
         var result = await httpResponse
             .Content
             .ReadFromJsonAsync<Result>();
@@ -47,8 +48,9 @@ public class UpdateUserTests
         result.Errors.Should().BeEmpty();
     }
 
-    [Test]
-    public async Task Put_WhenNameIsEmpty_ShouldReturnsHttpStatusCodeBadRequest()
+    [TestCase(Routes.User.WebApi)]
+    [TestCase(Routes.User.MinimalApi)]
+    public async Task Put_WhenNameIsEmpty_ShouldReturnsHttpStatusCodeBadRequest(string requestUri)
     {
         // Arrange
         using var factory = new WebApplicationFactory<Program>();
@@ -56,7 +58,7 @@ public class UpdateUserTests
         var request = new UserRequest { Name = string.Empty };
 
         // Act
-        var httpResponse = await client.PutAsJsonAsync("/User/5000", request);
+        var httpResponse = await client.PutAsJsonAsync($"{requestUri}/5000", request);
         var result = await httpResponse
             .Content
             .ReadFromJsonAsync<Result>();

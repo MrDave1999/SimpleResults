@@ -32,6 +32,10 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.AddUserRoutes();
+
+app.AddPersonRoutes();
+
 app.Run();
 
 // This class used in the integration test project.

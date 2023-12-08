@@ -2,8 +2,9 @@
 
 public class CreateUserTests
 {
-    [Test]
-    public async Task Post_WhenUserIsCreated_ShouldReturnsHttpStatusCodeCreated()
+    [TestCase(Routes.User.WebApi)]
+    [TestCase(Routes.User.MinimalApi)]
+    public async Task Post_WhenUserIsCreated_ShouldReturnsHttpStatusCodeCreated(string requestUri)
     {
         // Arrange
         using var factory = new WebApplicationFactory<Program>();
@@ -11,7 +12,7 @@ public class CreateUserTests
         var request = new UserRequest { Name = "Bob" };
 
         // Act
-        var httpResponse = await client.PostAsJsonAsync("/User", request);
+        var httpResponse = await client.PostAsJsonAsync(requestUri, request);
         var result = await httpResponse
             .Content
             .ReadFromJsonAsync<Result<CreatedGuid>>();
@@ -24,8 +25,9 @@ public class CreateUserTests
         result.Errors.Should().BeEmpty();
     }
 
-    [Test]
-    public async Task Post_WhenNameIsEmpty_ShouldReturnsHttpStatusCodeBadRequest()
+    [TestCase(Routes.User.WebApi)]
+    [TestCase(Routes.User.MinimalApi)]
+    public async Task Post_WhenNameIsEmpty_ShouldReturnsHttpStatusCodeBadRequest(string requestUri)
     {
         // Arrange
         using var factory = new WebApplicationFactory<Program>();
@@ -33,7 +35,7 @@ public class CreateUserTests
         var request = new UserRequest { Name = string.Empty };
 
         // Act
-        var httpResponse = await client.PostAsJsonAsync("/User", request);
+        var httpResponse = await client.PostAsJsonAsync(requestUri, request);
         var result = await httpResponse
             .Content
             .ReadFromJsonAsync<Result<CreatedGuid>>();

@@ -2,18 +2,18 @@
 
 public class DeleteUserTests
 {
-    [Test]
-    public async Task Delete_WhenUserIsDeleted_ShouldReturnsHttpStatusCodeOk()
+    [TestCase(Routes.User.WebApi)]
+    [TestCase(Routes.User.MinimalApi)]
+    public async Task Delete_WhenUserIsDeleted_ShouldReturnsHttpStatusCodeOk(string requestUri)
     {
         // Arrange
         using var factory = new WebApplicationFactory<Program>();
         var client = factory.CreateClient();
         var users = factory.Services.GetService<List<User>>();
         var guid = users[0].Id;
-        var requestUri = $"/User/{guid}";
 
         // Act
-        var httpResponse = await client.DeleteAsync(requestUri);
+        var httpResponse = await client.DeleteAsync($"{requestUri}/{guid}");
         var result = await httpResponse
             .Content
             .ReadFromJsonAsync<Result>();
@@ -25,15 +25,16 @@ public class DeleteUserTests
         result.Errors.Should().BeEmpty();
     }
 
-    [Test]
-    public async Task Delete_WhenUserIsNotFound_ShouldReturnsHttpStatusCodeNotFound()
+    [TestCase(Routes.User.WebApi)]
+    [TestCase(Routes.User.MinimalApi)]
+    public async Task Delete_WhenUserIsNotFound_ShouldReturnsHttpStatusCodeNotFound(string requestUri)
     {
         // Arrange
         using var factory = new WebApplicationFactory<Program>();
         var client = factory.CreateClient();
 
         // Act
-        var httpResponse = await client.DeleteAsync("/User/5000");
+        var httpResponse = await client.DeleteAsync($"{requestUri}/5000");
         var result = await httpResponse
             .Content
             .ReadFromJsonAsync<Result>();

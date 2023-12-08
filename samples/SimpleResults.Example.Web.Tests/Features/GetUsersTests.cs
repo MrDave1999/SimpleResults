@@ -2,15 +2,16 @@
 
 public class GetUsersTests
 {
-    [Test]
-    public async Task Get_WhenUsersAreObtained_ShouldReturnsHttpStatusCodeOk()
+    [TestCase(Routes.User.WebApi)]
+    [TestCase(Routes.User.MinimalApi)]
+    public async Task Get_WhenUsersAreObtained_ShouldReturnsHttpStatusCodeOk(string requestUri)
     {
         // Arrange
         using var factory = new WebApplicationFactory<Program>();
         var client = factory.CreateClient();
 
         // Act
-        var httpResponse = await client.GetAsync("/User");
+        var httpResponse = await client.GetAsync(requestUri);
         var result = await httpResponse
             .Content
             .ReadFromJsonAsync<ListedResult<User>>();
@@ -23,8 +24,9 @@ public class GetUsersTests
         result.Errors.Should().BeEmpty();
     }
 
-    [Test]
-    public async Task Get_WhenThereAreNoUsers_ShouldReturnsHttpStatusCodeUnprocessableEntity()
+    [TestCase(Routes.User.WebApi)]
+    [TestCase(Routes.User.MinimalApi)]
+    public async Task Get_WhenThereAreNoUsers_ShouldReturnsHttpStatusCodeUnprocessableEntity(string requestUri)
     {
         // Arrange
         using var factory = new WebApplicationFactory<Program>();
@@ -33,7 +35,7 @@ public class GetUsersTests
         users.Clear();
 
         // Act
-        var httpResponse = await client.GetAsync("/User");
+        var httpResponse = await client.GetAsync(requestUri);
         var result = await httpResponse
             .Content
             .ReadFromJsonAsync<ListedResult<User>>();

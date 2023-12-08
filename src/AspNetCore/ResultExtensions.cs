@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using SimpleResults.Resources;
 
 namespace SimpleResults;
@@ -81,7 +82,7 @@ public static class ResultExtensions
     internal static ActionResult TranslateToActionResult(this ResultBase result) => result.Status switch
     {
         ResultStatus.Ok            => new OkObjectResult(result),
-        ResultStatus.Created       => new CreatedResult(nameof(TranslateToActionResult), result),
+        ResultStatus.Created       => new CreatedResult(string.Empty, result),
         ResultStatus.Invalid       => new BadRequestObjectResult(result),
         ResultStatus.NotFound      => new NotFoundObjectResult(result),
         ResultStatus.Unauthorized  => new UnauthorizedObjectResult(result),
@@ -89,6 +90,67 @@ public static class ResultExtensions
         ResultStatus.Failure       => new UnprocessableContentResult(result),
         ResultStatus.CriticalError => new InternalServerErrorResult(result),
         ResultStatus.Forbidden     => new ForbiddenResult(result),
+        _ => throw new NotSupportedException(string.Format(ResponseMessages.UnsupportedStatus, result.Status))
+    };
+
+    /// <summary>
+    /// Converts the <see cref="PagedResult{T}" /> to an implementation of <see cref="IResult"/>.
+    /// </summary>
+    /// <typeparam name="T">The type of objects to enumerate.</typeparam>
+    /// <param name="result">An instance of type <see cref="PagedResult{T}"/>.</param>
+    /// <returns>An instance of <see cref="IResult"/>.</returns>
+    /// <exception cref="NotSupportedException">
+    /// <see cref="ResultBase.Status"/> is invalid.
+    /// </exception>
+    public static IResult ToHttpResult<T>(this PagedResult<T> result)
+        => TranslateToHttpResult(result);
+
+    /// <summary>
+    /// Converts the <see cref="ListedResult{T}" /> to an implementation of <see cref="IResult"/>.
+    /// </summary>
+    /// <typeparam name="T">The type of objects to enumerate.</typeparam>
+    /// <param name="result">An instance of type <see cref="ListedResult{T}"/>.</param>
+    /// <returns>An instance of <see cref="IResult"/>.</returns>
+    /// <exception cref="NotSupportedException">
+    /// <see cref="ResultBase.Status"/> is invalid.
+    /// </exception>
+    public static IResult ToHttpResult<T>(this ListedResult<T> result)
+        => TranslateToHttpResult(result);
+
+    /// <summary>
+    /// Converts the <see cref="Result{T}" /> to an implementation of <see cref="IResult"/>.
+    /// </summary>
+    /// <typeparam name="T">A value associated to the result.</typeparam>
+    /// <param name="result">An instance of type <see cref="Result{T}"/>.</param>
+    /// <returns>An instance of <see cref="IResult"/>.</returns>
+    /// <exception cref="NotSupportedException">
+    /// <see cref="ResultBase.Status"/> is invalid.
+    /// </exception>
+    public static IResult ToHttpResult<T>(this Result<T> result)
+        => TranslateToHttpResult(result);
+
+    /// <summary>
+    /// Converts the <see cref="Result" /> to an implementation of <see cref="IResult"/>.
+    /// </summary>
+    /// <param name="result">An instance of type <see cref="Result"/>.</param>
+    /// <returns>An instance of <see cref="IResult"/>.</returns>
+    /// <exception cref="NotSupportedException">
+    /// <see cref="ResultBase.Status"/> is invalid.
+    /// </exception>
+    public static IResult ToHttpResult(this Result result)
+        => TranslateToHttpResult(result);
+
+    internal static IResult TranslateToHttpResult(this ResultBase result) => result.Status switch
+    {
+        ResultStatus.Ok            => Results.Ok(result),
+        ResultStatus.Created       => Results.Created(string.Empty, result),
+        ResultStatus.Invalid       => Results.BadRequest(result),
+        ResultStatus.NotFound      => Results.NotFound(result),
+        ResultStatus.Unauthorized  => new UnauthorizedHttpResult(result),
+        ResultStatus.Conflict      => Results.Conflict(result),
+        ResultStatus.Failure       => Results.UnprocessableEntity(result),
+        ResultStatus.CriticalError => new InternalServerErrorHttpResult(result),
+        ResultStatus.Forbidden     => new ForbiddenHttpResult(result),
         _ => throw new NotSupportedException(string.Format(ResponseMessages.UnsupportedStatus, result.Status))
     };
 }
