@@ -1,7 +1,8 @@
 ﻿namespace SimpleResults.Example.AspNetCore.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Tags("Person WebApi")]
+[Route("Person-WebApi")]
 public class PersonController : ControllerBase
 {
     private readonly PersonService _personService;
