@@ -36,6 +36,8 @@ app.AddUserRoutes();
 
 app.AddPersonRoutes();
 
+app.AddMessageRoutes();
+
 app.Run();
 
 // This class used in the integration test project.
