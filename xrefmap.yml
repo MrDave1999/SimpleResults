@@ -824,6 +824,15 @@ references:
   fullName.vb: SimpleResults.Result(Of T).Data
   nameWithType: Result<T>.Data
   nameWithType.vb: Result(Of T).Data
+- uid: SimpleResults.Result`1.op_Implicit(`0)~SimpleResults.Result{`0}
+  name: Implicit(T to Result<T>)
+  href: api/SimpleResults.Result-1.op_Implicit.html#SimpleResults_Result_1_op_Implicit__0__SimpleResults_Result__0_
+  commentId: M:SimpleResults.Result`1.op_Implicit(`0)~SimpleResults.Result{`0}
+  name.vb: Widening(T to Result(Of T))
+  fullName: SimpleResults.Result<T>.Implicit(T to SimpleResults.Result<T>)
+  fullName.vb: SimpleResults.Result(Of T).Widening(T to SimpleResults.Result(Of T))
+  nameWithType: Result<T>.Implicit(T to Result<T>)
+  nameWithType.vb: Result(Of T).Widening(T to Result(Of T))
 - uid: SimpleResults.Result`1.op_Implicit(SimpleResults.Result)~SimpleResults.Result{`0}
   name: Implicit(Result to Result<T>)
   href: api/SimpleResults.Result-1.op_Implicit.html#SimpleResults_Result_1_op_Implicit_SimpleResults_Result__SimpleResults_Result__0_
@@ -833,6 +842,15 @@ references:
   fullName.vb: SimpleResults.Result(Of T).Widening(SimpleResults.Result to SimpleResults.Result(Of T))
   nameWithType: Result<T>.Implicit(Result to Result<T>)
   nameWithType.vb: Result(Of T).Widening(Result to Result(Of T))
+- uid: SimpleResults.Result`1.op_Implicit(SimpleResults.Result{`0})~`0
+  name: Implicit(Result<T> to T)
+  href: api/SimpleResults.Result-1.op_Implicit.html#SimpleResults_Result_1_op_Implicit_SimpleResults_Result__0____0
+  commentId: M:SimpleResults.Result`1.op_Implicit(SimpleResults.Result{`0})~`0
+  name.vb: Widening(Result(Of T) to T)
+  fullName: SimpleResults.Result<T>.Implicit(SimpleResults.Result<T> to T)
+  fullName.vb: SimpleResults.Result(Of T).Widening(SimpleResults.Result(Of T) to T)
+  nameWithType: Result<T>.Implicit(Result<T> to T)
+  nameWithType.vb: Result(Of T).Widening(Result(Of T) to T)
 - uid: SimpleResults.Result`1.op_Implicit*
   name: Implicit
   href: api/SimpleResults.Result-1.op_Implicit.html
@@ -953,6 +971,45 @@ references:
   fullName.vb: SimpleResults.ResultExtensions.ToActionResult(Of T)(SimpleResults.Result(Of T))
   nameWithType: ResultExtensions.ToActionResult<T>(Result<T>)
   nameWithType.vb: ResultExtensions.ToActionResult(Of T)(Result(Of T))
+- uid: SimpleResults.ResultExtensions.ToHttpResult(SimpleResults.Result)
+  name: ToHttpResult(Result)
+  href: api/SimpleResults.ResultExtensions.ToHttpResult.html#SimpleResults_ResultExtensions_ToHttpResult_SimpleResults_Result_
+  commentId: M:SimpleResults.ResultExtensions.ToHttpResult(SimpleResults.Result)
+  fullName: SimpleResults.ResultExtensions.ToHttpResult(SimpleResults.Result)
+  nameWithType: ResultExtensions.ToHttpResult(Result)
+- uid: SimpleResults.ResultExtensions.ToHttpResult*
+  name: ToHttpResult
+  href: api/SimpleResults.ResultExtensions.ToHttpResult.html
+  commentId: Overload:SimpleResults.ResultExtensions.ToHttpResult
+  fullName: SimpleResults.ResultExtensions.ToHttpResult
+  nameWithType: ResultExtensions.ToHttpResult
+- uid: SimpleResults.ResultExtensions.ToHttpResult``1(SimpleResults.ListedResult{``0})
+  name: ToHttpResult<T>(ListedResult<T>)
+  href: api/SimpleResults.ResultExtensions.ToHttpResult.html#SimpleResults_ResultExtensions_ToHttpResult__1_SimpleResults_ListedResult___0__
+  commentId: M:SimpleResults.ResultExtensions.ToHttpResult``1(SimpleResults.ListedResult{``0})
+  name.vb: ToHttpResult(Of T)(ListedResult(Of T))
+  fullName: SimpleResults.ResultExtensions.ToHttpResult<T>(SimpleResults.ListedResult<T>)
+  fullName.vb: SimpleResults.ResultExtensions.ToHttpResult(Of T)(SimpleResults.ListedResult(Of T))
+  nameWithType: ResultExtensions.ToHttpResult<T>(ListedResult<T>)
+  nameWithType.vb: ResultExtensions.ToHttpResult(Of T)(ListedResult(Of T))
+- uid: SimpleResults.ResultExtensions.ToHttpResult``1(SimpleResults.PagedResult{``0})
+  name: ToHttpResult<T>(PagedResult<T>)
+  href: api/SimpleResults.ResultExtensions.ToHttpResult.html#SimpleResults_ResultExtensions_ToHttpResult__1_SimpleResults_PagedResult___0__
+  commentId: M:SimpleResults.ResultExtensions.ToHttpResult``1(SimpleResults.PagedResult{``0})
+  name.vb: ToHttpResult(Of T)(PagedResult(Of T))
+  fullName: SimpleResults.ResultExtensions.ToHttpResult<T>(SimpleResults.PagedResult<T>)
+  fullName.vb: SimpleResults.ResultExtensions.ToHttpResult(Of T)(SimpleResults.PagedResult(Of T))
+  nameWithType: ResultExtensions.ToHttpResult<T>(PagedResult<T>)
+  nameWithType.vb: ResultExtensions.ToHttpResult(Of T)(PagedResult(Of T))
+- uid: SimpleResults.ResultExtensions.ToHttpResult``1(SimpleResults.Result{``0})
+  name: ToHttpResult<T>(Result<T>)
+  href: api/SimpleResults.ResultExtensions.ToHttpResult.html#SimpleResults_ResultExtensions_ToHttpResult__1_SimpleResults_Result___0__
+  commentId: M:SimpleResults.ResultExtensions.ToHttpResult``1(SimpleResults.Result{``0})
+  name.vb: ToHttpResult(Of T)(Result(Of T))
+  fullName: SimpleResults.ResultExtensions.ToHttpResult<T>(SimpleResults.Result<T>)
+  fullName.vb: SimpleResults.ResultExtensions.ToHttpResult(Of T)(SimpleResults.Result(Of T))
+  nameWithType: ResultExtensions.ToHttpResult<T>(Result<T>)
+  nameWithType.vb: ResultExtensions.ToHttpResult(Of T)(Result(Of T))
 - uid: SimpleResults.ResultStatus
   name: ResultStatus
   href: api/SimpleResults.ResultStatus.html
