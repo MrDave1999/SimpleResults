@@ -1,9 +1,8 @@
 namespace SimpleResults.Example.AspNetCore.Controllers;
 
-[ApiController]
 [Tags("User WebApi")]
 [Route("User-WebApi")]
-public class UserController : ControllerBase
+public class UserController
 {
     private readonly UserService _userService;
 
