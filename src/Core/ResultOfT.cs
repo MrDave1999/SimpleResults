@@ -1,4 +1,6 @@
-﻿namespace SimpleResults;
+﻿using SimpleResults.Resources;
+
+namespace SimpleResults;
 
 /// <summary>
 /// Represents the result of an operation that returns a value.
@@ -26,4 +28,18 @@ public sealed class Result<T> : ResultBase
     /// <param name="result">An instance of type <see cref="Result"/>.</param>
     public static implicit operator Result<T>(Result result) 
         => result.ToResult(default(T));
+
+    /// <summary>
+    /// Converts the value of type <typeparamref name="T"/> to an instance of type <see cref="Result{T}"/>.
+    /// </summary>
+    /// <param name="value">
+    /// An instance of type <typeparamref name="T"/> that represents the value.
+    /// </param>
+    public static implicit operator Result<T>(T value) => new() 
+    { 
+        IsSuccess = true,
+        Data = value,
+        Message = ResponseMessages.Success,
+        Status = ResultStatus.Ok
+    };
 }
