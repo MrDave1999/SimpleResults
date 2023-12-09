@@ -11,7 +11,7 @@
 
 [![SimpleResults-logo](https://raw.githubusercontent.com/MrDave1999/SimpleResults/master/SimpleResults-logo.png)](https://github.com/MrDave1999/SimpleResults)
 
-A simple library to implement the Result pattern for returning from services. It also provides a mechanism for translating the Result object to an [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult?view=aspnetcore-7.0).
+A simple library to implement the Result pattern for returning from services. It also provides a mechanism for translating the Result object to an [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult?view=aspnetcore-7.0) or [IResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.iresult?view=aspnetcore-7.0).
 
 > This library was inspired by [Arcadis.Result](https://github.com/ardalis/Result).
 
@@ -33,6 +33,7 @@ See the [API documentation](https://mrdave1999.github.io/SimpleResults/api/Simpl
   - [Integration with ASP.NET Core](#integration-with-aspnet-core)
     - [Using TranslateResultToActionResult as an action filter](#using-translateresulttoactionresult-as-an-action-filter)
     - [Add action filter as global](#add-action-filter-as-global)
+    - [Support for Minimal APIs](#support-for-minimal-apis)
   - [Translate Result object to HTTP status code](#translate-result-object-to-http-status-code)
   - [Integration with Fluent Validation](#integration-with-fluent-validation)
 - [Samples](#samples)
@@ -100,6 +101,7 @@ This was a surprise to me! I didn't know! I was expecting an exception but it wa
 ### Interesting resource about exceptions
 
 - [Exceptions for flow control in C# by Vladimir Khorikov](https://enterprisecraftsmanship.com/posts/exceptions-for-flow-control)
+- [Exceptions and Result pattern by Ben Witt](https://medium.com/@wgyxxbf/result-pattern-a01729f42f8c)
 
 ## Installation
 
@@ -287,9 +289,9 @@ public class UserService
 
 ### Integration with ASP.NET Core
 
-You can convert the `Result` object to an [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1?view=aspnetcore-7.0) using the `ToActionResult` extension method.
+You can convert the Result object to a [Microsoft.AspNetCore.Mvc.ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1?view=aspnetcore-7.0) using the [ToActionResult](https://mrdave1999.github.io/SimpleResults/api/SimpleResults.ResultExtensions.ToActionResult.html) extension method.
 
-You need to install the [SimpleResults.AspNetCore](https://www.nuget.org/packages/SimpleResults.AspNetCore) package to have access to the extension method.
+You need to install the [SimpleResults.AspNetCore](https://www.nuget.org/packages/SimpleResults.AspNetCore) package to have access to the extension method. See the [ResultExtensions](https://mrdave1999.github.io/SimpleResults/api/SimpleResults.ResultExtensions.html#methods) class to find all extension methods.
 
 **Example:**
 ```cs
@@ -300,7 +302,7 @@ public class UserRequest
 
 [ApiController]
 [Route("[controller]")]
-public class UserController : ControllerBase
+public class UserController
 {
     private readonly UserService _userService;
     public UserController(UserService userService) => _userService = userService;
@@ -341,7 +343,7 @@ You can also use the `TranslateResultToActionResult` filter to translate the Res
 [TranslateResultToActionResult]
 [ApiController]
 [Route("[controller]")]
-public class UserController : ControllerBase
+public class UserController
 {
     private readonly UserService _userService;
     public UserController(UserService userService) => _userService = userService;
@@ -365,6 +367,38 @@ builder.Services.AddControllers(options =>
 });
 ```
 This way you no longer need to add the `TranslateResultToActionResult` attribute on each controller or individual action.
+
+#### Support for Minimal APIs
+
+As of version 2.3.0, a feature has been added to convert the Result object to an implementation of [Microsoft.AspNetCore.Http.IResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.iresult?view=aspnetcore-7.0).
+
+You only need to use the extension method called [ToHttpResult](https://mrdave1999.github.io/SimpleResults/api/SimpleResults.ResultExtensions.ToHttpResult.html). See the [ResultExtensions](https://mrdave1999.github.io/SimpleResults/api/SimpleResults.ResultExtensions.html#methods) class to find all extension methods.
+
+**Example:**
+```cs
+public static class UserEndpoint
+{
+    public static void AddRoutes(this WebApplication app)
+    {
+        var userGroup = app
+            .MapGroup("/User")
+            .WithTags("User");
+
+        userGroup
+            .MapGet("/", (UserService service) => service.GetAll().ToHttpResult())
+            .Produces<ListedResult<User>>();
+
+        userGroup
+            .MapGet("/{id}", (string id, UserService service) => service.GetById(id).ToHttpResult())
+            .Produces<Result<User>>();
+
+        userGroup.MapPost("/", ([FromBody]UserRequest request, UserService service) =>
+        {
+            return service.Create(request.Name).ToHttpResult();
+        })
+        .Produces<Result<CreatedGuid>>();
+}
+```
 
 ### Translate Result object to HTTP status code
 
