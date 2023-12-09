@@ -13,4 +13,10 @@ public class Routes
         public const string WebApi     = "/User-WebApi";
         public const string MinimalApi = "/User-MinimalApi";
     }
+
+    public class Message
+    {
+        public const string WebApi     = "/Message-WebApi";
+        public const string MinimalApi = "/Message-MinimalApi";
+    }
 }
