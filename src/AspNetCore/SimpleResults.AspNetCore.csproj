@@ -22,10 +22,10 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <Description>
-      A simple package that translates the Result object to ActionResult.
+      A simple package that translates the Result object to ActionResult or IResult.
     </Description>
-    <Version>2.2.2</Version>
-    <PackageReleaseNotes>- Add support for .NET 8</PackageReleaseNotes>
+    <Version>2.3.0</Version>
+    <PackageReleaseNotes>- Add support for Minimal APIs</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
