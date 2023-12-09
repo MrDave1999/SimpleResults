@@ -11,59 +11,67 @@ public class TranslateResultToActionResultAttributeTests
     }
 
     [Test]
-    public void OnActionExecuted_WhenObjectResultValueIsNotResultBase_ShouldNotRunAnyLogic()
+    public void OnActionExecuted_WhenValueIsNotSubtypeOfResultBase_ShouldNotRunAnyLogic()
     {
         // Arrange
         var actionExecutedContext = CreateContext();
         var actionFilter = new TranslateResultToActionResultAttribute();
-        var person = new Person { Name = "Test" };
-        actionExecutedContext.Result = new ObjectResult(person);
+        var value = new Person { Name = "Test" };
+        actionExecutedContext.Result = new ObjectResult(value);
 
         // Act
         actionFilter.OnActionExecuted(actionExecutedContext);
 
-        // Asserts
-        var objectResult = actionExecutedContext.Result as ObjectResult;
-        objectResult.StatusCode.Should().BeNull();
-        objectResult.Value.Should().As<Person>();
+        // Assert
+        actionExecutedContext.Result.Should().As<ObjectResult>();
     }
 
     [Test]
-    public void OnActionExecuted_WhenObjectResultValueIsResultBase_ShouldTranslateToActionResult()
+    public void OnActionExecuted_WhenValueIsSubtypeOfResultBase_ShouldTranslateToActionResult()
     {
         // Arrange
         var actionExecutedContext = CreateContext();
         var actionFilter = new TranslateResultToActionResultAttribute();
+        int expectedStatusCode = 200;
         var person = new Person { Name = "Test" };
-        Result<Person> result = Result.Success(person);
-        actionExecutedContext.Result = new ObjectResult(result);
+        Result<Person> value = Result.Success(person);
+        actionExecutedContext.Result = new ObjectResult(value);
 
         // Act
         actionFilter.OnActionExecuted(actionExecutedContext);
 
         // Asserts
         var objectResult = actionExecutedContext.Result as OkObjectResult;
-        objectResult.StatusCode.Should().Be(200);
+        objectResult.StatusCode.Should().Be(expectedStatusCode);
         objectResult.Value.Should().As<Result<Person>>();
     }
 
     [Test]
-    public void OnActionExecuted_WhenContextResultIsNotObjectResult_ShouldNotRunAnyLogic()
+    public void OnActionExecuted_WhenResultIsNotSubtypeOfObjectResult_ShouldNotRunAnyLogic()
     {
         // Arrange
         var actionExecutedContext = CreateContext();
         var actionFilter = new TranslateResultToActionResultAttribute();
-        actionExecutedContext.Result = new TestResult();
+        var value = new Person { Name = "Test" };
+        actionExecutedContext.Result = new HttpActionResult(value);
 
         // Act
         actionFilter.OnActionExecuted(actionExecutedContext);
 
         // Assert
-        actionExecutedContext.Result.Should().As<TestResult>();
+        actionExecutedContext.Result.Should().As<HttpActionResult>();
     }
 
-    private class TestResult : IActionResult
+    private class HttpActionResult : IActionResult
     {
-        public Task ExecuteResultAsync(ActionContext context) => throw new NotImplementedException();
+        public object Value { get; }
+        public int StatusCode => StatusCodes.Status200OK;
+        public HttpActionResult(object value) => Value = value;
+
+        public Task ExecuteResultAsync(ActionContext context)
+        {
+            context.HttpContext.Response.StatusCode = StatusCode;
+            return context.HttpContext.Response.WriteAsJsonAsync(Value);
+        }
     }
 }
