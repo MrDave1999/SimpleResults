@@ -11,7 +11,7 @@
 
 [![SimpleResults-logo](https://raw.githubusercontent.com/MrDave1999/SimpleResults/master/SimpleResults-logo.png)](https://github.com/MrDave1999/SimpleResults)
 
-A simple library to implement the Result pattern for returning from services. It also provides a mechanism for translating the Result object to an [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult?view=aspnetcore-7.0).
+A simple library to implement the Result pattern for returning from services. It also provides a mechanism for translating the Result object to an [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult?view=aspnetcore-7.0) or [IResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.iresult?view=aspnetcore-7.0).
 
 > This library was inspired by [Arcadis.Result](https://github.com/ardalis/Result).
 
