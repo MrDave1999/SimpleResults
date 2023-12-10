@@ -4,25 +4,22 @@ public static class PersonEndpoint
 {
     public static void AddPersonRoutes(this WebApplication app)
     {
-        var userGroup = app
+        var personGroup = app
             .MapGroup("/Person-MinimalApi")
-            .WithTags("Person MinimalApi");
+            .WithTags("Person MinimalApi")
+            .AddEndpointFilter<TranslateResultToHttpResultFilter>();
 
-        userGroup.MapPost("/", async ([FromBody]Person person, PersonService service) =>
+        personGroup.MapPost("/", async ([FromBody]Person person, PersonService service) =>
         {
             await Task.Delay(100);
-            return service
-                .Create(person)
-                .ToHttpResult();
+            return service.Create(person);
         })
         .Produces<Result>();
 
-        userGroup.MapGet("/", async (PersonService service) =>
+        personGroup.MapGet("/", async (PersonService service) =>
         {
             await Task.Delay(100);
-            return service
-                .GetAll()
-                .ToHttpResult();
+            return service.GetAll();
         })
         .Produces<ListedResult<Person>>();
     }
