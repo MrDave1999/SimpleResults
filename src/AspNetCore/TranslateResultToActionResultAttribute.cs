@@ -5,6 +5,14 @@ namespace SimpleResults;
 
 /// <summary>
 /// Translates the Result object to an <see cref="ActionResult"/>.
+/// <para>Result object can be:</para>
+/// <list type="bullet">
+/// <item><see cref="Result{T}"/></item>
+/// <item><see cref="ListedResult{T}"/></item>
+/// <item><see cref="PagedResult{T}"/></item>
+/// <item><see cref="Result"/></item>
+/// <item>A subtype of <see cref="ResultBase"/>.</item>
+/// </list>
 /// </summary>
 public class TranslateResultToActionResultAttribute : ActionFilterAttribute
 {
