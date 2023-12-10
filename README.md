@@ -334,9 +334,9 @@ See the [API documentation](https://mrdave1999.github.io/SimpleResults/api/Simpl
 
 #### Using TranslateResultToActionResult as an action filter
 
-You can also use the `TranslateResultToActionResult` filter to translate the Result object to [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult?view=aspnetcore-7.0). 
+You can also use the [TranslateResultToActionResult](https://mrdave1999.github.io/SimpleResults/api/SimpleResults.TranslateResultToActionResultAttribute.html) filter to translate the Result object to [ActionResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult?view=aspnetcore-7.0). 
 
-`TranslateResultToActionResult` class will internally call the `ToActionResult` method and perform the translation.
+`TranslateResultToActionResultAttribute` class will internally call the `ToActionResult` method and perform the translation.
 
 **Example:**
 ```cs
@@ -397,8 +397,33 @@ public static class UserEndpoint
             return service.Create(request.Name).ToHttpResult();
         })
         .Produces<Result<CreatedGuid>>();
+    }
 }
 ```
+You can also use the [TranslateResultToHttpResult](https://mrdave1999.github.io/SimpleResults/api/SimpleResults.TranslateResultToHttpResultFilter.html) filter to translate the Result object to an implementation of [IResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.iresult?view=aspnetcore-7.0). 
+
+`TranslateResultToHttpResultFilter` class will internally call the `ToHttpResult` method and perform the translation.
+
+**Example:**
+```cs
+public static class UserEndpoint
+{
+    public static void AddRoutes(this WebApplication app)
+    {
+        var userGroup = app
+            .MapGroup("/User")
+            .WithTags("User")
+            .AddEndpointFilter<TranslateResultToHttpResultFilter>();
+
+        userGroup
+            .MapGet("/{id}", (string id, UserService service) => service.GetById(id))
+            .Produces<Result<User>>();
+    }
+}
+```
+The endpoint handler returns a `Result<User>`. After the handler is executed, the filter (i.e. `TranslateResultToHttpResult`) will run and translate the `Result<User>` to an implementation of [IResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.iresult?view=aspnetcore-7.0).
+
+[See the source code](https://github.com/MrDave1999/SimpleResults/blob/25387945f57241dadad3baf52886ab59949c98fa/src/AspNetCore/TranslateResultToHttpResultFilter.cs#L26), it is very simple.
 
 ### Translate Result object to HTTP status code
 
