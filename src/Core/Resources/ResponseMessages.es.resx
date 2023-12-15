@@ -153,6 +153,9 @@
   <data name="ObtainedResources" xml:space="preserve">
     <value>Recursos obtenidos con éxito</value>
   </data>
+  <data name="PropertyFailedValidation" xml:space="preserve">
+    <value>La propiedad '{0}' falló en la validación. El error fue: {1}</value>
+  </data>
   <data name="Success" xml:space="preserve">
     <value>Operación ejecutada con éxito</value>
   </data>
