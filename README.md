@@ -458,7 +458,7 @@ public class UserService
     {
         ValidationResult result = new CreateUserValidator().Validate(request);
         if(result.IsFailed())
-            return Result.Invalid(result.AsErrors());
+            return result.Invalid();
 
         // Some code..
     }
@@ -474,22 +474,30 @@ You can find a complete and functional example in these projects:
 - [SimpleResults.Example.Web.Tests](https://github.com/MrDave1999/SimpleResults/tree/master/samples/SimpleResults.Example.Web.Tests)
 - [SimpleResults.Example.FluentValidation](https://github.com/MrDave1999/SimpleResults/tree/master/samples/SimpleResults.Example/FluentValidation)
 - [Double-V-Partners](https://github.com/MrDave1999/double-v-partners/tree/master/backend/src/Features/Users)
+- [Orders.Sample](https://github.com/MrDave1999/orders-sample/tree/master/src/Application/Features/Orders)
 
 ## Language settings
-`SimpleResults` uses default messages in English. You can change the language in this way:
+
+`SimpleResults` has resources that contain response messages. [See the source code](https://github.com/MrDave1999/SimpleResults/tree/23f5fdb4af10195b182ace9ff78fb4fbf4fa9768/src/Core/Resources).
+
+At the moment there are only two resources:
+- `ResponseMessages.resx`. It contains messages in English.
+- `ResponseMessages.es.resx`. It contains messages in Spanish.
+
+The loading of these resources depends on your locale settings. 
+For example, if your computer has the language as Spanish, the resource that will be loaded will be `ResponseMessages.es.resx`.
+Likewise, if it is set to English, the default resource will be loaded: `ResponseMessages.resx`.
+
+And if the configuration is set to French, the resource that will be loaded will be the default one (i.e. `ResponseMessages.resx`), since there is no resource called `ResponseMessages.fr.resx`.
+
+You can explicitly specify the culture to ensure that a resource is loaded regardless of your computer's language settings:
 ```cs
-// Allows to load the resource in Spanish.
 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("es");
 ```
 In ASP.NET Core applications, the [UseRequestLocalization](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.applicationbuilderextensions.userequestlocalization?view=aspnetcore-7.0#microsoft-aspnetcore-builder-applicationbuilderextensions-userequestlocalization(microsoft-aspnetcore-builder-iapplicationbuilder-system-string())) extension method is used:
 ```cs
 app.UseRequestLocalization("es");
 ```
-At the moment, only two languages are available:
-- English
-- Spanish
-
-Feel free to contribute :D
 
 ## Contribution
 
