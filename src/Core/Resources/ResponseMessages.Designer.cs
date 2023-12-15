@@ -169,6 +169,15 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &apos;{0}&apos; property failed validation. Error was: {1}.
+        /// </summary>
+        internal static string PropertyFailedValidation {
+            get {
+                return ResourceManager.GetString("PropertyFailedValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Operation successfully executed.
         /// </summary>
         internal static string Success {

@@ -153,6 +153,9 @@
   <data name="ObtainedResources" xml:space="preserve">
     <value>Resources successfully obtained</value>
   </data>
+  <data name="PropertyFailedValidation" xml:space="preserve">
+    <value>'{0}' property failed validation. Error was: {1}</value>
+  </data>
   <data name="Success" xml:space="preserve">
     <value>Operation successfully executed</value>
   </data>

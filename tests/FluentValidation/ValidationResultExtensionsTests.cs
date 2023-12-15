@@ -32,32 +32,43 @@ public class ValidationResultExtensionsTests
         actual.Should().BeFalse();
     }
 
-    [Test]
-    public void AsErrors_WhenValidationResultIsReceived_ShouldReturnsCollectionOfErrorMessages()
+    [TestCaseSource(typeof(FailedValidationTestCases))]
+    public void AsErrors_WhenValidationResultIsReceived_ShouldReturnsCollectionOfErrorMessages(
+        Order order,
+        string[] expectedErrors)
     {
         // Arrange
-        var person = new Person { Name = string.Empty };
-        var validator = new PersonValidator();
-        ValidationResult result = validator.Validate(person);
-        var expectedCollection = new[]
-        {
-            "'Name' must not be empty."
-        };
+        var validator = new OrderValidator();
+        ValidationResult result = validator.Validate(order);
 
         // Act
         IEnumerable<string> actual = result.AsErrors();
 
         // Assert
-        actual.Should().BeEquivalentTo(expectedCollection);
+        actual.Should().BeEquivalentTo(expectedErrors);
     }
 
     [Test]
     public void AsErrors_WhenThereAreNoErrors_ShouldReturnsEmptyCollection()
     {
         // Arrange
-        var person = new Person { Name = "Alice" };
-        var validator = new PersonValidator();
-        ValidationResult result = validator.Validate(person);
+        var order = new Order
+        {
+            Customer = "Bob",
+            Description = "Test",
+            DeliveryAddress = new Address { Description = "D", Postcode = "P", Country = "C" },
+            Details = new List<OrderDetail>
+            {
+                new()
+                {
+                    Product = "P",
+                    Price = 5000,
+                    Amount = 2
+                }
+            }
+        };
+        var validator = new OrderValidator();
+        ValidationResult result = validator.Validate(order);
 
         // Act
         IEnumerable<string> actual = result.AsErrors();
@@ -76,7 +87,7 @@ public class ValidationResultExtensionsTests
         var expectedMessage = ResponseMessages.ValidationErrors;
         var expectedErrors = new[]
         {
-            "'Name' must not be empty."
+            "'Name' property failed validation. Error was: 'Name' must not be empty."
         };
 
         // Act
@@ -100,7 +111,7 @@ public class ValidationResultExtensionsTests
         var expectedMessage = "Error";
         var expectedErrors = new[]
         {
-            "'Name' must not be empty."
+            "'Name' property failed validation. Error was: 'Name' must not be empty."
         };
 
         // Act

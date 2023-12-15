@@ -1,4 +1,4 @@
-﻿namespace SimpleResults.Tests.FluentValidation;
+﻿namespace SimpleResults.Tests.FluentValidation.Validators;
 
 public class PersonValidator : AbstractValidator<Person>
 {
