@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using FluentValidation.Results;
+using SimpleResults.Resources;
 
 namespace SimpleResults;
 
@@ -15,7 +16,7 @@ public static class SRFluentValidationResultExtensions
     /// <returns>
     /// <c>true</c> if the validation result is failed; otherwise <c>false</c>.
     /// </returns>
-    public static bool IsFailed(this ValidationResult result) 
+    public static bool IsFailed(this ValidationResult result)
         => !result.IsValid;
 
     /// <summary>
@@ -24,7 +25,13 @@ public static class SRFluentValidationResultExtensions
     /// <param name="result">The result of running a validator.</param>
     /// <returns>A collection that contains error messages.</returns>
     public static IEnumerable<string> AsErrors(this ValidationResult result)
-        => result.Errors.Select(failure => failure.ErrorMessage);
+        => result.Errors.Select(GetErrorMessage);
+
+    private static string GetErrorMessage(ValidationFailure failure)
+        => string.Format(
+            ResponseMessages.PropertyFailedValidation, 
+            failure.PropertyName, 
+            failure.ErrorMessage);
 
     /// <summary>
     /// Represents a validation error that prevents the underlying service from completing.
