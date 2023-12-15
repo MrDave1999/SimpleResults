@@ -7,6 +7,6 @@ public class TestFixtureProjectSetup
     public void RunBeforeAllTestFixtures()
     {
         // Allows to load the default resource in English.
-        Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
+        Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en");
     }
 }
