@@ -1,5 +1,6 @@
 global using System.Globalization;
 global using System.Text.Json;
+global using System.Collections;
 global using NUnit.Framework;
 global using FluentAssertions;
 global using FluentValidation;
@@ -9,3 +10,4 @@ global using Microsoft.AspNetCore.Http;
 global using Microsoft.AspNetCore.Http.HttpResults;
 global using Microsoft.AspNetCore.Mvc.Filters;
 global using SimpleResults.Resources;
+global using SimpleResults.Tests.FluentValidation.Validators;
