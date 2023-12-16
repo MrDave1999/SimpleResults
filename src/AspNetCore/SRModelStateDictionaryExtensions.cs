@@ -9,7 +9,7 @@ namespace SimpleResults;
 /// Contains extension methods that convert an instance of <see cref="ModelStateDictionary"/> 
 /// into an instance of type <see cref="Result"/>.
 /// </summary>
-public static class SRModelStateExtensions
+public static class SRModelStateDictionaryExtensions
 {
     /// <summary>
     /// Checks if the model state is failed.
@@ -78,7 +78,7 @@ public static class SRModelStateExtensions
 
     private static IEnumerable<string> AsErrors(this ModelStateDictionary modelState)
     {
-        foreach (var (propertyName, value) in modelState)
+        foreach (var(propertyName, value) in modelState)
         {
             var errors = value
                 .Errors
