@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using SimpleResults.Resources;
 
@@ -10,10 +11,19 @@ public static class SRModelStateExtensions
         => !modelState.IsValid;
 
     public static Result Invalid(this ModelStateDictionary modelState)
-        => Result.Invalid(AsErrors(modelState));
+        => Result.Invalid(modelState.AsErrors());
 
     public static Result Invalid(this ModelStateDictionary modelState, string message)
-        => Result.Invalid(message, AsErrors(modelState));
+        => Result.Invalid(message, modelState.AsErrors());
+
+    public static ActionResult BadRequest(this ModelStateDictionary modelState)
+        => modelState.BadRequest(ResponseMessages.ValidationErrors);
+
+    public static ActionResult BadRequest(this ModelStateDictionary modelState, string message)
+    {
+        Result result = Result.Invalid(message, modelState.AsErrors());
+        return new BadRequestObjectResult(result);
+    }
 
     private static IEnumerable<string> AsErrors(this ModelStateDictionary modelState)
     {
