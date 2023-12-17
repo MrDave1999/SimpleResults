@@ -9,5 +9,6 @@ global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.AspNetCore.Http;
 global using Microsoft.AspNetCore.Http.HttpResults;
 global using Microsoft.AspNetCore.Mvc.Filters;
+global using Microsoft.AspNetCore.Mvc.ModelBinding;
 global using SimpleResults.Resources;
 global using SimpleResults.Tests.FluentValidation.Validators;
