@@ -19,4 +19,10 @@ public class Routes
         public const string WebApi     = "/Message-WebApi";
         public const string MinimalApi = "/Message-MinimalApi";
     }
+
+    public class Order
+    {
+        public const string ManualValidation    = "/Order-ManualValidation";
+        public const string AutomaticValidation = "/Order-AutomaticValidation";
+    }
 }
