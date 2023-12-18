@@ -1118,6 +1118,60 @@ references:
   commentId: Overload:SimpleResults.SRFluentValidationResultExtensions.IsFailed
   fullName: SimpleResults.SRFluentValidationResultExtensions.IsFailed
   nameWithType: SRFluentValidationResultExtensions.IsFailed
+- uid: SimpleResults.SRModelStateDictionaryExtensions
+  name: SRModelStateDictionaryExtensions
+  href: api/SimpleResults.SRModelStateDictionaryExtensions.html
+  commentId: T:SimpleResults.SRModelStateDictionaryExtensions
+  fullName: SimpleResults.SRModelStateDictionaryExtensions
+  nameWithType: SRModelStateDictionaryExtensions
+- uid: SimpleResults.SRModelStateDictionaryExtensions.BadRequest(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)
+  name: BadRequest(ModelStateDictionary)
+  href: api/SimpleResults.SRModelStateDictionaryExtensions.BadRequest.html#SimpleResults_SRModelStateDictionaryExtensions_BadRequest_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_
+  commentId: M:SimpleResults.SRModelStateDictionaryExtensions.BadRequest(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)
+  fullName: SimpleResults.SRModelStateDictionaryExtensions.BadRequest(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)
+  nameWithType: SRModelStateDictionaryExtensions.BadRequest(ModelStateDictionary)
+- uid: SimpleResults.SRModelStateDictionaryExtensions.BadRequest(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary,System.String)
+  name: BadRequest(ModelStateDictionary, String)
+  href: api/SimpleResults.SRModelStateDictionaryExtensions.BadRequest.html#SimpleResults_SRModelStateDictionaryExtensions_BadRequest_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_System_String_
+  commentId: M:SimpleResults.SRModelStateDictionaryExtensions.BadRequest(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary,System.String)
+  fullName: SimpleResults.SRModelStateDictionaryExtensions.BadRequest(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary, System.String)
+  nameWithType: SRModelStateDictionaryExtensions.BadRequest(ModelStateDictionary, String)
+- uid: SimpleResults.SRModelStateDictionaryExtensions.BadRequest*
+  name: BadRequest
+  href: api/SimpleResults.SRModelStateDictionaryExtensions.BadRequest.html
+  commentId: Overload:SimpleResults.SRModelStateDictionaryExtensions.BadRequest
+  fullName: SimpleResults.SRModelStateDictionaryExtensions.BadRequest
+  nameWithType: SRModelStateDictionaryExtensions.BadRequest
+- uid: SimpleResults.SRModelStateDictionaryExtensions.Invalid(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)
+  name: Invalid(ModelStateDictionary)
+  href: api/SimpleResults.SRModelStateDictionaryExtensions.Invalid.html#SimpleResults_SRModelStateDictionaryExtensions_Invalid_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_
+  commentId: M:SimpleResults.SRModelStateDictionaryExtensions.Invalid(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)
+  fullName: SimpleResults.SRModelStateDictionaryExtensions.Invalid(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)
+  nameWithType: SRModelStateDictionaryExtensions.Invalid(ModelStateDictionary)
+- uid: SimpleResults.SRModelStateDictionaryExtensions.Invalid(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary,System.String)
+  name: Invalid(ModelStateDictionary, String)
+  href: api/SimpleResults.SRModelStateDictionaryExtensions.Invalid.html#SimpleResults_SRModelStateDictionaryExtensions_Invalid_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_System_String_
+  commentId: M:SimpleResults.SRModelStateDictionaryExtensions.Invalid(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary,System.String)
+  fullName: SimpleResults.SRModelStateDictionaryExtensions.Invalid(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary, System.String)
+  nameWithType: SRModelStateDictionaryExtensions.Invalid(ModelStateDictionary, String)
+- uid: SimpleResults.SRModelStateDictionaryExtensions.Invalid*
+  name: Invalid
+  href: api/SimpleResults.SRModelStateDictionaryExtensions.Invalid.html
+  commentId: Overload:SimpleResults.SRModelStateDictionaryExtensions.Invalid
+  fullName: SimpleResults.SRModelStateDictionaryExtensions.Invalid
+  nameWithType: SRModelStateDictionaryExtensions.Invalid
+- uid: SimpleResults.SRModelStateDictionaryExtensions.IsFailed(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)
+  name: IsFailed(ModelStateDictionary)
+  href: api/SimpleResults.SRModelStateDictionaryExtensions.IsFailed.html#SimpleResults_SRModelStateDictionaryExtensions_IsFailed_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_
+  commentId: M:SimpleResults.SRModelStateDictionaryExtensions.IsFailed(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)
+  fullName: SimpleResults.SRModelStateDictionaryExtensions.IsFailed(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)
+  nameWithType: SRModelStateDictionaryExtensions.IsFailed(ModelStateDictionary)
+- uid: SimpleResults.SRModelStateDictionaryExtensions.IsFailed*
+  name: IsFailed
+  href: api/SimpleResults.SRModelStateDictionaryExtensions.IsFailed.html
+  commentId: Overload:SimpleResults.SRModelStateDictionaryExtensions.IsFailed
+  fullName: SimpleResults.SRModelStateDictionaryExtensions.IsFailed
+  nameWithType: SRModelStateDictionaryExtensions.IsFailed
 - uid: SimpleResults.TranslateResultToActionResultAttribute
   name: TranslateResultToActionResultAttribute
   href: api/SimpleResults.TranslateResultToActionResultAttribute.html

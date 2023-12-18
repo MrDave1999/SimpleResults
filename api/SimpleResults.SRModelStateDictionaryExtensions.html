@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class SRFluentValidationResultExtensions
+    <title>Class SRModelStateDictionaryExtensions
    | SimpleResults </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class SRFluentValidationResultExtensions
+    <meta name="title" content="Class SRModelStateDictionaryExtensions
    | SimpleResults ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,18 +78,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="SimpleResults.SRFluentValidationResultExtensions">
+            <article class="content wrap" id="_content" data-uid="SimpleResults.SRModelStateDictionaryExtensions">
   
   
-  <h1 id="SimpleResults_SRFluentValidationResultExtensions" data-uid="SimpleResults.SRFluentValidationResultExtensions" class="text-break">Class SRFluentValidationResultExtensions
+  <h1 id="SimpleResults_SRModelStateDictionaryExtensions" data-uid="SimpleResults.SRModelStateDictionaryExtensions" class="text-break">Class SRModelStateDictionaryExtensions
   </h1>
-  <div class="markdown level0 summary"><p>Defines extension methods for the <a href="https://www.nuget.org/packages/FluentValidation">Fluent Validation</a> package.</p>
+  <div class="markdown level0 summary"><p>Contains extension methods that convert an instance of <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.modelstatedictionary">ModelStateDictionary</a>
+into an instance of type <a class="xref" href="SimpleResults.Result.html">Result</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">SRFluentValidationResultExtensions</span></div>
+    <div class="level1"><span class="xref">SRModelStateDictionaryExtensions</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -116,10 +117,10 @@
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="SimpleResults.html">SimpleResults</a></h6>
-  <h6><strong>Assembly</strong>: SimpleResults.FluentValidation.dll</h6>
-  <h5 id="SimpleResults_SRFluentValidationResultExtensions_syntax">Syntax</h5>
+  <h6><strong>Assembly</strong>: SimpleResults.AspNetCore.dll</h6>
+  <h5 id="SimpleResults_SRModelStateDictionaryExtensions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class SRFluentValidationResultExtensions</code></pre>
+    <pre><code class="lang-csharp hljs">public static class SRModelStateDictionaryExtensions</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
@@ -132,31 +133,38 @@
     </thead>
     <tbody>
       <tr>
-        <td id="SimpleResults_SRFluentValidationResultExtensions_AsErrors_FluentValidation_Results_ValidationResult_" data-uid="SimpleResults.SRFluentValidationResultExtensions.AsErrors(FluentValidation.Results.ValidationResult)">
-          <a class="xref" href="SimpleResults.SRFluentValidationResultExtensions.AsErrors.html#SimpleResults_SRFluentValidationResultExtensions_AsErrors_FluentValidation_Results_ValidationResult_">AsErrors(ValidationResult)</a>
+        <td id="SimpleResults_SRModelStateDictionaryExtensions_BadRequest_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_" data-uid="SimpleResults.SRModelStateDictionaryExtensions.BadRequest(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)">
+          <a class="xref" href="SimpleResults.SRModelStateDictionaryExtensions.BadRequest.html#SimpleResults_SRModelStateDictionaryExtensions_BadRequest_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_">BadRequest(ModelStateDictionary)</a>
         </td>
-        <td class="markdown level1 summary"><p>Converts the validation result to a collection of error messages.</p>
+        <td class="markdown level1 summary"><p>Represents a validation error that prevents the controller action from completing.</p>
 </td>
       </tr>
       <tr>
-        <td id="SimpleResults_SRFluentValidationResultExtensions_Invalid_FluentValidation_Results_ValidationResult_" data-uid="SimpleResults.SRFluentValidationResultExtensions.Invalid(FluentValidation.Results.ValidationResult)">
-          <a class="xref" href="SimpleResults.SRFluentValidationResultExtensions.Invalid.html#SimpleResults_SRFluentValidationResultExtensions_Invalid_FluentValidation_Results_ValidationResult_">Invalid(ValidationResult)</a>
+        <td id="SimpleResults_SRModelStateDictionaryExtensions_BadRequest_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_System_String_" data-uid="SimpleResults.SRModelStateDictionaryExtensions.BadRequest(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary,System.String)">
+          <a class="xref" href="SimpleResults.SRModelStateDictionaryExtensions.BadRequest.html#SimpleResults_SRModelStateDictionaryExtensions_BadRequest_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_System_String_">BadRequest(ModelStateDictionary, String)</a>
         </td>
-        <td class="markdown level1 summary"><p>Represents a validation error that prevents the underlying service from completing.</p>
+        <td class="markdown level1 summary"><p>Represents a validation error that prevents the controller action from completing.</p>
 </td>
       </tr>
       <tr>
-        <td id="SimpleResults_SRFluentValidationResultExtensions_Invalid_FluentValidation_Results_ValidationResult_System_String_" data-uid="SimpleResults.SRFluentValidationResultExtensions.Invalid(FluentValidation.Results.ValidationResult,System.String)">
-          <a class="xref" href="SimpleResults.SRFluentValidationResultExtensions.Invalid.html#SimpleResults_SRFluentValidationResultExtensions_Invalid_FluentValidation_Results_ValidationResult_System_String_">Invalid(ValidationResult, String)</a>
+        <td id="SimpleResults_SRModelStateDictionaryExtensions_Invalid_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_" data-uid="SimpleResults.SRModelStateDictionaryExtensions.Invalid(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)">
+          <a class="xref" href="SimpleResults.SRModelStateDictionaryExtensions.Invalid.html#SimpleResults_SRModelStateDictionaryExtensions_Invalid_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_">Invalid(ModelStateDictionary)</a>
         </td>
-        <td class="markdown level1 summary"><p>Represents a validation error that prevents the underlying service from completing.</p>
+        <td class="markdown level1 summary"><p>Represents a validation error that prevents the controller action from completing.</p>
 </td>
       </tr>
       <tr>
-        <td id="SimpleResults_SRFluentValidationResultExtensions_IsFailed_FluentValidation_Results_ValidationResult_" data-uid="SimpleResults.SRFluentValidationResultExtensions.IsFailed(FluentValidation.Results.ValidationResult)">
-          <a class="xref" href="SimpleResults.SRFluentValidationResultExtensions.IsFailed.html#SimpleResults_SRFluentValidationResultExtensions_IsFailed_FluentValidation_Results_ValidationResult_">IsFailed(ValidationResult)</a>
+        <td id="SimpleResults_SRModelStateDictionaryExtensions_Invalid_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_System_String_" data-uid="SimpleResults.SRModelStateDictionaryExtensions.Invalid(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary,System.String)">
+          <a class="xref" href="SimpleResults.SRModelStateDictionaryExtensions.Invalid.html#SimpleResults_SRModelStateDictionaryExtensions_Invalid_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_System_String_">Invalid(ModelStateDictionary, String)</a>
         </td>
-        <td class="markdown level1 summary"><p>Checks if the validation result is failed.</p>
+        <td class="markdown level1 summary"><p>Represents a validation error that prevents the controller action from completing.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="SimpleResults_SRModelStateDictionaryExtensions_IsFailed_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_" data-uid="SimpleResults.SRModelStateDictionaryExtensions.IsFailed(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)">
+          <a class="xref" href="SimpleResults.SRModelStateDictionaryExtensions.IsFailed.html#SimpleResults_SRModelStateDictionaryExtensions_IsFailed_Microsoft_AspNetCore_Mvc_ModelBinding_ModelStateDictionary_">IsFailed(ModelStateDictionary)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Checks if the model state is failed.</p>
 </td>
       </tr>
     </tbody>
@@ -169,10 +177,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/MrDave1999/SimpleResults/new/master/apiSpec/new?filename=SimpleResults_SRFluentValidationResultExtensions.md&amp;value=---%0Auid%3A%20SimpleResults.SRFluentValidationResultExtensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/MrDave1999/SimpleResults/new/master/apiSpec/new?filename=SimpleResults_SRModelStateDictionaryExtensions.md&amp;value=---%0Auid%3A%20SimpleResults.SRModelStateDictionaryExtensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/MrDave1999/SimpleResults/blob/master/src/FluentValidation/SRFluentValidationResultExtensions.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/MrDave1999/SimpleResults/blob/master/src/AspNetCore/SRModelStateDictionaryExtensions.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
