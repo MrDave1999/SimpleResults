@@ -4,13 +4,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddSingleton(DataSeeds.CreateUsers())
     .AddSingleton<List<Person>>()
+    .AddSingleton<List<Order>>()
     .AddSingleton<UserService>()
-    .AddSingleton<PersonService>();
+    .AddSingleton<PersonService>()
+    .AddSingleton<OrderService>();
 
 builder.Services.AddControllers(options =>
 {
     // Add filter for all controllers.
     options.Filters.Add<TranslateResultToActionResultAttribute>();
+})
+.ConfigureApiBehaviorOptions(options =>
+{
+    options.InvalidModelStateResponseFactory = (context) => context.ModelState.BadRequest();
 });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -26,7 +32,7 @@ if (app.Environment.IsDevelopment())
 }
 
 // Allows to load the default resource in English.
-app.UseRequestLocalization("en-US");
+app.UseRequestLocalization("en");
 
 app.UseAuthorization();
 
