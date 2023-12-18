@@ -4,7 +4,7 @@ public class Address
 {
     public string Description { get; init; }
     public string Country { get; init; }
-    public string Postcode { get; init; }
+    public string PostCode { get; init; }
 }
 
 public class DeliveryAddressValidator : AbstractValidator<Address>
@@ -13,6 +13,6 @@ public class DeliveryAddressValidator : AbstractValidator<Address>
     {
         RuleFor(d => d.Description).NotEmpty();
         RuleFor(d => d.Country).NotEmpty();
-        RuleFor(d => d.Postcode).NotEmpty();
+        RuleFor(d => d.PostCode).NotEmpty();
     }
 }

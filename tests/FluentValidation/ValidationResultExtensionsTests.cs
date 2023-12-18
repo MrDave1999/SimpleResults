@@ -56,7 +56,7 @@ public class ValidationResultExtensionsTests
         {
             Customer = "Bob",
             Description = "Test",
-            DeliveryAddress = new Address { Description = "D", Postcode = "P", Country = "C" },
+            DeliveryAddress = new Address { Description = "D", PostCode = "P", Country = "C" },
             Details = new List<OrderDetail>
             {
                 new()

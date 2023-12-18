@@ -31,7 +31,7 @@ public class FailedValidationTestCases : IEnumerable
                 DeliveryAddress = new Address
                 {
                     Description = string.Empty,
-                    Postcode = string.Empty,
+                    PostCode = string.Empty,
                     Country = string.Empty
                 },
                 Details = new List<OrderDetail>
@@ -55,7 +55,7 @@ public class FailedValidationTestCases : IEnumerable
                 "'Customer' property failed validation. Error was: 'Customer' must not be empty.",
                 "'Description' property failed validation. Error was: 'Description' must not be empty.",
                 "'DeliveryAddress.Description' property failed validation. Error was: 'Description' must not be empty.",
-                "'DeliveryAddress.Postcode' property failed validation. Error was: 'Postcode' must not be empty.",
+                "'DeliveryAddress.PostCode' property failed validation. Error was: 'Post Code' must not be empty.",
                 "'DeliveryAddress.Country' property failed validation. Error was: 'Country' must not be empty.",
                 "'Details[0].Product' property failed validation. Error was: 'Product' must not be empty.",
                 "'Details[0].Price' property failed validation. Error was: 'Price' must be greater than '0'.",
