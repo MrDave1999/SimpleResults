@@ -34,6 +34,7 @@ See the [API documentation](https://mrdave1999.github.io/SimpleResults/api/Simpl
     - [Using TranslateResultToActionResult as an action filter](#using-translateresulttoactionresult-as-an-action-filter)
     - [Add action filter as global](#add-action-filter-as-global)
     - [Support for Minimal APIs](#support-for-minimal-apis)
+    - [Validating with the ModelState property](#validating-with-the-modelstate-property)
   - [Translate Result object to HTTP status code](#translate-result-object-to-http-status-code)
   - [Integration with Fluent Validation](#integration-with-fluent-validation)
 - [Samples](#samples)
@@ -424,6 +425,96 @@ public static class UserEndpoint
 The endpoint handler returns a `Result<User>`. After the handler is executed, the filter (i.e. `TranslateResultToHttpResult`) will run and translate the `Result<User>` to an implementation of [IResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.iresult?view=aspnetcore-7.0).
 
 [See the source code](https://github.com/MrDave1999/SimpleResults/blob/25387945f57241dadad3baf52886ab59949c98fa/src/AspNetCore/TranslateResultToHttpResultFilter.cs#L26), it is very simple.
+
+#### Validating with the ModelState property
+
+[SimpleResults.AspNetCore](https://www.nuget.org/packages/SimpleResults.AspNetCore) package also adds extension methods for the [ModelStateDictionary](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.modelstatedictionary?view=aspnetcore-7.0) type.
+
+See the [ModelStateDictionaryExtensions](https://mrdave1999.github.io/SimpleResults/api/SimpleResults.SRModelStateDictionaryExtensions.html) class to find all extension methods.
+
+The `ModelStateDictionary` type contains the validation errors that are displayed to the client. Somehow these errors must be included in an instance of type [Result](https://mrdave1999.github.io/SimpleResults/api/SimpleResults.Result.html).
+
+##### Manual validation
+
+Manual validation is performed directly in the controller action.
+
+**Example:**
+```cs
+[TranslateResultToActionResult]
+[Route("[controller]")]
+public class OrderController : ControllerBase
+{
+    private readonly OrderService _orderService;
+    public OrderController(OrderService orderService) => _orderService = orderService;
+
+    [HttpPost]
+    public Result<CreatedGuid> Create([FromBody]CreateOrderRequest request)
+    {
+        if (ModelState.IsFailed())
+            return ModelState.Invalid();
+
+        return _orderService.Create(request);
+    }
+}
+```
+In this example a manual validation is performed with `ModelState.IsFailed()` (an extension method), so if the model state is failed, an invalid result type is returned. What `ModelState.Invalid()` does is to convert the instance of `ModelStateDictionary` to an instance of type [Result](https://mrdave1999.github.io/SimpleResults/api/SimpleResults.Result.html), so in the result object the validation errors will be added.
+
+After the controller action is executed, the `TranslateResultToActionResult` filter will translate the Result object to an instance of type `ActionResult`.
+
+You can also return the ActionResult directly in the controller action instead of using the action filter.
+
+**Example:**
+```cs
+[Route("[controller]")]
+public class OrderController : ControllerBase
+{
+    private readonly OrderService _orderService;
+    public OrderController(OrderService orderService) => _orderService = orderService;
+
+    [HttpPost]
+    public ActionResult<Result<CreatedGuid>> Create([FromBody]CreateOrderRequest request)
+    {
+        if (ModelState.IsFailed())
+            return ModelState.BadRequest();
+
+        return _orderService
+            .Create(request)
+            .ToActionResult();
+    }
+}
+```
+`ModelState.BadRequest()` has a behavior similar to `ModelState.Invalid()`, the difference is that the first one returns an instance of type [BadRequestObjectResult](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.badrequestobjectresult?view=aspnetcore-7.0) in which contains the instance of type [Result](https://mrdave1999.github.io/SimpleResults/api/SimpleResults.Result.html).
+
+##### Automatic validation
+
+You need to make a setting in the `Program.cs` to convert the instance of type `ModelStateDictionary` to an instance of type [Result](https://mrdave1999.github.io/SimpleResults/api/SimpleResults.Result.html) when the model validation fails.
+
+**Example:**
+```cs
+builder.Services.AddControllers()
+.ConfigureApiBehaviorOptions(options =>
+{
+    options.InvalidModelStateResponseFactory = (ActionContext context) => context.ModelState.BadRequest();
+});
+```
+This delegate is only invoked on actions annotated with `ApiControllerAttribute` and will execute the `context.ModelState.BadRequest()` call when a model validation failure occurs. If a validation failure occurs in the model, the controller action will never be executed.
+
+Your controller no longer needs to perform manual validation, for example:
+```cs
+[ApiController]
+[TranslateResultToActionResult]
+[Route("[controller]")]
+public class OrderController : ControllerBase
+{
+    private readonly OrderService _orderService;
+    public OrderController(OrderService orderService) => _orderService = orderService;
+
+    [HttpPost]
+    public Result<CreatedGuid> Create([FromBody]CreateOrderRequest request)
+        => _orderService.Create(request);
+}
+```
+The [ApiController](https://learn.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-7.0#automatic-http-400-responses) is necessary because it allows to activate the [ModelStateInvalid](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.infrastructure.modelstateinvalidfilter?view=aspnetcore-7.0) filter to perform the model validation before executing the controller action.
 
 ### Translate Result object to HTTP status code
 
