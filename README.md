@@ -69,7 +69,7 @@ I couldn't change this format because the front-end used it, so I didn't want to
 
 ## Why don't I use exceptions?
 
-I usually throw exceptions when developing open source libraries to alert the developer immediately that an error has occurred and must be corrected. In this case, it makes sense to me to throw an exception because the developer can know exactly where the error originated (by looking at the stack trace).
+I usually throw exceptions when developing open source libraries to alert the developer immediately that an unexpected error has occurred and must be corrected. In this case, it makes sense to me to throw an exception because the developer can know exactly where the error originated (by looking at the stack trace).
 
 However, when I develop applications I very rarely find a case for using exceptions.
 
@@ -79,11 +79,22 @@ For example, I could throw an exception when a normal user enters empty fields b
 
 - Nobody cares where the error originated, whether it was in method X or Y, it doesn't matter.
 
+- It is not an unexpected error. An exception is thrown to indicate an unexpected error. Unexpected errors are those that are not expected to occur, and they are not recoverable.
+  - For example, if the database server is not online, it will produce an unexpected error in the application, so there is no way for the application to recover or handle the error.
+
 And there are many more examples of errors caused by the end user: the email is duplicated or a password that does not comply with security policies, among others.
 
-I only throw exceptions when the exception object is useful to someone (like a developer); otherwise, I use a **Result object** to handle errors. I use **return statements** in my methods to create the error.
+I only throw exceptions for unexpected errors otherwise, I create **result objects** and use return statements in my methods to terminate execution immediately when an expected error occurs.
 
-This is just my opinion, it is not an **absolute truth** either. My point of view is more philosophical, so the purpose of my paragraphs is not to indicate the disadvantages of using exceptions, but to explain why for me it does not make sense in some cases to throw exceptions.
+It is necessary to understand the differences between an expected and unexpected error in order to know when to throw exceptions. In fact, in practice, third-party dependencies are responsible for reporting unexpected errors, so the developer only has to worry about identifying the expected errors of his business application.
+
+- **Expected errors** are those that are expected to occur, and we tend to recover them. They are also known as recoverable errors or declared errors.
+  - For example, empty fields or a duplicate email. These are errors that are expected to occur and are normal for them to happen.
+  - To handle these errors, it is useful to use the Result pattern.
+
+- **Unexpected errors** are those that are not expected to occur, and they are not recoverable. They are also known as non-recoverable errors or defects.
+  - For example, a database that does not exist or an incorrectly typed connection string. These are errors that are not expected to occur and it is not normal for them to happen. They should never happen and should be corrected immediately. It is fatal.
+  - Exceptions were designed to represent unexpected errors.
 
 ### Anecdote
 > At work I had to implement a module to generate a report that performs a monthly comparison of income and expenses for a company, so it was necessary to create a function that is responsible for calculating the percentage of a balance per month:
@@ -97,7 +108,7 @@ Percentage.Calculate(double amount, double total);
 > Dividing a floating-point value by zero doesn't throw an exception; it result is not a number (NaN). 
 This was a surprise to me! I didn't know! I was expecting an exception but it was not the case.
 
-> If I had thrown an exception, I would have found the error very quickly, just by looking at the stack trace, oh yeah. In this case, it is very useful the exception object, for me and other developers.
+> If I had thrown an exception, I would have found the error very quickly, just by looking at the stack trace. In this case, it is very useful the exception object, for me and other developers and yes, divide by zero is an **unexpected error**, an exception should be thrown.
 
 ### Interesting resource about exceptions
 
