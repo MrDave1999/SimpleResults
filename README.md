@@ -22,7 +22,9 @@ See the [API documentation](https://mrdave1999.github.io/SimpleResults/api/Simpl
 - [Operation Result Pattern](#operation-result-pattern)
 - [Why did I make this library?](#why-did-i-make-this-library)
 - [Why don't I use exceptions?](#why-dont-i-use-exceptions)
+  - [Differences between an expected and unexpected error](#differences-between-an-expected-and-unexpected-error)
   - [Anecdote](#anecdote)
+  - [What happens if exceptions are used to represent expected errors?](#what-happens-if-exceptions-are-used-to-represent-expected-errors)
   - [Interesting resource about exceptions](#interesting-resource-about-exceptions)
 - [Installation](#installation)
 - [Overview](#overview)
@@ -69,30 +71,30 @@ I couldn't change this format because the front-end used it, so I didn't want to
 
 ## Why don't I use exceptions?
 
-I usually throw exceptions when developing open source libraries to alert the developer immediately that an unexpected error has occurred and must be corrected. In this case, it makes sense to me to throw an exception because the developer can know exactly where the error originated (by looking at the stack trace).
+I usually throw exceptions when developing open source libraries to alert the developer immediately that an unexpected error has occurred and must be corrected. In this case, it makes sense to me to throw an exception because the developer can know exactly where the error originated (by looking at the stack trace). However, when I develop applications, I very rarely find a case for using exceptions.
 
-However, when I develop applications I very rarely find a case for using exceptions.
-
-For example, I could throw an exception when a normal user enters empty fields but this does not make sense to me, because it is an error caused by the end user (he/she manages the system from the user interface). So in this case throwing an exception is useless because:
+For example, I could throw an exception when a normal user enters empty fields but this does not make sense to me, because it is an error caused by the end user (who manages the system from the user interface). So in this case throwing an exception is useless because:
 - Stack trace included in the exception object is of no use to anyone, neither the end user nor the developer. 
   This is not a bug that a developer should be concerned about.
 
 - Nobody cares where the error originated, whether it was in method X or Y, it doesn't matter.
 
 - It is not an unexpected error. An exception is thrown to indicate an unexpected error. Unexpected errors are those that are not expected to occur, and they are not recoverable.
-  - For example, if the database server is not online, it will produce an unexpected error in the application, so there is no way for the application to recover or handle the error.
+  - For example, if the database server is not online, it will produce an unexpected error in the application, so there is no way for the application to recover.
 
 And there are many more examples of errors caused by the end user: the email is duplicated or a password that does not comply with security policies, among others.
 
-I only throw exceptions for unexpected errors otherwise, I create **result objects** and use return statements in my methods to terminate execution immediately when an expected error occurs.
+I only throw exceptions for unexpected errors; otherwise I create **result objects** and use return statements in my methods to terminate execution immediately when an expected error occurs.
+
+### Differences between an expected and unexpected error
 
 It is necessary to understand the differences between an expected and unexpected error in order to know when to throw exceptions. In fact, in practice, third-party dependencies are responsible for reporting unexpected errors, so the developer only has to worry about identifying the expected errors of his business application.
 
-- **Expected errors** are those that are expected to occur, and we tend to recover them. They are also known as recoverable errors or declared errors.
+- **Expected errors** are those that are expected to occur, and we tend to recover them. They are also known as recoverable errors.
   - For example, empty fields or a duplicate email. These are errors that are expected to occur and are normal for them to happen.
   - To handle these errors, it is useful to use the Result pattern.
 
-- **Unexpected errors** are those that are not expected to occur, and they are not recoverable. They are also known as non-recoverable errors or defects.
+- **Unexpected errors** are those that are not expected to occur, and they are not recoverable. They are also known as non-recoverable errors.
   - For example, a database that does not exist or an incorrectly typed connection string. These are errors that are not expected to occur and it is not normal for them to happen. They should never happen and should be corrected immediately. It is fatal.
   - Exceptions were designed to represent unexpected errors.
 
@@ -109,6 +111,25 @@ Percentage.Calculate(double amount, double total);
 This was a surprise to me! I didn't know! I was expecting an exception but it was not the case.
 
 > If I had thrown an exception, I would have found the error very quickly, just by looking at the stack trace. In this case, it is very useful the exception object, for me and other developers and yes, divide by zero is an **unexpected error**, an exception should be thrown.
+
+### What happens if exceptions are used to represent expected errors?
+
+**There are some details to consider:**
+
+- New maintainers of your application will learn that it is okay to throw exceptions in all situations. This is bad for their learning, as they don't really understand what exceptions were designed for in C#.
+
+- You make your code confusing, since you don't follow the official definition of what an exception is in C#.
+  - Yes, exceptions represent unexpected errors. This is the definition, changing it, only causes confusion.
+
+- You need to create custom classes that inherit from the Exception type, otherwise you end up using the Exception type in many places. This type does not express any information to the consumer (who calls the public API).
+
+- You need to document those methods that throw exceptions, otherwise the consumer will not know which exceptions to handle, and will end up reviewing the source code of the method (this is not good).
+
+- Performance. Yes, throwing exceptions is very expensive. Although in many applications there may not be any impact, it is not a justification for wasting resources unnecessarily. You can read more about it [here](https://github.com/dotnet/runtime/blob/main/docs/design/coreclr/botr/intro-to-clr.md#exceptions).
+
+- If your project is a web application, you will have to find a mechanism to translate the exception object to HTTP status code, so you will have to create base classes like InvalidDataException to catch it from a global exception handler. 
+  - For example: `DuplicateEmailException` inherits from `InvalidDataException` and in turn, it inherits from `Exception`. 
+    It is necessary to think of a hierarchy of types that use inheritance (this adds another complexity).
 
 ### Interesting resource about exceptions
 
