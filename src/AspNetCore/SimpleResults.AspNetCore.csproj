@@ -24,8 +24,8 @@
     <Description>
       A simple package that translates the Result object to ActionResult or IResult.
     </Description>
-    <Version>2.3.1</Version>
-    <PackageReleaseNotes>- Add extension methods to the ModelStateDictionary type</PackageReleaseNotes>
+    <Version>2.3.2</Version>
+    <PackageReleaseNotes>- Update README.md</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

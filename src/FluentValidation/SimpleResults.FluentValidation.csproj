@@ -20,8 +20,8 @@
     <Description>
       A simple package that provides extension methods for the Fluent Validation library.
     </Description>
-    <Version>2.3.1</Version>
-    <PackageReleaseNotes>- Resolves issue #52</PackageReleaseNotes>
+    <Version>2.3.2</Version>
+    <PackageReleaseNotes>- Update README.md</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

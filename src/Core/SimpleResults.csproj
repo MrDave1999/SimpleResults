@@ -20,7 +20,8 @@
     <Description>
       A simple package to implement the Result pattern for returning from services.
     </Description>
-    <Version>2.3.1</Version>
+    <Version>2.3.2</Version>
+    <PackageReleaseNotes>- Update README.md</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
