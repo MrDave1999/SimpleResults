@@ -24,7 +24,7 @@ See the [API documentation](https://mrdave1999.github.io/SimpleResults/api/Simpl
 - [Why don't I use exceptions?](#why-dont-i-use-exceptions)
   - [Differences between an expected and unexpected error](#differences-between-an-expected-and-unexpected-error)
   - [Anecdote](#anecdote)
-  - [What happens if exceptions are used to represent expected errors?](#what-happens-if-exceptions-are-used-to-represent-expected-errors)
+  - [What happens if exceptions are used for all situations?](#what-happens-if-exceptions-are-used-for-all-situations)
   - [Interesting resource about exceptions](#interesting-resource-about-exceptions)
 - [Installation](#installation)
 - [Overview](#overview)
@@ -67,7 +67,7 @@ The purpose of the Result design pattern is to give an operation (a method) the 
 ```
 I couldn't change this format because the front-end used it, so I didn't want to make a breaking change.
 
-- I do not want to throw [exceptions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/using-exceptions) for all cases.
+- I do not want to throw [exceptions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/using-exceptions) for all situations.
 
 ## Why don't I use exceptions?
 
@@ -112,23 +112,23 @@ This was a surprise to me! I didn't know! I was expecting an exception but it wa
 
 > If I had thrown an exception, I would have found the error very quickly, just by looking at the stack trace. In this case, it is very useful the exception object, for me and other developers and yes, divide by zero is an **unexpected error**, an exception should be thrown.
 
-### What happens if exceptions are used to represent expected errors?
+### What happens if exceptions are used for all situations?
 
 **There are some details to consider:**
 
-- New maintainers of your application will learn that it is okay to throw exceptions in all situations. This is bad for their learning, as they don't really understand what exceptions were designed for in C#.
+- New maintainers of your application will learn that it is okay to throw exceptions in all situations. This is bad for their learning, as they don't really understand what [exceptions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions) were designed for in C#.
 
-- You make your code confusing, since you don't follow the official definition of what an exception is in C#.
+- You make your code confusing, since you don't follow the official definition of what an [exception](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions) is in C#.
   - Yes, exceptions represent unexpected errors. This is the definition, changing it, only causes confusion.
 
 - You need to create custom classes that inherit from the Exception type, otherwise you end up using the Exception type in many places. This type does not express any information to the consumer (who calls the public API).
 
 - You need to document those methods that throw exceptions, otherwise the consumer will not know which exceptions to handle, and will end up reviewing the source code of the method (this is not good).
 
-- Performance. Yes, throwing exceptions is very expensive. Although in many applications there may not be any impact, it is not a justification for wasting resources unnecessarily. You can read more about it [here](https://github.com/dotnet/runtime/blob/main/docs/design/coreclr/botr/intro-to-clr.md#exceptions).
+- Performance. Yes, throwing exceptions is very expensive. Although in many applications there may not be any impact, it is not a justification for wasting resources unnecessarily. You can read more about it [here](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions).
 
 - If your project is a web application, you will have to find a mechanism to translate the exception object to HTTP status code, so you will have to create base classes like InvalidDataException to catch it from a global exception handler. 
-  - For example: `DuplicateEmailException` inherits from `InvalidDataException` and in turn, it inherits from `Exception`. 
+  - For example: `WrongEmailException` inherits from `InvalidDataException` and in turn, it inherits from `Exception`. 
     It is necessary to think of a hierarchy of types that use inheritance (this adds another complexity).
 
 ### Interesting resource about exceptions
