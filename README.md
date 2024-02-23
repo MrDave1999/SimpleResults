@@ -125,7 +125,10 @@ This was a surprise to me! I didn't know! I was expecting an exception but it wa
 
 - You need to document those methods that throw exceptions, otherwise the consumer will not know which exceptions to handle, and will end up reviewing the source code of the method (this is not good).
 
-- Performance. Yes, throwing exceptions is very expensive. Although in many applications there may not be any impact, it is not a justification for wasting resources unnecessarily. You can read more about it [here](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions).
+- Performance. Yes, throwing exceptions is very expensive. Although in many applications there may not be any impact, it is not a justification for wasting resources unnecessarily. For more information, see these links: 
+  - [Exceptions and Exception Handling](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions)
+  - [Thread contention while throwing and catching exceptions](https://github.com/dotnet/runtime/issues/97181)
+  - [Exceptions are extremely expensive](https://github.com/dotnet/aspnetcore/issues/46280?fbclid=IwAR25e2CFNrI0VhS_H8V4WzgmR_JkXrXTqVn0vpNUFnyCMa9LC9GtnfzMvRU#issuecomment-1527898867)
 
 - If your project is a web application, you will have to find a mechanism to translate the exception object to HTTP status code, so you will have to create base classes like InvalidDataException to catch it from a global exception handler. 
   - For example: `WrongEmailException` inherits from `InvalidDataException` and in turn, it inherits from `Exception`. 
