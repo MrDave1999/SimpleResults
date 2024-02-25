@@ -6,17 +6,6 @@ namespace SimpleResults;
 
 public partial class Result
 {
-    private static Result CreateError(
-        string message, 
-        ResultStatus status, 
-        IEnumerable<string> errors) => new() 
-        { 
-            IsSuccess = false, 
-            Message = message, 
-            Status = status, 
-            Errors = errors 
-        };
-
     /// <inheritdoc cref="Failure(string)" />
     public static Result Failure() 
         => Failure(ResponseMessages.Failure);
@@ -178,4 +167,15 @@ public partial class Result
     /// <param name="errors">A collection of errors.</param>
     public static Result Forbidden(string message, IEnumerable<string> errors) 
         => CreateError(message, ResultStatus.Forbidden, errors);
+
+    private static Result CreateError(
+        string message, 
+        ResultStatus status, 
+        IEnumerable<string> errors) => new() 
+        { 
+            IsSuccess = false, 
+            Message = message, 
+            Status = status, 
+            Errors = errors 
+        };
 }
