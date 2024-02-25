@@ -32,6 +32,7 @@ See the [API documentation](https://mrdave1999.github.io/SimpleResults/api/Simpl
   - [Using the ListedResult type](#using-the-listedresult-type)
   - [Using the PagedResult type](#using-the-pagedresult-type)
   - [Creating a resource with Result type](#creating-a-resource-with-resultt-type)
+  - [Designing errors and success messages](#designing-errors-and-success-messages)
   - [Integration with ASP.NET Core](#integration-with-aspnet-core)
     - [Using TranslateResultToActionResult as an action filter](#using-translateresulttoactionresult-as-an-action-filter)
     - [Add action filter as global](#add-action-filter-as-global)
@@ -319,6 +320,40 @@ public class UserService
         _db.Add(user);
         _db.SaveChanges();
         return Result.CreatedResource(user.Id);
+    }
+}
+```
+
+### Designing errors and success messages
+
+You can create an object that represents an error or success message. The advantage is all the relevant information of an error or success is encapsulated within one object.
+
+**Example:**
+```cs
+public readonly ref struct StartDateIsAfterEndDateError
+{
+    public string Message { get; }
+    public StartDateIsAfterEndDateError(DateTime startDate, DateTime endDate)
+    { 
+        Message = string.Format(
+            "The start date {0} is after the end date {1}", 
+            startDate.ToString("yyyy-MM-dd"), 
+            endDate.ToString("yyyy-MM-dd"));
+    }
+}
+```
+This approach allows you to change the format of the message without having to make changes elsewhere.
+
+And then you can use it in your service:
+```cs
+public class UserService
+{
+    public Result<List<User>> GetUsersByDateRange(DateTime startDate, DateTime endDate)
+    {
+        if(startDate > endDate)
+            return Result.Invalid(new StartDateIsAfterEndDateError(startDate, endDate).Message);
+
+        // Do something..
     }
 }
 ```
