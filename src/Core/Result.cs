@@ -150,7 +150,7 @@ public sealed partial class Result : ResultBase
     /// Represents a situation in which the service returns the contents of a file as an array of bytes.
     /// </summary>
     /// <param name="fileContent">The contents of a file.</param>
-    public static Result<ByteArrayContent> File(ByteArrayContent fileContent) => new()
+    public static Result<ByteArrayFileContent> File(ByteArrayFileContent fileContent) => new()
     {
         Data = fileContent,
         IsSuccess = true,
