@@ -115,11 +115,29 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed conversion. Unable to translate result object into HTTP status code.
+        /// </summary>
+        internal static string FailedConversion {
+            get {
+                return ResourceManager.GetString("FailedConversion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An error occurred during the execution of a service.
         /// </summary>
         internal static string Failure {
             get {
                 return ResourceManager.GetString("Failure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File content has been returned successfully.
+        /// </summary>
+        internal static string FileContent {
+            get {
+                return ResourceManager.GetString("FileContent", resourceCulture);
             }
         }
         

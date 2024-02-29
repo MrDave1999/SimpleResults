@@ -135,8 +135,14 @@
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="FailedConversion" xml:space="preserve">
+    <value>Conversión fallida. No se ha podido convertir el objeto resultante en código de estado HTTP</value>
+  </data>
   <data name="Failure" xml:space="preserve">
     <value>Se ha producido un error durante la ejecución de un servicio</value>
+  </data>
+  <data name="FileContent" xml:space="preserve">
+    <value>El contenido del archivo se ha devuelto correctamente</value>
   </data>
   <data name="Forbidden" xml:space="preserve">
     <value>No tienes permisos para realizar esta acción</value>
