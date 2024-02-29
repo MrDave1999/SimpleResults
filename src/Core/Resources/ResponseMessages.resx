@@ -136,7 +136,7 @@
     <value>Error</value>
   </data>
   <data name="FailedConversion" xml:space="preserve">
-    <value>Failed conversion. Unable to translate result object into HTTP status code</value>
+    <value>Conversion failed. Failed to convert the result object to an object of type '{0}'</value>
   </data>
   <data name="Failure" xml:space="preserve">
     <value>An error occurred during the execution of a service</value>

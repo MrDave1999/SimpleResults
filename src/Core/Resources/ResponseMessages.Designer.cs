@@ -115,7 +115,7 @@ namespace SimpleResults.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed conversion. Unable to translate result object into HTTP status code.
+        ///   Looks up a localized string similar to Conversion failed. Failed to convert the result object to an object of type &apos;{0}&apos;.
         /// </summary>
         internal static string FailedConversion {
             get {
