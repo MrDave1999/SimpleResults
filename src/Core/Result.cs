@@ -145,4 +145,28 @@ public sealed partial class Result : ResultBase
     /// <param name="data">A set of data.</param>
     public static ListedResult<T> ObtainedResources<T>(IEnumerable<T> data)
         => Success(data, ResponseMessages.ObtainedResources);
+
+    /// <summary>
+    /// Represents a situation in which the service returns the contents of a file as an array of bytes.
+    /// </summary>
+    /// <param name="fileContent">The contents of a file.</param>
+    public static Result<ByteArrayContent> File(ByteArrayContent fileContent) => new()
+    {
+        Data = fileContent,
+        IsSuccess = true,
+        Message = ResponseMessages.FileContent,
+        Status = ResultStatus.ByteArrayFile
+    };
+
+    /// <summary>
+    /// Represents a situation in which the service returns the contents of a file as a stream.
+    /// </summary>
+    /// <param name="fileContent">The contents of a file.</param>
+    public static Result<StreamFileContent> File(StreamFileContent fileContent) => new()
+    {
+        Data = fileContent,
+        IsSuccess = true,
+        Message = ResponseMessages.FileContent,
+        Status = ResultStatus.StreamFile
+    };
 }
