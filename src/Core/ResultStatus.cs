@@ -41,5 +41,13 @@ public enum ResultStatus
     /// <summary>
     /// Represents a status where the user does not have permission to perform some action.
     /// </summary>
-    Forbidden
+    Forbidden,
+    /// <summary>
+    /// Represents a status where the service returns the contents of a file as an array of bytes.
+    /// </summary>
+    ByteArrayFile,
+    /// <summary>
+    /// Represents a status where the service returns the contents of a file as a stream.
+    /// </summary>
+    StreamFile
 }
