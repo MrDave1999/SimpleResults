@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SimpleResults.Resources;
 
 namespace SimpleResults;
 
@@ -7,8 +6,12 @@ internal class FileResultFactory
 {
     public static FileContentResult CreateFileContentResult(ResultBase resultBase)
     {
-        var result = resultBase as Result<ByteArrayFileContent> ?? 
-            throw new InvalidOperationException(ResponseMessages.FailedConversion);
+        var result = resultBase as Result<ByteArrayFileContent>;
+        if (result is null)
+        {
+            var typeName = typeof(FileContentResult).FullName;
+            throw new InvalidOperationException(new FailedConversionError(typeName).Message);
+        }
 
         var byteArrayFile = result.Data;
         var fileContent = new FileContentResult(byteArrayFile.Content, byteArrayFile.ContentType)
@@ -20,8 +23,12 @@ internal class FileResultFactory
 
     public static FileStreamResult CreateFileStreamResult(ResultBase resultBase)
     {
-        var result = resultBase as Result<StreamFileContent> ??
-            throw new InvalidOperationException(ResponseMessages.FailedConversion);
+        var result = resultBase as Result<StreamFileContent>;
+        if (result is null)
+        {
+            var typeName = typeof(FileStreamResult).FullName;
+            throw new InvalidOperationException(new FailedConversionError(typeName).Message);
+        }
 
         var streamFile = result.Data;
         var fileContent = new FileStreamResult(streamFile.Content, streamFile.ContentType)
@@ -33,8 +40,12 @@ internal class FileResultFactory
 
     public static IResult CreateFileContentHttpResult(ResultBase resultBase)
     {
-        var result = resultBase as Result<ByteArrayFileContent> ??
-            throw new InvalidOperationException(ResponseMessages.FailedConversion);
+        var result = resultBase as Result<ByteArrayFileContent>;
+        if (result is null)
+        {
+            var typeName = typeof(IResult).FullName;
+            throw new InvalidOperationException(new FailedConversionError(typeName).Message);
+        }
 
         var byteArrayFile = result.Data;
         var fileContent = Results.File(
@@ -47,8 +58,12 @@ internal class FileResultFactory
 
     public static IResult CreateFileStreamHttpResult(ResultBase resultBase)
     {
-        var result = resultBase as Result<StreamFileContent> ??
-            throw new InvalidOperationException(ResponseMessages.FailedConversion);
+        var result = resultBase as Result<StreamFileContent>;
+        if (result is null)
+        {
+            var typeName = typeof(IResult).FullName;
+            throw new InvalidOperationException(new FailedConversionError(typeName).Message);
+        }
 
         var streamFile = result.Data;
         var fileContent = Results.File(
