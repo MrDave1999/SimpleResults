@@ -284,4 +284,53 @@ public partial class ResultTests
         actual.Data.Should().BeEquivalentTo(expectedData);
         actual.Status.Should().Be(ResultStatus.Ok);
     }
+
+    [Test]
+    public void File_WhenResultIsByteArrayFileContent_ShouldReturnsResultOfByteArrayFileContent()
+    {
+        // Arrange
+        byte[] content = [1, 1, 0, 0];
+        var expectedData = new ByteArrayFileContent(content)
+        {
+            ContentType = "application/pdf",
+            FileName    = "Report.pdf"
+        };
+        var expectedMessage = ResponseMessages.FileContent;
+
+        // Act
+        Result<ByteArrayFileContent> actual = Result.File(expectedData);
+
+        // Asserts
+        actual.IsSuccess.Should().BeTrue();
+        actual.IsFailed.Should().BeFalse();
+        actual.Message.Should().Be(expectedMessage);
+        actual.Errors.Should().BeEmpty();
+        actual.Data.Should().BeEquivalentTo(expectedData);
+        actual.Status.Should().Be(ResultStatus.ByteArrayFile);
+    }
+
+    [Test]
+    public void File_WhenResultIsStreamFileContent_ShouldReturnsResultOfStreamFileContent()
+    {
+        // Arrange
+        byte[] buffer = [1, 0, 1];
+        Stream content = new MemoryStream(buffer);
+        var expectedData = new StreamFileContent(content)
+        {
+            ContentType = "application/pdf",
+            FileName    = "Report.pdf"
+        };
+        var expectedMessage = ResponseMessages.FileContent;
+
+        // Act
+        Result<StreamFileContent> actual = Result.File(expectedData);
+
+        // Asserts
+        actual.IsSuccess.Should().BeTrue();
+        actual.IsFailed.Should().BeFalse();
+        actual.Message.Should().Be(expectedMessage);
+        actual.Errors.Should().BeEmpty();
+        actual.Data.Should().BeEquivalentTo(expectedData);
+        actual.Status.Should().Be(ResultStatus.StreamFile);
+    }
 }
