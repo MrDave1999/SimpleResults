@@ -599,6 +599,8 @@ The following table is used as a reference to know which type of result correspo
 | Result.UpdatedResource  | 200 - Ok                    |
 | Result.DeletedResource  | 200 - Ok                    |
 | Result.ObtainedResource | 200 - Ok                    |
+| Result.ObtainedResources| 200 - Ok                    |
+| Result.File             | 200 - Ok                    |
 | Result.Invalid          | 400 - Bad Request           |
 | Result.NotFound         | 404 - Not Found             |
 | Result.Unauthorized     | 401 - Unauthorized          |

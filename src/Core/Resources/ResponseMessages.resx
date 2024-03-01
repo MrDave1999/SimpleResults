@@ -135,8 +135,14 @@
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="FailedConversion" xml:space="preserve">
+    <value>Conversion failed. Failed to convert the result object to an object of type '{0}'</value>
+  </data>
   <data name="Failure" xml:space="preserve">
     <value>An error occurred during the execution of a service</value>
+  </data>
+  <data name="FileContent" xml:space="preserve">
+    <value>File content has been returned successfully</value>
   </data>
   <data name="Forbidden" xml:space="preserve">
     <value>You do not have permissions to perform this action</value>

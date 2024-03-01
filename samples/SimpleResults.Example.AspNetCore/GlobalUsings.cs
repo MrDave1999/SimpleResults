@@ -1,5 +1,7 @@
-﻿global using Bogus;
+﻿global using System.Net.Mime;
+global using Bogus;
 global using Microsoft.AspNetCore.Mvc;
+global using Swashbuckle.AspNetCore.Annotations;
 global using SimpleResults;
 global using SimpleResults.Example;
 global using SimpleResults.Example.AspNetCore;

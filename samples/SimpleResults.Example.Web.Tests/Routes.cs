@@ -20,6 +20,14 @@ public class Routes
         public const string MinimalApi = "/Message-MinimalApi";
     }
 
+    public class File
+    {
+        public const string ByteArrayController = "/FileResult-WebApi/byte-array";
+        public const string StreamController    = "/FileResult-WebApi/stream";
+        public const string ByteArrayMinimalApi = "/FileResult-MinimalApi/byte-array";
+        public const string StreamMinimalApi    = "/FileResult-MinimalApi/stream";
+    }
+
     public class Order
     {
         public const string ManualValidation    = "/Order-ManualValidation";

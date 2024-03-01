@@ -90,6 +90,8 @@ public static class ResultExtensions
         ResultStatus.Failure       => new UnprocessableContentResult(result),
         ResultStatus.CriticalError => new InternalServerErrorResult(result),
         ResultStatus.Forbidden     => new ForbiddenResult(result),
+        ResultStatus.ByteArrayFile => FileResultConverter.ConvertToFileContentResult(result),
+        ResultStatus.StreamFile    => FileResultConverter.ConvertToFileStreamResult(result),
         _ => throw new NotSupportedException(string.Format(ResponseMessages.UnsupportedStatus, result.Status))
     };
 
@@ -151,6 +153,8 @@ public static class ResultExtensions
         ResultStatus.Failure       => Results.UnprocessableEntity(result),
         ResultStatus.CriticalError => new InternalServerErrorHttpResult(result),
         ResultStatus.Forbidden     => new ForbiddenHttpResult(result),
+        ResultStatus.ByteArrayFile => FileResultConverter.ConvertToFileContentHttpResult(result),
+        ResultStatus.StreamFile    => FileResultConverter.ConvertToFileStreamHttpResult(result),
         _ => throw new NotSupportedException(string.Format(ResponseMessages.UnsupportedStatus, result.Status))
     };
 }
