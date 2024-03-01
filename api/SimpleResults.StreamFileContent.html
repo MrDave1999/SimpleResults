@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Enum ResultStatus
+    <title>Class StreamFileContent
    | SimpleResults </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Enum ResultStatus
+    <meta name="title" content="Class StreamFileContent
    | SimpleResults ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,21 +78,50 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="SimpleResults.ResultStatus">
+            <article class="content wrap" id="_content" data-uid="SimpleResults.StreamFileContent">
   
   
-  <h1 id="SimpleResults_ResultStatus" data-uid="SimpleResults.ResultStatus" class="text-break">Enum ResultStatus
+  <h1 id="SimpleResults_StreamFileContent" data-uid="SimpleResults.StreamFileContent" class="text-break">Class StreamFileContent
   </h1>
-  <div class="markdown level0 summary"><p>Represents the status of a Result object.</p>
+  <div class="markdown level0 summary"><p>Represents the content of a file using a stream.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">StreamFileContent</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="SimpleResults.html">SimpleResults</a></h6>
   <h6><strong>Assembly</strong>: SimpleResults.dll</h6>
-  <h5 id="SimpleResults_ResultStatus_syntax">Syntax</h5>
+  <h5 id="SimpleResults_StreamFileContent_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum ResultStatus</code></pre>
+    <pre><code class="lang-csharp hljs">public class StreamFileContent</code></pre>
   </div>
-  <h3 id="fields">Fields
+  <h3 id="constructors">Constructors
   </h3>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -100,66 +129,51 @@
         <th>Name</th>
         <th>Description</th>
       </tr>
-    <thead>
+    </thead>
     <tbody>
       <tr>
-        <td id="SimpleResults_ResultStatus_ByteArrayFile">ByteArrayFile</td>
-        <td><p>Represents a status where the service returns the contents of a file as an array of bytes.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="SimpleResults_ResultStatus_Conflict">Conflict</td>
-        <td><p>Represents a status where a service is in conflict due to the current state of a resource.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="SimpleResults_ResultStatus_Created">Created</td>
-        <td><p>Represents a status in which the service successfully creates a resource.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="SimpleResults_ResultStatus_CriticalError">CriticalError</td>
-        <td><p>Represents a status where unexpected behavior has occurred and
-the service does not know how to handle it (e.g., database connection error).</p>
-</td>
-      </tr>
-      <tr>
-        <td id="SimpleResults_ResultStatus_Failure">Failure</td>
-        <td><p>Represents a failed status.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="SimpleResults_ResultStatus_Forbidden">Forbidden</td>
-        <td><p>Represents a status where the user does not have permission to perform some action.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="SimpleResults_ResultStatus_Invalid">Invalid</td>
-        <td><p>Represents a status in which the consumer has provided invalid data.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="SimpleResults_ResultStatus_NotFound">NotFound</td>
-        <td><p>Represents a status where a service was unable to find a requested resource.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="SimpleResults_ResultStatus_Ok">Ok</td>
-        <td><p>Represents a successful status.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="SimpleResults_ResultStatus_StreamFile">StreamFile</td>
-        <td><p>Represents a status where the service returns the contents of a file as a stream.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="SimpleResults_ResultStatus_Unauthorized">Unauthorized</td>
-        <td><p>Represents a status where a user does not have valid authentication credentials for the target resource.</p>
+        <td id="SimpleResults_StreamFileContent__ctor_System_IO_Stream_" data-uid="SimpleResults.StreamFileContent.#ctor(System.IO.Stream)">
+          <a class="xref" href="SimpleResults.StreamFileContent.-ctor.html#SimpleResults_StreamFileContent__ctor_System_IO_Stream_">StreamFileContent(Stream)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="SimpleResults.StreamFileContent.html">StreamFileContent</a> class
+with the provided <code data-dev-comment-type="paramref" class="paramref">content</code>.</p>
 </td>
       </tr>
     </tbody>
-  </thead></thead></table>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="SimpleResults_StreamFileContent_Content" data-uid="SimpleResults.StreamFileContent.Content">
+          <a class="xref" href="SimpleResults.StreamFileContent.Content.html#SimpleResults_StreamFileContent_Content">Content</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the stream that represent the file contents.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="SimpleResults_StreamFileContent_ContentType" data-uid="SimpleResults.StreamFileContent.ContentType">
+          <a class="xref" href="SimpleResults.StreamFileContent.ContentType.html#SimpleResults_StreamFileContent_ContentType">ContentType</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the content type. Its default value is an empty string.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="SimpleResults_StreamFileContent_FileName" data-uid="SimpleResults.StreamFileContent.FileName">
+          <a class="xref" href="SimpleResults.StreamFileContent.FileName.html#SimpleResults_StreamFileContent_FileName">FileName</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the file name. Its default value is an empty string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
@@ -168,10 +182,10 @@ the service does not know how to handle it (e.g., database connection error).</p
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/MrDave1999/SimpleResults/new/master/apiSpec/new?filename=SimpleResults_ResultStatus.md&amp;value=---%0Auid%3A%20SimpleResults.ResultStatus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/MrDave1999/SimpleResults/new/master/apiSpec/new?filename=SimpleResults_StreamFileContent.md&amp;value=---%0Auid%3A%20SimpleResults.StreamFileContent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/MrDave1999/SimpleResults/blob/master/src/Core/ResultStatus.cs/#L6" class="contribution-link">View Source</a>
+                    <a href="https://github.com/MrDave1999/SimpleResults/blob/master/src/Core/FileContent.cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

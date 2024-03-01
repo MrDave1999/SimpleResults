@@ -7,6 +7,63 @@ references:
   commentId: N:SimpleResults
   fullName: SimpleResults
   nameWithType: SimpleResults
+- uid: SimpleResults.ByteArrayFileContent
+  name: ByteArrayFileContent
+  href: api/SimpleResults.ByteArrayFileContent.html
+  commentId: T:SimpleResults.ByteArrayFileContent
+  fullName: SimpleResults.ByteArrayFileContent
+  nameWithType: ByteArrayFileContent
+- uid: SimpleResults.ByteArrayFileContent.#ctor(System.Byte[])
+  name: ByteArrayFileContent(Byte[])
+  href: api/SimpleResults.ByteArrayFileContent.-ctor.html#SimpleResults_ByteArrayFileContent__ctor_System_Byte___
+  commentId: M:SimpleResults.ByteArrayFileContent.#ctor(System.Byte[])
+  name.vb: ByteArrayFileContent(Byte())
+  fullName: SimpleResults.ByteArrayFileContent.ByteArrayFileContent(System.Byte[])
+  fullName.vb: SimpleResults.ByteArrayFileContent.ByteArrayFileContent(System.Byte())
+  nameWithType: ByteArrayFileContent.ByteArrayFileContent(Byte[])
+  nameWithType.vb: ByteArrayFileContent.ByteArrayFileContent(Byte())
+- uid: SimpleResults.ByteArrayFileContent.#ctor*
+  name: ByteArrayFileContent
+  href: api/SimpleResults.ByteArrayFileContent.-ctor.html
+  commentId: Overload:SimpleResults.ByteArrayFileContent.#ctor
+  fullName: SimpleResults.ByteArrayFileContent.ByteArrayFileContent
+  nameWithType: ByteArrayFileContent.ByteArrayFileContent
+- uid: SimpleResults.ByteArrayFileContent.Content
+  name: Content
+  href: api/SimpleResults.ByteArrayFileContent.Content.html#SimpleResults_ByteArrayFileContent_Content
+  commentId: P:SimpleResults.ByteArrayFileContent.Content
+  fullName: SimpleResults.ByteArrayFileContent.Content
+  nameWithType: ByteArrayFileContent.Content
+- uid: SimpleResults.ByteArrayFileContent.Content*
+  name: Content
+  href: api/SimpleResults.ByteArrayFileContent.Content.html
+  commentId: Overload:SimpleResults.ByteArrayFileContent.Content
+  fullName: SimpleResults.ByteArrayFileContent.Content
+  nameWithType: ByteArrayFileContent.Content
+- uid: SimpleResults.ByteArrayFileContent.ContentType
+  name: ContentType
+  href: api/SimpleResults.ByteArrayFileContent.ContentType.html#SimpleResults_ByteArrayFileContent_ContentType
+  commentId: P:SimpleResults.ByteArrayFileContent.ContentType
+  fullName: SimpleResults.ByteArrayFileContent.ContentType
+  nameWithType: ByteArrayFileContent.ContentType
+- uid: SimpleResults.ByteArrayFileContent.ContentType*
+  name: ContentType
+  href: api/SimpleResults.ByteArrayFileContent.ContentType.html
+  commentId: Overload:SimpleResults.ByteArrayFileContent.ContentType
+  fullName: SimpleResults.ByteArrayFileContent.ContentType
+  nameWithType: ByteArrayFileContent.ContentType
+- uid: SimpleResults.ByteArrayFileContent.FileName
+  name: FileName
+  href: api/SimpleResults.ByteArrayFileContent.FileName.html#SimpleResults_ByteArrayFileContent_FileName
+  commentId: P:SimpleResults.ByteArrayFileContent.FileName
+  fullName: SimpleResults.ByteArrayFileContent.FileName
+  nameWithType: ByteArrayFileContent.FileName
+- uid: SimpleResults.ByteArrayFileContent.FileName*
+  name: FileName
+  href: api/SimpleResults.ByteArrayFileContent.FileName.html
+  commentId: Overload:SimpleResults.ByteArrayFileContent.FileName
+  fullName: SimpleResults.ByteArrayFileContent.FileName
+  nameWithType: ByteArrayFileContent.FileName
 - uid: SimpleResults.CreatedGuid
   name: CreatedGuid
   href: api/SimpleResults.CreatedGuid.html
@@ -498,6 +555,24 @@ references:
   commentId: Overload:SimpleResults.Result.Failure
   fullName: SimpleResults.Result.Failure
   nameWithType: Result.Failure
+- uid: SimpleResults.Result.File(SimpleResults.ByteArrayFileContent)
+  name: File(ByteArrayFileContent)
+  href: api/SimpleResults.Result.File.html#SimpleResults_Result_File_SimpleResults_ByteArrayFileContent_
+  commentId: M:SimpleResults.Result.File(SimpleResults.ByteArrayFileContent)
+  fullName: SimpleResults.Result.File(SimpleResults.ByteArrayFileContent)
+  nameWithType: Result.File(ByteArrayFileContent)
+- uid: SimpleResults.Result.File(SimpleResults.StreamFileContent)
+  name: File(StreamFileContent)
+  href: api/SimpleResults.Result.File.html#SimpleResults_Result_File_SimpleResults_StreamFileContent_
+  commentId: M:SimpleResults.Result.File(SimpleResults.StreamFileContent)
+  fullName: SimpleResults.Result.File(SimpleResults.StreamFileContent)
+  nameWithType: Result.File(StreamFileContent)
+- uid: SimpleResults.Result.File*
+  name: File
+  href: api/SimpleResults.Result.File.html
+  commentId: Overload:SimpleResults.Result.File
+  fullName: SimpleResults.Result.File
+  nameWithType: Result.File
 - uid: SimpleResults.Result.Forbidden
   name: Forbidden()
   href: api/SimpleResults.Result.Forbidden.html#SimpleResults_Result_Forbidden
@@ -1016,6 +1091,12 @@ references:
   commentId: T:SimpleResults.ResultStatus
   fullName: SimpleResults.ResultStatus
   nameWithType: ResultStatus
+- uid: SimpleResults.ResultStatus.ByteArrayFile
+  name: ByteArrayFile
+  href: api/SimpleResults.ResultStatus.html#SimpleResults_ResultStatus_ByteArrayFile
+  commentId: F:SimpleResults.ResultStatus.ByteArrayFile
+  fullName: SimpleResults.ResultStatus.ByteArrayFile
+  nameWithType: ResultStatus.ByteArrayFile
 - uid: SimpleResults.ResultStatus.Conflict
   name: Conflict
   href: api/SimpleResults.ResultStatus.html#SimpleResults_ResultStatus_Conflict
@@ -1064,6 +1145,12 @@ references:
   commentId: F:SimpleResults.ResultStatus.Ok
   fullName: SimpleResults.ResultStatus.Ok
   nameWithType: ResultStatus.Ok
+- uid: SimpleResults.ResultStatus.StreamFile
+  name: StreamFile
+  href: api/SimpleResults.ResultStatus.html#SimpleResults_ResultStatus_StreamFile
+  commentId: F:SimpleResults.ResultStatus.StreamFile
+  fullName: SimpleResults.ResultStatus.StreamFile
+  nameWithType: ResultStatus.StreamFile
 - uid: SimpleResults.ResultStatus.Unauthorized
   name: Unauthorized
   href: api/SimpleResults.ResultStatus.html#SimpleResults_ResultStatus_Unauthorized
@@ -1172,6 +1259,60 @@ references:
   commentId: Overload:SimpleResults.SRModelStateDictionaryExtensions.IsFailed
   fullName: SimpleResults.SRModelStateDictionaryExtensions.IsFailed
   nameWithType: SRModelStateDictionaryExtensions.IsFailed
+- uid: SimpleResults.StreamFileContent
+  name: StreamFileContent
+  href: api/SimpleResults.StreamFileContent.html
+  commentId: T:SimpleResults.StreamFileContent
+  fullName: SimpleResults.StreamFileContent
+  nameWithType: StreamFileContent
+- uid: SimpleResults.StreamFileContent.#ctor(System.IO.Stream)
+  name: StreamFileContent(Stream)
+  href: api/SimpleResults.StreamFileContent.-ctor.html#SimpleResults_StreamFileContent__ctor_System_IO_Stream_
+  commentId: M:SimpleResults.StreamFileContent.#ctor(System.IO.Stream)
+  fullName: SimpleResults.StreamFileContent.StreamFileContent(System.IO.Stream)
+  nameWithType: StreamFileContent.StreamFileContent(Stream)
+- uid: SimpleResults.StreamFileContent.#ctor*
+  name: StreamFileContent
+  href: api/SimpleResults.StreamFileContent.-ctor.html
+  commentId: Overload:SimpleResults.StreamFileContent.#ctor
+  fullName: SimpleResults.StreamFileContent.StreamFileContent
+  nameWithType: StreamFileContent.StreamFileContent
+- uid: SimpleResults.StreamFileContent.Content
+  name: Content
+  href: api/SimpleResults.StreamFileContent.Content.html#SimpleResults_StreamFileContent_Content
+  commentId: P:SimpleResults.StreamFileContent.Content
+  fullName: SimpleResults.StreamFileContent.Content
+  nameWithType: StreamFileContent.Content
+- uid: SimpleResults.StreamFileContent.Content*
+  name: Content
+  href: api/SimpleResults.StreamFileContent.Content.html
+  commentId: Overload:SimpleResults.StreamFileContent.Content
+  fullName: SimpleResults.StreamFileContent.Content
+  nameWithType: StreamFileContent.Content
+- uid: SimpleResults.StreamFileContent.ContentType
+  name: ContentType
+  href: api/SimpleResults.StreamFileContent.ContentType.html#SimpleResults_StreamFileContent_ContentType
+  commentId: P:SimpleResults.StreamFileContent.ContentType
+  fullName: SimpleResults.StreamFileContent.ContentType
+  nameWithType: StreamFileContent.ContentType
+- uid: SimpleResults.StreamFileContent.ContentType*
+  name: ContentType
+  href: api/SimpleResults.StreamFileContent.ContentType.html
+  commentId: Overload:SimpleResults.StreamFileContent.ContentType
+  fullName: SimpleResults.StreamFileContent.ContentType
+  nameWithType: StreamFileContent.ContentType
+- uid: SimpleResults.StreamFileContent.FileName
+  name: FileName
+  href: api/SimpleResults.StreamFileContent.FileName.html#SimpleResults_StreamFileContent_FileName
+  commentId: P:SimpleResults.StreamFileContent.FileName
+  fullName: SimpleResults.StreamFileContent.FileName
+  nameWithType: StreamFileContent.FileName
+- uid: SimpleResults.StreamFileContent.FileName*
+  name: FileName
+  href: api/SimpleResults.StreamFileContent.FileName.html
+  commentId: Overload:SimpleResults.StreamFileContent.FileName
+  fullName: SimpleResults.StreamFileContent.FileName
+  nameWithType: StreamFileContent.FileName
 - uid: SimpleResults.TranslateResultToActionResultAttribute
   name: TranslateResultToActionResultAttribute
   href: api/SimpleResults.TranslateResultToActionResultAttribute.html
