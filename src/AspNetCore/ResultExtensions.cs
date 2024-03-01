@@ -92,7 +92,7 @@ public static class ResultExtensions
         ResultStatus.Forbidden     => new ForbiddenResult(result),
         ResultStatus.ByteArrayFile => FileResultConverter.ConvertToFileContentResult(result),
         ResultStatus.StreamFile    => FileResultConverter.ConvertToFileStreamResult(result),
-        _ => throw new NotSupportedException(string.Format(ResponseMessages.UnsupportedStatus, result.Status))
+        _ => throw new NotSupportedException(new UnsupportedStatusError(result.Status).Message)
     };
 
     /// <summary>
@@ -155,6 +155,6 @@ public static class ResultExtensions
         ResultStatus.Forbidden     => new ForbiddenHttpResult(result),
         ResultStatus.ByteArrayFile => FileResultConverter.ConvertToFileContentHttpResult(result),
         ResultStatus.StreamFile    => FileResultConverter.ConvertToFileStreamHttpResult(result),
-        _ => throw new NotSupportedException(string.Format(ResponseMessages.UnsupportedStatus, result.Status))
+        _ => throw new NotSupportedException(new UnsupportedStatusError(result.Status).Message)
     };
 }

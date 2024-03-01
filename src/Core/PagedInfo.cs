@@ -51,14 +51,18 @@ public class PagedInfo
     public PagedInfo(int pageNumber, int pageSize, int totalRecords)
     {
         if (pageSize == 0)
-        {
-            var message = string.Format(ResponseMessages.DivideByZero, nameof(pageSize));
-            throw new DivideByZeroException(message);
-        }
+            throw new DivideByZeroException(new DivideByZeroError(nameof(pageSize)).Message);
 
         PageNumber   = pageNumber;
         PageSize     = pageSize;
         TotalRecords = totalRecords;
         TotalPages   = (int)Math.Ceiling(totalRecords / (double)pageSize);
+    }
+
+    internal readonly ref struct DivideByZeroError
+    {
+        public string Message { get; }
+        public DivideByZeroError(string parameterName)
+            => Message = string.Format(ResponseMessages.DivideByZero, parameterName ?? string.Empty);
     }
 }

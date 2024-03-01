@@ -61,7 +61,7 @@ public class PagedInfoTests
     {
         // Arrange
         int pageSize = 0;
-        var expectedMessage = string.Format(ResponseMessages.DivideByZero, nameof(pageSize));
+        var expectedMessage = new PagedInfo.DivideByZeroError(nameof(pageSize)).Message;
 
         // Act
         Action act = () =>

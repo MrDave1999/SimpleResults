@@ -142,7 +142,7 @@ public partial class ToActionResultTests
     {
         // Arrange
         var result = new Result<Person> { Status = (ResultStatus)5000 };
-        var expectedMessage = string.Format(ResponseMessages.UnsupportedStatus, result.Status);
+        var expectedMessage = new UnsupportedStatusError(result.Status).Message;
 
         // Act
         Action act = () => result.ToActionResult();
