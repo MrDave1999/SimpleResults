@@ -24,8 +24,8 @@
     <Description>
       A simple package that translates the Result object to ActionResult or IResult.
     </Description>
-    <Version>2.3.2</Version>
-    <PackageReleaseNotes>- Update README.md</PackageReleaseNotes>
+    <Version>2.4.0</Version>
+    <PackageReleaseNotes>See https://github.com/MrDave1999/SimpleResults/releases</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
