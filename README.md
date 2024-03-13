@@ -57,16 +57,9 @@ The purpose of the Result design pattern is to give an operation (a method) the 
 
 ## Why did I make this library?
 
-- I designed this library for use in the [DentallApp](https://github.com/DentallApp/back-end) project because no library like [Arcadis.Result](https://github.com/ardalis/Result) followed this response format:
-```json
-{
-    "success": true,
-    "data": { "id": 1 },
-    "message": "..",
-    "errors": ["..", ".."]
-}
-```
-I couldn't change this format because the front-end used it, so I didn't want to make a breaking change.
+- I designed this library for use it in the [DentallApp](https://github.com/DentallApp/back-end) project and for other projects according to my needs.
+
+- I wanted to share my knowledge with the community. I love open source.
 
 - I do not want to throw [exceptions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/using-exceptions) for all situations.
 
