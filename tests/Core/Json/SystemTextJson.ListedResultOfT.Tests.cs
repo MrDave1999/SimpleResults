@@ -16,6 +16,7 @@ public class SystemTextJsonListedResultOfT
                 1,
                 2
               ],
+              "status": "Ok",
               "success": true,
               "message": "{{ResponseMessages.Success}}",
               "errors": []
@@ -51,6 +52,7 @@ public class SystemTextJsonListedResultOfT
                   "name": "Alice"
                 }
               ],
+              "status": "Ok",
               "success": true,
               "message": "{{ResponseMessages.Success}}",
               "errors": []
@@ -78,6 +80,7 @@ public class SystemTextJsonListedResultOfT
                 1,
                 2
               ],
+              "status": "Ok",
               "success": true,
               "message": "{{ResponseMessages.Success}}",
               "errors": []
@@ -88,9 +91,7 @@ public class SystemTextJsonListedResultOfT
         var actual = JsonSerializer.Deserialize<ListedResult<int>>(json, options);
 
         // Assert
-        actual
-            .Should()
-            .BeEquivalentTo(expectedResult, o => o.Excluding(r => r.Status));
+        actual.Should().BeEquivalentTo(expectedResult);
     }
 
     [Test]
@@ -115,6 +116,7 @@ public class SystemTextJsonListedResultOfT
                   "name": "Alice"
                 }
               ],
+              "status": "Ok",
               "success": true,
               "message": "{{ResponseMessages.Success}}",
               "errors": []
@@ -125,8 +127,6 @@ public class SystemTextJsonListedResultOfT
         var actual = JsonSerializer.Deserialize<ListedResult<Person>>(json, options);
 
         // Assert
-        actual
-            .Should()
-            .BeEquivalentTo(expectedResult, o => o.Excluding(r => r.Status));
+        actual.Should().BeEquivalentTo(expectedResult);
     }
 }

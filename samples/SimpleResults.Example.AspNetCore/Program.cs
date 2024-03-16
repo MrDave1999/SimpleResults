@@ -15,10 +15,15 @@ builder.Services.AddControllers(options =>
     // Add filter for all controllers.
     options.Filters.Add<TranslateResultToActionResultAttribute>();
 })
+.AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<ResultStatus>());
+})
 .ConfigureApiBehaviorOptions(options =>
 {
     options.InvalidModelStateResponseFactory = (context) => context.ModelState.BadRequest();
 });
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>

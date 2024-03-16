@@ -24,6 +24,7 @@ public class GetPersonsTests
         result.IsSuccess.Should().BeTrue();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEmpty();
+        result.Status.Should().Be(ResultStatus.Ok);
     }
 
     [TestCase(Routes.Person.WebApi)]
@@ -48,5 +49,6 @@ public class GetPersonsTests
         result.IsSuccess.Should().BeFalse();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEmpty();
+        result.Status.Should().Be(ResultStatus.Failure);
     }
 }

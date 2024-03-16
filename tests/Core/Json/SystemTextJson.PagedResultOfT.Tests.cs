@@ -26,6 +26,7 @@ public class SystemTextJsonPagedResultOfT
                 "hasPrevious": false,
                 "hasNext": true
               },
+              "status": "Ok",
               "success": true,
               "message": "{{ResponseMessages.ObtainedResources}}",
               "errors": []
@@ -70,6 +71,7 @@ public class SystemTextJsonPagedResultOfT
                 "hasPrevious": false,
                 "hasNext": true
               },
+              "status": "Ok",
               "success": true,
               "message": "{{ResponseMessages.ObtainedResources}}",
               "errors": []
@@ -107,6 +109,7 @@ public class SystemTextJsonPagedResultOfT
                 "hasPrevious": false,
                 "hasNext": true
               },
+              "status": "Ok",
               "success": true,
               "message": "{{ResponseMessages.ObtainedResources}}",
               "errors": []
@@ -117,9 +120,7 @@ public class SystemTextJsonPagedResultOfT
         var actual = JsonSerializer.Deserialize<PagedResult<int>>(json, options);
 
         // Assert
-        actual
-            .Should()
-            .BeEquivalentTo(expectedResult, o => o.Excluding(r => r.Status));
+        actual.Should().BeEquivalentTo(expectedResult);
     }
 
     [Test]
@@ -153,6 +154,7 @@ public class SystemTextJsonPagedResultOfT
                 "hasPrevious": false,
                 "hasNext": true
               },
+              "status": "Ok",
               "success": true,
               "message": "{{ResponseMessages.ObtainedResources}}",
               "errors": []
@@ -163,8 +165,6 @@ public class SystemTextJsonPagedResultOfT
         var actual = JsonSerializer.Deserialize<PagedResult<Person>>(json, options);
 
         // Assert
-        actual
-            .Should()
-            .BeEquivalentTo(expectedResult, o => o.Excluding(r => r.Status));
+        actual.Should().BeEquivalentTo(expectedResult);
     }
 }

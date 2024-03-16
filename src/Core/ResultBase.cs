@@ -11,6 +11,16 @@ namespace SimpleResults;
 public abstract class ResultBase
 {
     /// <summary>
+    /// Gets the current status of a result.
+    /// </summary>
+    /// <value>
+    /// The current status of a result.
+    /// Its default value is a <see cref="ResultStatus.Failure"/>.
+    /// </value>
+    [JsonConverter(typeof(JsonStringEnumConverter<ResultStatus>))]
+    public ResultStatus Status { get; init; } = ResultStatus.Failure;
+
+    /// <summary>
     /// A value indicating that the result was successful.
     /// </summary>
     [JsonPropertyName("success")]
@@ -39,14 +49,4 @@ public abstract class ResultBase
     /// Its default value is never a null value.
     /// </value>
     public IEnumerable<string> Errors { get; init; } = Enumerable.Empty<string>();
-
-    /// <summary>
-    /// Gets the current status of a result.
-    /// </summary>
-    /// <value>
-    /// The current status of a result.
-    /// Its default value is a <see cref="ResultStatus.Failure"/>.
-    /// </value>
-    [JsonIgnore]
-    public ResultStatus Status { get; init; } = ResultStatus.Failure;
 }

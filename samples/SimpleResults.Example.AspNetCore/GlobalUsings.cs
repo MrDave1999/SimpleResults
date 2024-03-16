@@ -1,4 +1,5 @@
 ﻿global using System.Net.Mime;
+global using System.Text.Json.Serialization;
 global using Bogus;
 global using Microsoft.AspNetCore.Mvc;
 global using Swashbuckle.AspNetCore.Annotations;

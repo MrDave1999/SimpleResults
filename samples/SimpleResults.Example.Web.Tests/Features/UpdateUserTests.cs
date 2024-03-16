@@ -24,6 +24,7 @@ public class UpdateUserTests
         result.IsSuccess.Should().BeTrue();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEmpty();
+        result.Status.Should().Be(ResultStatus.Ok);
     }
 
     [TestCase(Routes.User.WebApi)]
@@ -46,6 +47,7 @@ public class UpdateUserTests
         result.IsSuccess.Should().BeFalse();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEmpty();
+        result.Status.Should().Be(ResultStatus.NotFound);
     }
 
     [TestCase(Routes.User.WebApi)]
@@ -68,5 +70,6 @@ public class UpdateUserTests
         result.IsSuccess.Should().BeFalse();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEmpty();
+        result.Status.Should().Be(ResultStatus.Invalid);
     }
 }

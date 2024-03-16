@@ -47,5 +47,6 @@ public class GetFileResultTests
         result.IsSuccess.Should().BeFalse();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEmpty();
+        result.Status.Should().Be(ResultStatus.Invalid);
     }
 }

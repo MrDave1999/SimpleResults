@@ -24,6 +24,7 @@ public class GetPagedUsersTests
         result.IsSuccess.Should().BeTrue();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEmpty();
+        result.Status.Should().Be(ResultStatus.Ok);
     }
 
     [TestCase(Routes.User.WebApi)]
@@ -48,6 +49,7 @@ public class GetPagedUsersTests
         result.IsSuccess.Should().BeFalse();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEmpty();
+        result.Status.Should().Be(ResultStatus.Failure);
     }
 
     [TestCase(Routes.User.WebApi)]
@@ -72,5 +74,6 @@ public class GetPagedUsersTests
         result.IsSuccess.Should().BeFalse();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEmpty();
+        result.Status.Should().Be(ResultStatus.Invalid);
     }
 }

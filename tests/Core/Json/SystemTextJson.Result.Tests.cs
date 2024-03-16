@@ -11,6 +11,7 @@ public class SystemTextJsonResult
         var expectedJson =
             $$"""
             {
+              "status": "Ok",
               "success": true,
               "message": "{{ResponseMessages.Success}}",
               "errors": []
@@ -33,6 +34,7 @@ public class SystemTextJsonResult
         var json =
             $$"""
             {
+              "status": "Ok",
               "success": true,
               "message": "{{ResponseMessages.Success}}",
               "errors": []
@@ -43,8 +45,6 @@ public class SystemTextJsonResult
         var actual = JsonSerializer.Deserialize<Result>(json, options);
 
         // Assert
-        actual
-            .Should()
-            .BeEquivalentTo(expectedResult, o => o.Excluding(r => r.Status));
+        actual.Should().BeEquivalentTo(expectedResult);
     }
 }
