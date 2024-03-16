@@ -12,6 +12,7 @@ public class SystemTextJsonResultOfT
             $$"""
             {
               "data": 1,
+              "status": "Ok",
               "success": true,
               "message": "{{ResponseMessages.Success}}",
               "errors": []
@@ -37,6 +38,7 @@ public class SystemTextJsonResultOfT
               "data": {
                 "name": "Test"
               },
+              "status": "Ok",
               "success": true,
               "message": "{{ResponseMessages.Success}}",
               "errors": []
@@ -60,6 +62,7 @@ public class SystemTextJsonResultOfT
             $$"""
             {
               "data": 1,
+              "status": "Ok",
               "success": true,
               "message": "{{ResponseMessages.Success}}",
               "errors": []
@@ -70,9 +73,7 @@ public class SystemTextJsonResultOfT
         var actual = JsonSerializer.Deserialize<Result<int>>(json, options);
 
         // Assert
-        actual
-            .Should()
-            .BeEquivalentTo(expectedResult, o => o.Excluding(r => r.Status));
+        actual.Should().BeEquivalentTo(expectedResult);
     }
 
     [Test]
@@ -87,6 +88,7 @@ public class SystemTextJsonResultOfT
               "data": {
                 "Id": 1
               },
+              "status": "Ok",
               "success": true,
               "message": "{{ResponseMessages.Success}}",
               "errors": []
@@ -97,9 +99,7 @@ public class SystemTextJsonResultOfT
         var actual = JsonSerializer.Deserialize<Result<CreatedId>>(json, options);
 
         // Assert
-        actual
-            .Should()
-            .BeEquivalentTo(expectedResult, o => o.Excluding(r => r.Status));
+        actual.Should().BeEquivalentTo(expectedResult);
     }
 
     [Test]
@@ -115,6 +115,7 @@ public class SystemTextJsonResultOfT
               "data": {
                 "Id": "{{guid}}"
               },
+              "status": "Ok",
               "success": true,
               "message": "{{ResponseMessages.Success}}",
               "errors": []
@@ -125,8 +126,6 @@ public class SystemTextJsonResultOfT
         var actual = JsonSerializer.Deserialize<Result<CreatedGuid>>(json, options);
 
         // Assert
-        actual
-            .Should()
-            .BeEquivalentTo(expectedResult, o => o.Excluding(r => r.Status));
+        actual.Should().BeEquivalentTo(expectedResult);
     }
 }
