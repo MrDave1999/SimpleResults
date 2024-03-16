@@ -23,6 +23,7 @@ public class DeleteUserTests
         result.IsSuccess.Should().BeTrue();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEmpty();
+        result.Status.Should().Be(ResultStatus.Ok);
     }
 
     [TestCase(Routes.User.WebApi)]
@@ -44,5 +45,6 @@ public class DeleteUserTests
         result.IsSuccess.Should().BeFalse();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEmpty();
+        result.Status.Should().Be(ResultStatus.NotFound);
     }
 }

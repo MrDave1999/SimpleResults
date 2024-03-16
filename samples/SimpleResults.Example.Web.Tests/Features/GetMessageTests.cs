@@ -21,6 +21,7 @@ public class GetMessageTests
         result.IsSuccess.Should().BeFalse();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEmpty();
+        result.Status.Should().Be(ResultStatus.Forbidden);
     }
 
     [TestCase(Routes.Message.WebApi)]
@@ -42,6 +43,7 @@ public class GetMessageTests
         result.IsSuccess.Should().BeFalse();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEmpty();
+        result.Status.Should().Be(ResultStatus.CriticalError);
     }
 
     [TestCase(Routes.Message.WebApi)]
@@ -63,5 +65,6 @@ public class GetMessageTests
         result.IsSuccess.Should().BeFalse();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEmpty();
+        result.Status.Should().Be(ResultStatus.Unauthorized);
     }
 }

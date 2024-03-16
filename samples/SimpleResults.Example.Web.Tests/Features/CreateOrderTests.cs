@@ -38,6 +38,7 @@ public class CreateOrderTests
         result.IsSuccess.Should().BeTrue();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEmpty();
+        result.Status.Should().Be(ResultStatus.Created);
     }
 
     [TestCase(Routes.Order.ManualValidation)]
@@ -95,5 +96,6 @@ public class CreateOrderTests
         result.IsSuccess.Should().BeFalse();
         result.Message.Should().NotBeNullOrEmpty();
         result.Errors.Should().BeEquivalentTo(expectedErrors);
+        result.Status.Should().Be(ResultStatus.Invalid);
     }
 }
