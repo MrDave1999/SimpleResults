@@ -626,6 +626,7 @@ See the [API documentation](https://mrdave1999.github.io/SimpleResults/api/Simpl
 
 You can find a complete and functional example in these projects:
 - [SimpleResults.Example](https://github.com/MrDave1999/SimpleResults/tree/master/samples/SimpleResults.Example)
+- [SimpleResults.Example.NativeAOT](https://github.com/MrDave1999/SimpleResults/tree/master/samples/SimpleResults.Example.NativeAOT)
 - [SimpleResults.Example.AspNetCore](https://github.com/MrDave1999/SimpleResults/tree/master/samples/SimpleResults.Example.AspNetCore)
 - [SimpleResults.Example.Web.Tests](https://github.com/MrDave1999/SimpleResults/tree/master/samples/SimpleResults.Example.Web.Tests)
 - [SimpleResults.Example.FluentValidation](https://github.com/MrDave1999/SimpleResults/tree/master/samples/SimpleResults.Example/FluentValidation)
