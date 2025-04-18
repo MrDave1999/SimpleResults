@@ -60,22 +60,4 @@ public class ResultOfTTests
         actual.Errors.Should().BeEmpty();
         actual.Status.Should().Be(ResultStatus.Ok);
     }
-
-    [Test]
-    public void ImplicitOperator_WhenConvertedFromResultOfT_ShouldReturnsValueOfT()
-    {
-        // Arrange
-        var expectedValue = new List<Person>
-        {
-            new() { Name = "Bob" },
-            new() { Name = "Alice" }
-        };
-        Result<List<Person>> result = Result.Success(expectedValue);
-
-        // Act
-        List<Person> actual = result;
-
-        // Assert
-        actual.Should().BeEquivalentTo(expectedValue);
-    }
 }

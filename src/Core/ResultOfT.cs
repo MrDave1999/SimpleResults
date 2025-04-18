@@ -42,11 +42,4 @@ public sealed class Result<T> : ResultBase
         Message = ResponseMessages.Success,
         Status = ResultStatus.Ok
     };
-
-    /// <summary>
-    /// Converts an instance of type <see cref="Result{T}"/> to the value of type <typeparamref name="T"/>.
-    /// </summary>
-    /// <param name="result">An instance of type <see cref="Result{T}"/>.</param>
-    public static implicit operator T(Result<T> result) 
-        => result.Data;
 }
